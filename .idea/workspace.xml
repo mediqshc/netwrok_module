@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffd53922-ca5c-48d0-b8f6-73580601143a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/mediq-android-sdk.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netwrok_module/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/netwrok_module/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
