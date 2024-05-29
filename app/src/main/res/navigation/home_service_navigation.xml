@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_service_navigation"
+    app:startDestination="@id/hospitalServiceFragment">
+
+    <fragment
+        android:id="@+id/hospitalServiceFragment"
+        android:name="com.homemedics.app.ui.fragment.walkin.hospital.HospitalServiceFragment"
+        android:label="HospitalServiceFragment"
+        tools:layout="@layout/fragment_pharmacy_services">
+        <action
+            android:id="@+id/action_hospitalServiceFragment_to_homeServiceListFragment"
+            app:destination="@id/homeServiceListFragment" />
+        <action
+            android:id="@+id/action_hospitalServiceFragment_to_walkInHospitalServicesFragment2"
+            app:destination="@id/walkin_services_navigation" />
+        <action
+            android:id="@+id/action_hospitalServiceFragment_to_walkInDiscountsCenterFragment4"
+            app:destination="@id/walkInDiscountsCenterFragment4" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeServiceListFragment"
+        android:name="com.homemedics.app.ui.fragment.home_health_service.HomeServiceListFragment"
+        android:label="HomeServiceListFragment" >
+        <action
+            android:id="@+id/action_homeServiceListFragment_to_homeServiceDetailFragment"
+            app:destination="@id/homeServiceDetailFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/walkin_services_navigation" />
+
+    <fragment
+        android:id="@+id/homeServiceDetailFragment"
+        android:name="com.homemedics.app.ui.fragment.home_health_service.HomeServiceDetailFragment"
+        android:label="HomeServiceDetailFragment" >
+        <action
+            android:id="@+id/action_homeServiceDetailFragment_to_selectAddressFragment"
+            app:destination="@id/selectAddressFragment" />
+        <action
+            android:id="@+id/action_homeServiceDetailFragment_to_homeServiceListFragment"
+            app:destination="@id/homeServiceListFragment"
+            app:popUpTo="@id/homeServiceListFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_homeServiceDetailFragment_to_ordersDetailFragment"
+            app:destination="@id/ordersDetailFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/homeServiceListFragment"/>
+        <action
+            android:id="@+id/action_homeServiceDetailFragment_to_patient_emr_navigation"
+            app:destination="@id/patient_emr_navigation">
+            <argument
+                android:name="bookingId"
+                android:defaultValue="0"
+                app:argType="integer"
+                />
+            <argument android:name="fromBDC"
+                android:defaultValue="true" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectAddressFragment"
+        android:name="com.homemedics.app.ui.fragment.doctorconsultation.SelectAddressFragment"
+        android:label="SelectAddressFragment"
+        tools:layout="@layout/fragment_select_address">
+        <action
+            android:id="@+id/action_selectAddressFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.homemedics.app.ui.fragment.address.AddAddressFragment"
+        android:label="AddAddressFragment"
+        tools:layout="@layout/fragment_add_address">
+        <action
+            android:id="@+id/action_addAddressFragment_to_addressBottomSheet"
+            app:destination="@id/addressBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/addressBottomSheet"
+        android:name="com.homemedics.app.ui.bottomsheets.AddressBottomSheet"
+        android:label="AddressBottomSheet" >
+        <action
+            android:id="@+id/action_addressBottomSheet_to_personalProfileFragment"
+            app:destination="@id/selectAddressFragment"
+            app:popUpTo="@id/selectAddressFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
+
+
+    <fragment
+        android:id="@+id/ordersDetailFragment"
+        android:name="com.homemedics.app.ui.fragment.myorder.OrdersDetailFragment"
+        android:label="OrdersDetailFragment"
+        tools:layout="@layout/fragment_order_details">
+        <action
+            android:id="@+id/action_ordersDetailFragment_to_rescheduleAppointmentFragment"
+            app:destination="@id/rescheduleAppointmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rescheduleAppointmentFragment"
+        android:name="com.homemedics.app.ui.fragment.myorder.RescheduleAppointmentFragment"
+        android:label="RescheduleAppointmentFragment"
+        tools:layout="@layout/fragment_reschedule_appointment"/>
+
+    <include app:graph="@navigation/customer_emr_navigation" />
+
+    <fragment
+        android:id="@+id/walkInDiscountsCenterFragment4"
+        android:name="com.homemedics.app.ui.fragment.walkin.discount.WalkInDiscountsCenterFragment"
+        android:label="WalkInDiscountsCenterFragment"
+        tools:layout="@layout/fragment_walkin_discounts_center"/>
+
+</navigation>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+            <variable
+                name="langData"
+                type="com.homemedics.app.firebase.RemoteConfigLanguage"/>
+
+        <variable
+            name="currency"
+            type="String" />
+
+        <variable
+            name="dataManager"
+            type="com.fatron.network_module.models.response.appointments.AppointmentResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:layout_height="match_parent">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleText=""
+            app:action1Res="@drawable/ic_expand"
+            app:desc=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintHeight="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/actionbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/iDoctorHeader"
+                    layout="@layout/options_patients_header_call"
+                    dataManager="@{dataManager}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvSpecialInstruction"
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.globalString.specialInstructions}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iDoctorHeader" />
+
+                <TextView
+                    android:id="@+id/tvSpecialInstructionDesc"
+                    style="@style/label_m"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="@{dataManager.instructions}"
+                    tools:text="@string/lorem_ipsum"
+                    android:textColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSpecialInstruction" />
+
+                <TextView
+                    android:id="@+id/tvBookBy"
+                    style="@style/label_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="@{langData.globalString.bookedBy +` `+dataManager.booked_by}"
+                    tools:text="Booked by: M Ahmed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSpecialInstructionDesc" />
+
+                <View
+                    android:id="@+id/vShadow3"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBookBy" />
+
+
+                <TextView
+                    android:id="@+id/tvOrderDetails"
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.globalString.orderDetails}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vShadow3" />
+
+                <TextView
+                    android:id="@+id/tvServiceAmount"
+                    style="@style/label_m"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginBottom="@dimen/dp18"
+                    tools:text="@string/video_consultation"
+                    android:textColor="@color/grey"
+                    app:layout_constraintStart_toStartOf="@+id/tvOrderDetails"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOrderDetails"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvAmount"
+                    style="@style/label_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp16"
+                    tools:text="4,500.00"
+                    android:textColor="@color/primary"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvServiceAmount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvServiceAmount" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

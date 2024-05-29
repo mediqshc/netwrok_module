@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:orientation="vertical">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:action1Res="@drawable/ic_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/iDoctor"
+                layout="@layout/item_doctor_small_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp16"
+                />
+
+            <View
+                android:id="@+id/sharedDivider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp10"
+                android:background="@color/divider" />
+
+            <com.homemedics.app.ui.custom.CustomAddMultipleView
+                android:id="@+id/caRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showAddButton="true"
+                app:addNewText="@{lang.globalString.addNew}" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/divider"/>
+
+        <Button
+            android:id="@+id/bSave"
+            style="@style/button_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{lang.emrScreens.saveRecord}"/>
+    </LinearLayout>
+</layout>

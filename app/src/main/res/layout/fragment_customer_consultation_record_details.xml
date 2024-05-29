@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:orientation="vertical">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:action1Res="@drawable/ic_back_white"
+            app:action2Res="@drawable/ic_share"
+            app:action3Res="@drawable/ic_download_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp16">
+
+            <include
+                android:id="@+id/iDoctor"
+                layout="@layout/item_doctor_small_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp16"
+                />
+
+            <View
+                android:id="@+id/headerDivider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp10"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:id="@+id/llSharedWithMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp16">
+
+                <TextView
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{lang.globalString.shared}"/>
+
+                <LinearLayout
+                    android:id="@+id/llSharedWith"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vShared"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp10"
+                android:background="@color/divider" />
+
+            <TextView
+                android:id="@+id/tvVitalsSymptoms"
+                style="@style/heading_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginHorizontal="@dimen/dp16"
+                android:text="@{lang.emrScreens.vitalsSymptoms}"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvVitals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginBottom="@dimen/dp12"
+                android:layout_marginHorizontal="@dimen/dp16"/>
+
+            <com.homemedics.app.ui.custom.CustomAddMultipleView
+                android:id="@+id/caSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showAddButton="false" />
+
+            <View
+                android:id="@+id/vSymtom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp10"
+                android:background="@color/divider" />
+
+            <com.homemedics.app.ui.custom.CustomAddMultipleView
+                android:id="@+id/caDiagnosis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showAddButton="false" />
+
+            <View
+                android:id="@+id/vDiagnosis"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp10"
+                android:background="@color/divider" />
+
+            <com.homemedics.app.ui.custom.CustomAddMultipleView
+                android:id="@+id/caMedicalProcedures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showAddButton="false" />
+
+            <com.homemedics.app.ui.custom.CustomAddMultipleView
+                android:id="@+id/caMedications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showAddButton="false" />
+
+            <com.homemedics.app.ui.custom.CustomAddMultipleView
+                android:id="@+id/caLabDiagnostic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showAddButton="false" />
+
+            <View
+                android:id="@+id/vAttachments"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp10"
+                android:background="@color/divider" />
+
+            <TextView
+                android:id="@+id/tvAttachments"
+                style="@style/heading_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp16"
+                android:text="@{lang.globalString.attachments}"
+                android:textSize="18sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAttachments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginHorizontal="@dimen/dp16" />
+
+            <TextView
+                android:id="@+id/tvNoData"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp16"
+                android:text="@{lang.messages.noAttachmentsFound}"
+                android:textColor="@color/grey"
+                android:textAlignment="center"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

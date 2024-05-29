@@ -1,0 +1,57 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = "1.5.10"
+        version_coroutine = "1.5.2"
+        version_gson = "2.8.8"
+        version_retrofit = "2.9.0"
+        version_retrofit_coroutines_adapter = "0.9.2"
+        version_moshi = "1.10.0"
+        version_ok_http = "4.9.3"
+        version_chuck = "1.1.0"
+        version_navigation = "2.3.5"
+        version_lifecycle_extensions = "2.2.0"
+        version_lifecycle_livedata = "2.4.0"
+        version_glide = "4.12.0"
+        version_shimmer = "0.5.0"
+        hilt_version = '2.38.1'
+        firebase_bom = '28.4.2'
+        progress_hud = '1.2.0'
+        room_version = "2.3.0"
+        version_glide = "4.12.0"
+        stripe_version = "18.1.0"
+        version_perference = "1.1.1"
+        playserviceauth_version = "19.2.0"
+        authapiphone_version = "17.5.1"
+        circleImageView_version = "3.1.0"
+        country_picker_version = "2.5.4"
+        firebase_auth_version = "8.0.0"
+        versions_chucker = "3.5.2"
+        version_timber = "5.0.1"
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+
+            url "https://jitpack.io"
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+        classpath 'com.google.gms:google-services:4.3.13'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
+        classpath 'com.google.firebase:firebase-appdistribution-gradle:3.0.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

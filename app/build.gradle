@@ -1,0 +1,206 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.firebase.appdistribution'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.homemedics.app"
+        minSdk 24
+        targetSdk 33
+        versionCode 173
+        versionName "1.10.55"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
+    }
+
+    buildFeatures{
+        viewBinding=true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def apkName = "medIQ-v" + variant.versionCode + "-" + variant.versionName + ".apk"
+                    output.outputFileName = apkName
+                }
+            }
+        }
+
+        debug {
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def apkName = "medIQ-v" + variant.versionCode + "-" + variant.versionName + ".apk"
+                    output.outputFileName = apkName
+                }
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.4"
+    }
+
+    flavorDimensions "server"
+
+    productFlavors {
+        dev {
+            dimension "server"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-Dev"
+        }
+        qa {
+            dimension "server"
+            applicationIdSuffix ".qa"
+            versionNameSuffix "-QA"
+        }
+        stage {
+            dimension "server"
+            applicationIdSuffix ".stage"
+            versionNameSuffix "-Stage"
+        }
+        live {
+            dimension "server"
+           // applicationId "com.homemedics.app.corporate"
+              applicationId "com.homemedics.app"
+        }
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    api project(':netwrok_module')
+
+    implementation "org.jetbrains.kotlinx:kotlinx-datetime:0.3.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutine"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine"
+
+    implementation "com.google.code.gson:gson:$version_gson"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$version_lifecycle_livedata"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_lifecycle_livedata"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$version_lifecycle_livedata"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$version_navigation"
+
+    implementation platform("com.google.firebase:firebase-bom:$firebase_bom")
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    //compose
+    // Integration with activities
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    // Compose Material Design
+    implementation 'androidx.compose.material:material:1.1.1'
+    // Animations
+    implementation 'androidx.compose.animation:animation:1.1.1'
+    // Tooling support (Previews, etc.)
+    implementation 'androidx.compose.ui:ui-tooling:1.1.1'
+    implementation "androidx.compose.ui:ui-tooling-preview:1.1.1"
+    // Integration with ViewModels
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1'
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.okhttp3:okhttp:$version_ok_http"
+
+    implementation "com.github.bumptech.glide:glide:$version_glide"
+    kapt "com.github.bumptech.glide:compiler:$version_glide"
+
+//    implementation "com.kaopiz:kprogresshud:$progress_hud"
+
+    //GLide
+    implementation "com.github.bumptech.glide:glide:$version_glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$version_glide"
+
+    //Timber
+    implementation "com.jakewharton.timber:timber:$version_timber"
+
+    //circle imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    // Dependency to include Maps SDK for Android
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.android.libraries.places:places:2.6.0'
+
+    //image crop
+    implementation 'com.github.CanHub:Android-Image-Cropper:3.3.5'
+    //pager indicator
+    implementation "com.tbuonomo:dotsindicator:4.3"
+
+    implementation 'com.github.santalu:maskara:1.0.0'
+
+    implementation 'com.nex3z:flow-layout:1.3.3'
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+
+    // sms retriever
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:17.4.0'
+
+    implementation "androidx.paging:paging-runtime:3.0.0-alpha03"
+
+    //twilio
+    implementation "com.twilio:video-android:7.5.1"
+    implementation "com.twilio.sdk:twilio:9.2.4"
+    implementation "com.twilio:conversations-android:2.0.0"
+
+    //ripple animation
+    implementation "com.skyfishjy.ripplebackground:library:1.0.1"
+    implementation 'com.github.devendroid:ReadMoreOption:1.0.2'
+
+    //QR code
+    implementation project(':zxing-android-embedded')
+
+
+
+
+}

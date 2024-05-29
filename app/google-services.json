@@ -1,0 +1,190 @@
+{
+  "project_info": {
+    "project_number": "228607937627",
+    "project_id": "mediq-13463",
+    "storage_bucket": "mediq-13463.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228607937627:android:407a8c81a3d622cdb6c37e",
+        "android_client_info": {
+          "package_name": "com.homemedics.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4lDKxtbU5R-GlM8nRm8N5IMFTQZV96k4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "228607937627-1e9f6au9r6tqku5udu849mn85q7313fs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.medIQ.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228607937627:android:6c6539b937090970b6c37e",
+        "android_client_info": {
+          "package_name": "com.homemedics.app.corporate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4lDKxtbU5R-GlM8nRm8N5IMFTQZV96k4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "228607937627-1e9f6au9r6tqku5udu849mn85q7313fs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.medIQ.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228607937627:android:312a8bae4a58e29ab6c37e",
+        "android_client_info": {
+          "package_name": "com.homemedics.app.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4lDKxtbU5R-GlM8nRm8N5IMFTQZV96k4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "228607937627-1e9f6au9r6tqku5udu849mn85q7313fs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.medIQ.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228607937627:android:3ac72eed34577cd3b6c37e",
+        "android_client_info": {
+          "package_name": "com.homemedics.app.qa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4lDKxtbU5R-GlM8nRm8N5IMFTQZV96k4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "228607937627-1e9f6au9r6tqku5udu849mn85q7313fs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.medIQ.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228607937627:android:7ed9730f16b8ecc7b6c37e",
+        "android_client_info": {
+          "package_name": "com.homemedics.app.stage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4lDKxtbU5R-GlM8nRm8N5IMFTQZV96k4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228607937627-2tj7c117bkpd1b344hu2bte4oi8c831i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "228607937627-1e9f6au9r6tqku5udu849mn85q7313fs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.medIQ.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

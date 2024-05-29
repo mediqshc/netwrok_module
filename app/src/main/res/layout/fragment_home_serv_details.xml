@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bookingRequest"
+            type="com.fatron.network_module.models.request.homeservice.HomeServiceStoreRequest" />
+
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:action1Res="@drawable/ic_back_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleText="@string/book_your_consultation" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/heading_m"
+                    android:textDirection="locale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.bookingScreen.visitType}" />
+
+                <RadioGroup
+                    android:id="@+id/rgVisitType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp16"
+                    android:orientation="horizontal"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <TextView
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.globalString.patientDetails}" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                    android:id="@+id/cdPatients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    app:layout_constraintEnd_toEndOf="@+id/dob"
+                    app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                    app:layout_constraintTop_toBottomOf="@+id/dob" />
+
+                <EditText
+                    android:id="@+id/etInstructions"
+                    style="@style/edittext_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/rounded_grey"
+                    android:hint="@{langData.globalString.specialInstructions}"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:padding="@dimen/dp16"
+                    android:text="@={bookingRequest.instructions}" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <com.homemedics.app.ui.custom.CustomAddMultipleView
+                    android:id="@+id/caAddresses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:tag="addressView"
+                    app:custDesc="@{langData.bookingScreen.chooseAddress == null ? `` : langData.bookingScreen.chooseAddress}"
+                    app:addNewText="@{langData.globalString.add}"
+                    app:titleText="@{langData.globalString.visitAddress}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <TextView
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.globalString.attachments}" />
+
+                <TextView
+                    style="@style/label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:text="@{langData.globalString.mAddAttachments}"
+                    android:textColor="@color/grey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvVoiceNote"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_mic_black"
+                        android:drawablePadding="@dimen/dp8"
+                        android:gravity="center"
+                        android:text="@{langData.globalString.voiceNote}" />
+
+                    <TextView
+                        android:id="@+id/tvAddImage"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_image"
+                        android:drawablePadding="@dimen/dp8"
+                        android:gravity="center"
+                        android:text="@{langData.globalString.addImage}" />
+
+                    <TextView
+                        android:id="@+id/tvUploadDoc"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_upload_file"
+                        android:drawablePadding="@dimen/dp8"
+                        android:gravity="center"
+                        android:text="@{langData.globalString.uploadDoc}" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/attachmentDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:background="@color/divider"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAttachments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <com.homemedics.app.ui.custom.CustomAddMultipleView
+                    android:id="@+id/caMedicalRecords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:tag="addressView"
+                    app:addNewText="@{langData.globalString.add}"
+                    app:titleText="@{langData.globalString.medicalRecords}" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bBookConsultation"
+            style="@style/button_long_orange"
+            android:layout_width="match_parent"
+            android:enabled="false"
+            android:layout_height="wrap_content"
+            android:text="@{langData.globalString.requestSubmit}" />
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.homemedics.app.ui.custom.CustomAddMultipleView
+            android:id="@+id/caAddNew"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:tag="addressView"
+            android:visibility="invisible"
+            app:addNewText="@{langData.globalString.addNew}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleText="@{langData.personalprofileBasicScreen.familyConnection}" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            style="@style/tabs_material"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caAddNew" />
+
+        <View
+            android:id="@+id/vShadow"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@drawable/gradient_grey"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vShadow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

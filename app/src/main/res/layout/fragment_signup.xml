@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userModel"
+            type="com.homemedics.app.model.UserModel" />
+
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/svContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/layout_actionbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/welcomeText"
+                style="@style/heading_ovo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp44"
+                android:layout_marginEnd="@dimen/dp20"
+                android:text="@{langData.userAuthScreen.welcome}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/include" />
+
+            <TextView
+                android:id="@+id/welcomeDesc"
+                style="@style/label_m"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp14"
+                android:text="@{langData.userAuthScreen.description}"
+                app:layout_constraintEnd_toEndOf="@+id/welcomeText"
+                app:layout_constraintStart_toStartOf="@+id/welcomeText"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                android:id="@+id/cdCountryCode"
+                selectedValue="@={userModel.countryCode}"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp26"
+                android:enabled="false"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeDesc" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.43" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultEditText
+                android:id="@+id/etMobileNumber"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp8"
+                android:digits="@string/restrict_special_characters"
+                android:inputType="none"
+                android:maxLength="16"
+                android:text="@={userModel.phoneNumber}"
+                app:layout_constraintEnd_toEndOf="@+id/welcomeDesc"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/cdCountryCode" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultEditText
+                android:id="@+id/etName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:inputType="textPersonName"
+                android:maxLength="35"
+                android:text="@={userModel.fullName}"
+
+                app:layout_constraintEnd_toEndOf="@+id/welcomeDesc"
+                app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/etMobileNumber" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultEditText
+                android:id="@+id/dob"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:clickable="true"
+                android:inputType="none"
+                android:text="@={userModel.dateOfBirth}"
+                app:click="true"
+                app:drawable="@drawable/ic_calendar"
+                app:endIconMode="custom"
+                app:layout_constraintEnd_toEndOf="@+id/welcomeDesc"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/etName"
+                app:textColorCheck="false" />
+
+
+            <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                android:id="@+id/cdGender"
+                selectedValue="@={userModel.gender}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="@+id/dob"
+                app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/dob" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                android:id="@+id/cdCountry"
+                selectedValue="@={userModel.country}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                app:layout_constraintEnd_toStartOf="@+id/cdCity"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/cdGender" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                android:id="@+id/cdCity"
+                selectedValue="@={userModel.city}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="@+id/welcomeDesc"
+                app:layout_constraintStart_toEndOf="@+id/cdCountry"
+                app:layout_constraintTop_toBottomOf="@+id/cdGender" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultEditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:inputType="textPassword"
+                android:text="@={userModel.password}"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="@+id/welcomeDesc"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/cdCity" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultEditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:inputType="textPassword"
+                android:text="@={userModel.passwordConfirm}"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="@+id/etPassword"
+                app:layout_constraintStart_toStartOf="@+id/etPassword"
+                app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+            <!--            android:text="@={userModel.otp}"-->
+            <com.homemedics.app.ui.custom.CustomDefaultButtonEdit
+                android:id="@+id/etVerificationCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:inputType="number"
+                android:maxLength="7"
+                android:text="@={userModel.otp}"
+                app:buttonText="@{langData.globalString.sendCode}"
+                app:helperTextColor="@color/purple_700"
+                app:layout_constraintEnd_toEndOf="@+id/etConfirmPassword"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/etPassword"
+                app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"
+                app:verifHelperText="" />
+
+            <CheckBox
+                android:id="@+id/cbProfCheck"
+                style="@style/label_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:text="@{langData.userAuthScreen.healthCheck}"
+                app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/etVerificationCode" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llCbTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/cbProfCheck">
+
+                <CheckBox
+                    android:id="@+id/cbTerms"
+                    style="@style/label_m"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cbTermsText"
+                    style="@style/label_link"
+                    android:text="@{langData.userAuthScreen.termAndConditionCheck}" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bSignup"
+                style="@style/button_primary"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp20"
+                android:text="@{langData.userAuthScreen.signup}"
+                app:icon="@drawable/ic_arrow_fw_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/etConfirmPassword"
+                app:layout_constraintTop_toBottomOf="@+id/llCbTerms" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layoutDirection="locale"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivDrImage"
+            android:layout_width="@dimen/dp48"
+            android:layout_height="@dimen/dp48"
+            android:layout_margin="@dimen/dp16"
+            android:src="@drawable/ic_male"
+            app:civ_border_color="@color/primary50"
+            app:civ_border_width="@dimen/dp2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivOnlineStatus"
+            android:layout_width="@dimen/dp8"
+            android:layout_height="@dimen/dp8"
+            android:src="@drawable/circle_orange"
+            android:layout_marginStart="@dimen/dp4"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvName"
+            app:layout_constraintStart_toEndOf="@+id/tvName"
+            app:layout_constraintTop_toTopOf="@+id/tvName"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/label_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@+id/tvStatus"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/ivDrImage"
+            app:layout_constraintTop_toTopOf="@+id/ivDrImage"
+            tools:text="Jahanzeb Qureshi" />
+
+        <TextView
+            android:id="@+id/tvSpeciality"
+            style="@style/label"
+            android:textAlignment="viewStart"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp4"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:lineSpacingExtra="@dimen/dp2"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDrImage"
+            app:layout_constraintEnd_toStartOf="@+id/tvTime"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/ivDrImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            tools:text="Booked by Kamran" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            style="@style/label_sm"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:textAlignment="textEnd"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="3 hrs Left"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            style="@style/label"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/dp2"
+            android:textAlignment="textEnd"
+            android:textColor="@color/grey"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSpeciality"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSpeciality"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="14th Sep 2022" />
+
+        <View
+            android:id="@+id/vDivider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp14"
+            android:background="@color/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintTop_toBottomOf="@id/tvBookedBy" />
+
+        <TextView
+            android:id="@+id/tvBookedBy"
+            style="@style/label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:visibility="gone"
+            android:lineSpacingExtra="@dimen/dp2"
+            android:textColor="@color/grey"
+            app:layout_constraintEnd_toStartOf="@+id/tvTime"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpeciality" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp0"
+            app:layout_constraintBottom_toTopOf="@+id/llButtons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/llContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/tvProfessionalDetails"
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:text="@{lang.emrScreens.vitals}" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/etHeartRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
+                    app:drawableStart="@drawable/ic_heart_rate"
+                    android:tag="heart_rate"/>
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/etTemperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
+                    app:drawableStart="@drawable/ic_thermostate"
+                    android:tag="temperature"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <com.homemedics.app.ui.custom.CustomDefaultEditText
+                        android:id="@+id/etSystolicBP"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLength="5"
+                        android:inputType="numberDecimal"
+                        app:drawableStart="@drawable/ic_bloodtype"
+                        android:layout_marginEnd="@dimen/dp16"
+                        android:tag="systolic_bp"/>
+
+                    <com.homemedics.app.ui.custom.CustomDefaultEditText
+                        android:id="@+id/etDiastolicBP"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLength="5"
+                        android:inputType="numberDecimal"
+                        android:tag="diastolic_bp"/>
+
+                </LinearLayout>
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/etOxygenLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="5"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    app:drawableStart="@drawable/ic_airwave"
+                    android:tag="oxygen_level"/>
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/etBloodSugar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="5"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    app:drawableStart="@drawable/ic_blood_sugar"
+                    android:tag="blood_sugar_level"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <com.homemedics.app.ui.custom.CustomAddMultipleView2
+                    android:id="@+id/caSymptoms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:tag="symptomsView"
+                    app:addNewText="@{lang.globalString.add}" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp50"
+            android:weightSum="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bSaveDraft"
+                style="@style/button_long_white"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{lang.emrScreens.saveDraft}"
+                android:textColor="@color/primary"
+                android:textSize="12sp"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="@dimen/dp1"
+                android:enabled="false"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bSendToPatient"
+                style="@style/button_long"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{lang.emrScreens.shareWithPatient}"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="currency"
+            type="String" />
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/divider"
+        android:orientation="vertical">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:action1Res="@drawable/ic_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvMsg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/actionbar"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/iProvider"
+                    layout="@layout/layout_image_title_desc_right_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp10"
+                    android:background="@color/divider" />
+
+                <TextView
+                    android:id="@+id/tvSpecialInstruction"
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@{langData.globalString.specialInstructions}"
+                    android:textSize="18sp"
+                    tools:text="@string/special_instructions" />
+
+                <TextView
+                    android:id="@+id/tvSpecialInstructionDesc"
+                    style="@style/label_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:textColor="@color/grey"
+                    tools:text="@string/lorem_ipsum" />
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <TextView
+                    android:id="@+id/tvBookBy"
+                    style="@style/label_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    tools:text="@string/book_by_name" />
+
+                <View
+                    android:id="@+id/attachmentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/heading_m"
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.globalString.attachments}"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llAddAttachments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvVoiceNote"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_mic_black"
+                        android:drawablePadding="@dimen/dp8"
+                        android:gravity="center"
+                        android:text="@{langData.globalString.voiceNote}"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvAddImage"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_image"
+                        android:drawablePadding="@dimen/dp8"
+                        android:gravity="center"
+                        android:text="@{langData.globalString.addImage}"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvUploadDoc"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_upload_file"
+                        android:drawablePadding="@dimen/dp8"
+                        android:gravity="center"
+                        android:text="@{langData.globalString.uploadDoc}"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAttachments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <TextView
+                    android:id="@+id/tvNoData"
+                    style="@style/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:text="@{langData.messages.noAttachmentsFound}"
+                    android:textAlignment="center"
+                    android:textColor="@color/grey"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <View
+                    android:id="@+id/vAttachments"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <TextView
+                    android:id="@+id/tvOrderDetails"
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@string/order_details"
+                    android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSplitAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:nestedScrollingEnabled="false"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_checkout_split_amount"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvNoDataPayment"
+                    style="@style/label_sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="@dimen/dp16"
+                    android:text="@string/no_details_found"
+                    android:textColor="@color/grey"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/llTotalStrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@color/off_pink"
+                    android:padding="@dimen/dp16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvSplitAmount">
+
+                    <TextView
+                        style="@style/label_m"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{langData.globalString.total}"
+                        android:textColor="@color/primary"
+                        tools:text="@string/total" />
+
+                    <TextView
+                        android:id="@+id/tvPayableAmount"
+                        style="@style/label_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary"
+                        tools:text="@string/pkr_1_000_00" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llAmountStrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@color/off_purple"
+                    android:padding="@dimen/dp16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvSplitAmount">
+
+                    <TextView
+                        android:id="@+id/tvServiceProvider"
+                        style="@style/label_m"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/primary"
+                        tools:text="@string/payment_mode_" />
+
+                    <TextView
+                        android:id="@+id/tvPayAmount"
+                        style="@style/label_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary"
+                        tools:text="@string/pkr_1_000_00" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp10"
+                    android:background="@color/divider" />
+
+                <LinearLayout
+                    android:id="@+id/llReviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp16"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvReview"
+                        style="@style/heading_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp16"
+                        android:text="@{langData.myOrdersScreens.review}" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp16"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tvStars"
+                        style="@style/label_sm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp16"
+                        android:textColor="@color/orange"
+                        tools:text="@string/_4_5_stars" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvShowReview"
+                    style="@style/label_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp16"
+                    android:layout_marginBottom="@dimen/dp16"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tvMsg"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/dp16"
+            android:paddingTop="@dimen/dp8"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/brButtons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Your appointment has been booked, the doctor will contact you on the scheduled date and timeYour appointment has been booked, the doctor will contact you on the scheduled date and time" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/brButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="llButtons,bContactHelplineLong,
+             bCancelRequestLong,bResubmitLong,bAddReviewLong, bSubmitForReview"
+            />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:constraint_referenced_ids="bCancelRequestLong, bResubmitLong, bAddReviewLong, bContactHelplineLong, llButtons, bSubmitForReview" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bCancelRequestLong"
+            style="@style/button_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{langData.myOrdersScreens.cancelRequest}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bResubmitLong"
+            style="@style/button_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{langData.globalString.resubmit}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible"
+            tools:text="Resubmit"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bAddReviewLong"
+            style="@style/button_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{langData.myOrdersScreens.addAReview}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bContactHelplineLong"
+            style="@style/button_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{langData.claimScreen.contactOurHelpline}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible"
+            tools:text="Contact our helpline"/>
+
+        <!-- for walkin claim -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bSubmitForReview"
+            style="@style/button_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{langData.walkInScreens.submitForReview}"
+            android:visibility="gone"
+            android:enabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+
+
+        <!-- for walkin claim end -->
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:visibility="gone"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="visible">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bCancelRequest"
+                style="@style/button_long_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{langData.myOrdersScreens.cancelRequest}"
+                android:textColor="@color/primary"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="@dimen/dp1"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bResubmit"
+                style="@style/button_long"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{langData.globalString.resubmit}" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

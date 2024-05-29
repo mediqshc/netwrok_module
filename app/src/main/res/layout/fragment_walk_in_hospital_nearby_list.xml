@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:text="@{lang.walkInScreens.walkInDesc}"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider0"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp12"
+            android:background="@color/divider"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/heading_m"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp16"
+            android:text="@{lang.globalString.searchByName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider0"
+            tools:text="@string/search_by_name" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            style="@style/edittext_search"
+            android:background="@drawable/search_bg"
+            android:layout_width="@dimen/dp0"
+            android:layout_margin="@dimen/dp16"
+            android:drawableEnd="@drawable/ic_search"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp12"
+            android:background="@color/divider"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etSearch"/>
+
+        <TextView
+            android:id="@+id/tvSearchCategory"
+            style="@style/heading_m"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp16"
+            android:text="@{lang.walkInScreens.nearbyFacility}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider1"
+            tools:text="Nearby health facilities" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp0"
+            android:layout_marginTop="@dimen/dp16"
+            android:background="@color/white"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_speciality_consultation"
+            tools:itemCount="8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSearchCategory"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvNoData"
+            style="@style/label_m"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp16"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:textColor="@color/grey"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSearchCategory"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

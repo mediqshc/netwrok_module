@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.homemedics.app.viewmodel.DoctorConsultationViewModel" />
+
+        <variable
+            name="languData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/dp24"
+        android:paddingTop="@dimen/dp16">
+
+        <TextView
+            android:id="@+id/tvDesc"
+            style="@style/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{languData.dialogsStrings.selectCity}"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <com.homemedics.app.ui.custom.CustomDefaultDropDown
+            android:id="@+id/cdCountry"
+            selectedValue="@={viewModel.countryName}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintEnd_toStartOf="@+id/cdCity"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+            app:layout_constraintTop_toBottomOf="@+id/cdGender" />
+        <!--            app:hintText="@{langData.globalString.country}"-->
+        <com.homemedics.app.ui.custom.CustomDefaultDropDown
+            android:id="@+id/cdCity"
+            selectedValue="@={viewModel.cityName}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            app:hintText="@{languData.globalString.city}"
+            app:layout_constraintEnd_toEndOf="@+id/welcomeDesc"
+            app:layout_constraintStart_toEndOf="@+id/cdCountry"
+            app:layout_constraintTop_toBottomOf="@+id/cdGender" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/become_partner_navigation"
+    app:startDestination="@id/becomePartnerFragment">
+
+
+    <fragment
+        android:id="@+id/becomePartnerFragment"
+        android:name="com.homemedics.app.ui.fragment.becomepartner.BecomePartnerFragment"
+        android:label="BecomePartnerFragment"
+        tools:layout="@layout/fragment_become_partner">
+        <action
+            android:id="@+id/action_becomePartnerFragment_to_uploadCnicPictureFragment"
+            app:destination="@id/uploadCnicPictureFragment" />
+        <action
+            android:id="@+id/action_becomePartnerFragment_to_specialitiesFragment"
+            app:destination="@id/specialitiesFragment" />
+        <action
+            android:id="@+id/action_becomePartnerFragment_to_addEducationFragment"
+            app:destination="@id/addEducationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/uploadCnicPictureFragment"
+        android:name="com.homemedics.app.ui.fragment.becomepartner.UploadCnicPictureFragment"
+        android:label="UploadCnicPictureFragment"
+        tools:layout="@layout/fragment_upload_cnic_picture"/>
+
+    <fragment
+        android:id="@+id/specialitiesFragment"
+        android:name="com.homemedics.app.ui.fragment.becomepartner.SpecialitiesFragment"
+        android:label="SpecialitiesFragment"
+        tools:layout="@layout/fragment_specialities"/>
+
+    <fragment
+        android:id="@+id/addEducationFragment"
+        android:name="com.homemedics.app.ui.fragment.becomepartner.AddEducationFragment"
+        android:label="AddEducationFragment"
+        tools:layout="@layout/fragment_education"/>
+
+</navigation>

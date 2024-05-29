@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/walkin_lab_order_details_navigation"
+    app:startDestination="@id/walkInLabOrdersDetailFragment">
+
+    <fragment
+        android:id="@+id/walkInLabOrdersDetailFragment"
+        android:name="com.homemedics.app.ui.fragment.walkin.details.WalkInLabOrdersDetailFragment"
+        android:label="WalkInLabOrdersDetailFragment" >
+        <action
+            android:id="@+id/action_walkInLabOrdersDetailFragment_to_walkInUploadDocsFragment2"
+            app:destination="@id/walkInUploadDocsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/walkInUploadDocsFragment2"
+        android:name="com.homemedics.app.ui.fragment.walkin.details.WalkInUploadDocsFragment"
+        android:label="WalkInUploadDocsFragment" >
+        <action
+            android:id="@+id/action_walkInUploadDocsFragment2_to_walkInLabOrdersDetailFragment3"
+            app:destination="@id/walkInLabOrdersDetailFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,2220 @@
+[33mcommit e95349363dccec138112efb1d020b58a155de071[m[33m ([m[1;36mHEAD -> [m[1;32moff_dates[m[33m, [m[1;31morigin/off_dates[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 18:14:03 2022 +0500
+
+    add off dates list item designed
+
+[33mcommit 72455f6bef880e1a618300b434210c92004daacf[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 15:09:51 2022 +0500
+
+    add off dates dialog validations done
+
+[33mcommit 3077f8b1f6063156f5bf5b4c41c22addbea3b08d[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 15:00:08 2022 +0500
+
+    add off dates dialog validations done
+
+[33mcommit 19d19dbb0e8f5cfa3c546069a0df42687376b84f[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 14:42:55 2022 +0500
+
+    add off dates dialog implementation and date time format
+
+[33mcommit 1b1daaf732a93e463accc608009c9afeb785c291[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 14:14:46 2022 +0500
+
+    text sizes changed
+
+[33mcommit 0577220b03d1e30eb4e01a789241ec6a6e480d80[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 12:44:16 2022 +0500
+
+    Dialog off dates designed
+
+[33mcommit aa3c8d46298d4f418bd5239907debb66224aa926[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 11:55:47 2022 +0500
+
+    Off dates fragment created and list visibility handled
+
+[33mcommit 0794b75cee2b106817f0648c752eec572547d3f5[m
+Merge: 11b0aca 32d0ab2
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 10:44:00 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into off_dates
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/res/values/strings.xml
+
+[33mcommit 32d0ab26a6bf69c70ff134fd5a302e04256de28b[m[33m ([m[1;31morigin/v1[m[33m)[m
+Merge: 8e99047 02e0b52
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Tue Aug 30 05:36:05 2022 +0000
+
+    Merged in email_cases (pull request #48)
+    
+    bug resolved on new user verify email
+
+[33mcommit 02e0b529ba621310044ae38f2864804024c32775[m[33m ([m[1;31morigin/email_cases[m[33m, [m[1;32memail_cases[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 30 10:27:51 2022 +0500
+
+    PR points
+
+[33mcommit efa42d0003daaca9ca65fb5afa693b57f5faad17[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 29 19:42:00 2022 +0500
+
+    empty case handled on email
+
+[33mcommit 0ca0726168da157ae40aaa9f0c39cad37d127dbb[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 29 19:32:03 2022 +0500
+
+    empty case handled on email
+
+[33mcommit 11b0aca9c12db628d9acc142931508d9954bd9a3[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 29 18:53:23 2022 +0500
+
+    add slot time dialog work
+
+[33mcommit 813347ed3528c22118788d2cd3002e9d434fd639[m
+Merge: 634453f 8e99047
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 29 17:44:11 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into email_cases
+
+[33mcommit 634453f376ac8da16f80e033da2fd877d4d190b8[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 29 17:43:31 2022 +0500
+
+    bug resolved on new user verify email
+
+[33mcommit 8e990478c533830554f5a6808273f7778f5d1f73[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 29 17:15:27 2022 +0500
+
+    qa feedbacks
+
+[33mcommit 8e7b85ad71d9496b1585bfef4d45e86fcaf91b50[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 29 17:12:11 2022 +0500
+
+    some navigations
+
+[33mcommit a3fbc4ecc19da255379c128bc0b291267f144cc8[m
+Merge: 3a075ca 70d133a
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Mon Aug 29 12:08:25 2022 +0000
+
+    Merged in email_cases (pull request #47)
+    
+    Verify email cases handled.
+
+[33mcommit 70d133a3fabeec9b626b56b2e51d8c7801fe5833[m
+Merge: 622e1ea 3a075ca
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 29 17:05:04 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into email_cases
+    
+     Conflicts:
+    	.idea/misc.xml
+
+[33mcommit 622e1eacc93a620173f6a13d8346c6a8c4e92f48[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 29 17:02:50 2022 +0500
+
+    Verify email cases handled.
+
+[33mcommit 3a075ca0c8458444a59a3fd980e21ada9a3e9f57[m
+Merge: 3cab974 91631d8
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Mon Aug 29 12:02:39 2022 +0000
+
+    Merged in partner_profile (pull request #46)
+    
+    Partner profile
+
+[33mcommit 91631d8edadec2c970ccac80fb5b91ffb7a51c0e[m
+Merge: f7e9ba1 3cab974
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 29 16:58:22 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into partner_profile
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/fragment/profile/BasicProfileFragment.kt
+    	app/src/main/res/values/strings.xml
+
+[33mcommit f7e9ba1d0ec9603037c72e070e3d284cfe0b8d3c[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 29 16:55:59 2022 +0500
+
+    qa feedback b=fixes
+
+[33mcommit cfc842668e3483e4d6527b3506805f8352af3caf[m[33m ([m[1;32mplanning[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 29 14:40:50 2022 +0500
+
+    Planning module UI
+
+[33mcommit 936b844ec901ef7e15a49aa43e3369dcc2e4e158[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 29 14:24:13 2022 +0500
+
+    qa feedbacks
+
+[33mcommit 3cab9743fa04db86ccb1eba9903229308d1d478c[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 29 13:05:35 2022 +0500
+
+    disable email if verified fixed
+
+[33mcommit 68c93b101b5b3fab8a3c858c9c64197b1a08eb37[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 26 20:46:56 2022 +0500
+
+    healthcare field key fix
+
+[33mcommit f8f1b4261d177852a5197c3d5ed23a0a7f0ca54e[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 26 20:37:27 2022 +0500
+
+    minor fixed
+
+[33mcommit c8c38270e8ff21c10a752553cc29413caa92bf1a[m
+Merge: b297740 888d61f
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 26 20:32:18 2022 +0500
+
+    Merge branch 'v1' into verify_email
+    
+    # Conflicts:
+    #       .idea/misc.xml
+    #       app/src/main/java/com/homemedics/app/ui/fragment/profile/BasicProfileFragment.kt
+    #       app/src/main/java/com/homemedics/app/viewmodel/ProfileViewModel.kt
+    #       app/src/main/res/values/strings.xml
+    #       netwrok_module/src/main/java/com/fatron/network_module/repository/RetrofitAPI.kt
+
+[33mcommit b297740a2aba20a7d4393712addb5b8529e8cd3c[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 26 20:24:38 2022 +0500
+
+    verify email dialog fixed
+
+[33mcommit 888d61f9ac0d14495935a6b15f7d26de41195764[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 26 15:13:33 2022 +0500
+
+    home slider login minor changesd
+
+[33mcommit 4afcfed49af5ad774dbddd2b1a0051cafc234e17[m
+Merge: af54c0c 867eaa4
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 26 14:57:40 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into v1
+
+[33mcommit af54c0cb24f686377b0832e8bf50216bb5f71d7f[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 26 14:57:24 2022 +0500
+
+    tried to fix expected crash cause
+
+[33mcommit 867eaa49933372786e0f5b5dd5b1882e28d50586[m
+Merge: 47a4a6d 2e573d6
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Fri Aug 26 09:56:11 2022 +0000
+
+    Merged in partner_profile (pull request #45)
+    
+    Partner profile
+
+[33mcommit 2e573d6977b9e3ab29bbd12b70e6fb4725853d7b[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 26 14:22:39 2022 +0500
+
+    fix qa fixes and add filter
+
+[33mcommit e1a9376ee64540bba3ff41fbb59a3a57bd2afa25[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 26 13:13:14 2022 +0500
+
+    Planner settings layout designed
+
+[33mcommit 28dbeb80a4b9231fc2236818faff447c466bab82[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 26 12:17:04 2022 +0500
+
+    work end and start date make clickable
+
+[33mcommit 9356f592a3d5fe41ab413b9cf7c401577ac3ec3c[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 26 12:05:50 2022 +0500
+
+    qa feedback fix
+
+[33mcommit 2f69a1b49b1415e90d8bb5c69256e5b36295ba1b[m[33m ([m[1;32mverify_email[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 25 19:53:06 2022 +0500
+
+    verify Email api done on profile
+
+[33mcommit b0587fc9622a11362c90c17daf381f340d4d812f[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 25 19:06:36 2022 +0500
+
+    fix padding and ui of cnic
+
+[33mcommit 47a4a6dc1cc282ca5e479bfb596c9b5ddba22cb5[m
+Merge: d0613fe dc2f491
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Thu Aug 25 13:49:44 2022 +0000
+
+    Merged in partner_profile (pull request #44)
+    
+    Partner profile
+
+[33mcommit dc2f4913e4502504dd0b36200061c3723ea7d964[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 25 18:35:12 2022 +0500
+
+    fix nav
+
+[33mcommit e9a68adc18c9141d6b1abcfc0dcaeb4a7b603e2f[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 25 18:30:10 2022 +0500
+
+    fix
+
+[33mcommit d6cd0d5954e0aa7e6511a580443a2bd4c7ecc327[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 25 18:22:01 2022 +0500
+
+    fix and merge
+
+[33mcommit 305e3cdd1cd618b01985a3d8db17277cb59e2ac5[m
+Merge: 64282e7 d0613fe
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 25 18:17:19 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into partner_profile
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/activity/HomeActivity.kt
+    	app/src/main/java/com/homemedics/app/ui/adapter/FamilyConnectionsAdapter.kt
+    	app/src/main/java/com/homemedics/app/ui/adapter/InsuranceCompanyAdapter.kt
+    	app/src/main/java/com/homemedics/app/ui/fragment/home/HomeFragment.kt
+    	app/src/main/java/com/homemedics/app/viewmodel/ProfileViewModel.kt
+    	app/src/main/res/menu/home_nav_menu.xml
+    	app/src/main/res/navigation/home_navigation.xml
+    	app/src/main/res/values/strings.xml
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/ApiRepository.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/RetrofitAPI.kt
+
+[33mcommit 64282e7925d440867260fd380aa5de3d62ff545c[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 25 18:09:44 2022 +0500
+
+    complete become partner and partner profile
+
+[33mcommit 92cd6796a73e12c151fb8ac1033e484ab8b3dddb[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 25 16:23:25 2022 +0500
+
+    cnic and specialities and fixes
+
+[33mcommit d0613fe6e3dba92435b8c64158c6a8e8ac98329f[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Aug 25 16:13:47 2022 +0500
+
+    basic profile issue fixed
+
+[33mcommit d8e443a84f78b59613f88243ac4cb2ccdab443b1[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 25 16:10:40 2022 +0500
+
+    Send Email api done on profile
+
+[33mcommit c73913036d104c24a55e44a868120574f93f9d83[m
+Merge: edc33ce e36e59c
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Aug 25 15:59:47 2022 +0500
+
+    misc resolved
+
+[33mcommit edc33ce58141ba5609c6acf786f4879c2112e97a[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Aug 25 15:58:41 2022 +0500
+
+    family feedbacks
+
+[33mcommit e36e59cc6322acc6a2204a42a859004bbc73cdc6[m
+Merge: 58aa7b3 f67d163
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Thu Aug 25 10:58:14 2022 +0000
+
+    Merged in verify_email (pull request #43)
+    
+    Verify email
+
+[33mcommit f67d1639ba0265884136d72f3e2223046b602c79[m
+Merge: 01693b5 58aa7b3
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 25 15:27:40 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into verify_email
+
+[33mcommit 01693b543eb0b88f908bf8b46822a247296ec90d[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 25 15:26:03 2022 +0500
+
+    500 handling and nav header feedbacks
+
+[33mcommit 58aa7b3d417b98d3862058922735ca68b16c3cf1[m
+Merge: 0703834 d27d583
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Aug 25 15:15:55 2022 +0500
+
+    conflicts resolved
+
+[33mcommit d27d583d721a38477f6b68cf57db6f597eb7ee3b[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Aug 25 15:13:55 2022 +0500
+
+    dynamic field according to insurance demand, home timer crash fix
+
+[33mcommit 1a8a3a6f5da2f211b6386a1151ebccfa0c642a7f[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 25 12:42:02 2022 +0500
+
+    Dialog view validation handling
+
+[33mcommit fb7762e63cfe565803f516d68207a75d6cedd9a2[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Aug 25 11:41:58 2022 +0500
+
+    some fields changed in company response and their handling
+
+[33mcommit dd863d15a1cc5eb350856d2ee7250bcf289359b8[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 24 19:06:06 2022 +0500
+
+    fix and complete add education
+
+[33mcommit 0703834404a801db72dcc50f631bb745e3ef09c8[m
+Merge: 0fd8aef 75b171e
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Wed Aug 24 12:41:42 2022 +0000
+
+    Merged in response_errors (pull request #42)
+    
+    Response errors
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit 75b171e17115defc6980baf29d2cc90b99234541[m[33m ([m[1;32mresponse_errors[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 17:37:06 2022 +0500
+
+    Error msgs handling
+
+[33mcommit ebc8c04f990969680bc55202c78ad2b473da110a[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 17:36:12 2022 +0500
+
+    Error msgs handling
+
+[33mcommit 0fd8aef35e48f2c463185f759c470c1c3056acf0[m
+Merge: 4db258d bca4ce1
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Wed Aug 24 12:07:06 2022 +0000
+
+    Merged in nav_menu (pull request #41)
+    
+    Nav menu
+
+[33mcommit bca4ce1ee48074ca966c56d220615f71162d3cd7[m[33m ([m[1;32mnav_menu[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 16:49:15 2022 +0500
+
+    Nav drawer font change
+
+[33mcommit 78d47e4eebfc03c85e4dafcc92c22a17e92c8f48[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 16:39:42 2022 +0500
+
+    Drawer closed when tap on login
+
+[33mcommit f55407a6a5ecec39bf059d0591ad05d0fe9dafbf[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 16:38:10 2022 +0500
+
+    Home navigation drawer completed with it's listener
+
+[33mcommit f904b0e2dcfb527e73d33accc20a72120cdd8e00[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 24 15:17:57 2022 +0500
+
+    merge and fix
+
+[33mcommit 44fbe85645d55647bd2643b5e637f3d40a698fa7[m
+Merge: 98f6b5e 4db258d
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 24 14:24:05 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into partner_profile
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/adapter/AddMultipleViewAdapter.kt
+    	app/src/main/java/com/homemedics/app/utils/DialogUtils.kt
+    	app/src/main/java/com/homemedics/app/viewmodel/ProfileViewModel.kt
+    	app/src/main/res/layout/fragment_family_connections.xml
+    	app/src/main/res/layout/item_add_multiple_list.xml
+    	app/src/main/res/values/strings.xml
+    	netwrok_module/src/main/java/com/fatron/network_module/models/response/meta/MetaDataResponse.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/ApiRepository.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/RetrofitAPI.kt
+
+[33mcommit 98f6b5ecdf612909ee12019bd7aace98c4f23959[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 24 14:13:42 2022 +0500
+
+    services complete and set partner type from meta
+
+[33mcommit cca785357d4df9c3764b4e9b918911ff83809af6[m
+Merge: 058ced4 4db258d
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 14:13:13 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into nav_menu
+    
+     Conflicts:
+    	app/src/main/java/com/homemedics/app/ui/activity/HomeActivity.kt
+    	app/src/main/res/values/strings.xml
+
+[33mcommit 058ced45ea02d9b155291908b9cf185108cd751d[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 14:11:02 2022 +0500
+
+    Load image changed based on gender id and SetVisibility of LoggedIn user
+
+[33mcommit 2a433a674c2dd3074da6ab61f28264bbd33a6716[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 12:48:02 2022 +0500
+
+    icons and title added on nav drawer
+
+[33mcommit 4db258d41e3908956972a6dcc782146ba8255e18[m
+Merge: 7233e91 be402f6
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 24 12:36:59 2022 +0500
+
+    conflicts resolved
+
+[33mcommit be402f6ab43a6f4a2ed90435be8a217d9bf1f28b[m
+Merge: 4ed9717 b270877
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 24 12:35:52 2022 +0500
+
+    conflicts resolved
+
+[33mcommit 7233e91e59e7ff1c0860f3a338dc086238f14e9d[m
+Merge: 6f150c4 b270877
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 24 12:34:12 2022 +0500
+
+    conflicsts resovled
+
+[33mcommit 4ed9717c67a29125e603b7df2ed87984ae0d4203[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 24 12:31:13 2022 +0500
+
+    family module completed
+
+[33mcommit b2708771e6046bca5dbf875c2c2efabfa0373ed4[m
+Merge: 5049d17 ebc7892
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Wed Aug 24 07:06:28 2022 +0000
+
+    Merged in date_format (pull request #40)
+    
+    Dob format issue fixed on SignupFragment
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit ebc7892d49a6b8589f3cb18fb3a3fac772cd6716[m[33m ([m[1;32mdate_format[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 24 11:54:38 2022 +0500
+
+    Dob format issue fixed on SignupFragment
+
+[33mcommit 7c262bc47927914262f877935b2762d005071a79[m
+Author: Ayesha <ayesha.shahid@nextgeni.dev>
+Date:   Wed Aug 24 10:25:02 2022 +0500
+
+    ui of service compleet
+
+[33mcommit e850aa76976d1089960e0638ed9473cc6f348341[m
+Author: Ayesha <ayesha.shahid@nextgeni.dev>
+Date:   Wed Aug 24 09:06:59 2022 +0500
+
+    add service
+
+[33mcommit da8f4dd153a6a02bbc6ef808edbc1207e368af16[m
+Merge: 0800ef2 5049d17
+Author: Ayesha <ayesha.shahid@nextgeni.dev>
+Date:   Wed Aug 24 09:03:16 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into partner_profile
+    
+     Conflicts:
+    	app/src/main/res/values/strings.xml
+
+[33mcommit 2d18c54591893b0e64616b568dc5468de35bacc5[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Aug 23 18:58:46 2022 +0500
+
+    refresh layout added
+
+[33mcommit 0800ef25e7313a6bfa2cf8ed4c0921deed4dcaec[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 23 18:05:26 2022 +0500
+
+    delete apis and education api
+
+[33mcommit 6f150c4fd9f7d1ab4d6d814f8c68b388c25c6bda[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Aug 23 17:18:57 2022 +0500
+
+    remove linked apis added
+
+[33mcommit 7b244f80613e1f0ce6085d699705d76e87a413d9[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 23 13:14:23 2022 +0500
+
+    add year dialog
+
+[33mcommit 19cdd53961ff072af88fcdae678c2f3c4989be5a[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 22 19:06:08 2022 +0500
+
+    linked account work, (not stable)
+
+[33mcommit 767d8c45430ab5defca0f33ef258beb36a2c9b49[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 22 18:12:19 2022 +0500
+
+    merge and add work experience
+
+[33mcommit 5049d174041fe5cc020eb861f26318259be00155[m
+Merge: fe04824 bb950d8
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 22 17:02:14 2022 +0500
+
+    conflicts resolved
+
+[33mcommit fe0482429b2d1733df3fe00f450e215040fd2be1[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 22 16:59:55 2022 +0500
+
+    add connection fixed
+
+[33mcommit 366c5cb72d80e28a9195c077f10a0ea7e7771b24[m
+Merge: 9b6392a c74a542
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 22 16:48:06 2022 +0500
+
+    Merge branch 'become_partner_apis' of https://bitbucket.org/nextgeni/mediq-android into partner_profile
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/fragment/becomepartner/BecomePartnerFragment.kt
+    	app/src/main/java/com/homemedics/app/ui/fragment/becomepartner/SpecialitiesFragment.kt
+    	app/src/main/res/values/strings.xml
+    	netwrok_module/src/main/java/com/fatron/network_module/models/response/meta/MetaDataResponse.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/ApiRepository.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/RetrofitAPI.kt
+
+[33mcommit 9b6392ad1a961e8523f813e0ed942a2438d36ac9[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 22 16:43:15 2022 +0500
+
+    add work and other
+
+[33mcommit 99b698de8f09277374598c9758673eb3f702fb9e[m
+Merge: e3ce1eb bb950d8
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 22 12:57:31 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into partner_profile
+    
+     Conflicts:
+    	app/src/main/java/com/homemedics/app/ui/activity/HomeActivity.kt
+    	app/src/main/java/com/homemedics/app/ui/fragment/profile/AddConnectionFragment.kt
+    	app/src/main/res/menu/home_nav_menu.xml
+    	app/src/main/res/navigation/home_navigation.xml
+
+[33mcommit bb950d86bef080c64ba649f6cd8119babf3b0197[m
+Merge: 19a74ea 5431ee8
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Mon Aug 22 07:55:13 2022 +0000
+
+    Merged in v1_feedbacks (pull request #39)
+    
+    V1 feedbacks
+
+[33mcommit 5431ee8f8ba4907b72ee0717788451c97b0c4baf[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 22 12:51:05 2022 +0500
+
+    qa feedbacks completed
+
+[33mcommit c74a5423ed5cb89b8dd1437e8aa4f8ee9b8acde2[m[33m ([m[1;32mbecome_partner_apis[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 19 19:20:54 2022 +0500
+
+    Add Specialities api
+
+[33mcommit e884e2b8aacc127556e8e121b2529f7ac1e7b8a6[m
+Merge: 6d58476 19a74ea
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 19 17:39:44 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into become_partner_apis
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/custom/CustomAddMultipleView.kt
+    	app/src/main/java/com/homemedics/app/utils/Enums.kt
+    	app/src/main/java/com/homemedics/app/viewmodel/ProfileViewModel.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/ApiRepository.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/RetrofitAPI.kt
+
+[33mcommit 6d58476ff00d4d2733cb7bd8ee09adee3693b8cf[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 19 17:36:33 2022 +0500
+
+    code merging
+
+[33mcommit 19a74ea56c0fb2ff2617d88d45b0bd7bd3828208[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 19 17:32:13 2022 +0500
+
+    some fixes
+
+[33mcommit 67224be5a03d4d567888c5b187c933324597cad8[m
+Merge: 5201be2 ef02c42
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 19 17:17:44 2022 +0500
+
+    conflicts resolved
+
+[33mcommit 5201be2b7d24871e847b4a033cdfedbb4649c613[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 19 16:48:07 2022 +0500
+
+    delete/ link / list apis added
+
+[33mcommit 488cc99fb838da07e596659ead534e3dfe28b55e[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 19 16:29:05 2022 +0500
+
+    Meta response update
+
+[33mcommit adc481bcc3342a6f2bb39d3f36d67e16d81a6db3[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 19 16:05:17 2022 +0500
+
+    Cnic front and back api done with its functionality and multiparts
+
+[33mcommit e3ce1ebf7f8a29ccca0ef273b31e79676b8da904[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 19 15:20:03 2022 +0500
+
+    ui of partner profile basic complete
+
+[33mcommit dcd9d706476003277cfd07e61656b8ae6d401ac7[m
+Merge: aa22919 ef02c42
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 19 12:10:28 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into partner_profile
+    
+     Conflicts:
+    	.idea/misc.xml
+
+[33mcommit aa22919cc19bef0361843f3a9e903f46c1f8b88b[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 19 12:09:56 2022 +0500
+
+    partner profile ui complete
+
+[33mcommit ef02c42daaef3e560c9b2224bc1262e1c6f81ee5[m
+Merge: 8a3b15d 8619094
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 19 11:47:33 2022 +0500
+
+    conflicts resolved
+
+[33mcommit 9d9acff14418b3792ae28b88aec0d3fc3b479847[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 19 11:27:22 2022 +0500
+
+    add insurance work
+
+[33mcommit 86190945d4e8dea8e54be6636f97ff0f4bf10f56[m
+Merge: 7827837 27ea1d9
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Fri Aug 19 05:33:54 2022 +0000
+
+    Merged in basic_profile_api (pull request #36)
+    
+    Basic profile api
+
+[33mcommit 27ea1d93a64055f9f69f4c46c6a549fe65a2e5fc[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 19 10:32:59 2022 +0500
+
+    fix
+
+[33mcommit 09d21f14136d9722aa68f2e3fe3e19f8849da732[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 18 18:39:59 2022 +0500
+
+    Get partner details api done.
+
+[33mcommit ab2203d80716e2d965f810d1a32e339d04c0ae3c[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 18 18:26:57 2022 +0500
+
+    verification code fix
+
+[33mcommit 782783779a65c8fb8dce887f1d8de24b8b27017d[m
+Merge: e160d54 bbb70f5
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Thu Aug 18 13:00:41 2022 +0000
+
+    Merged in basic_profile_api (pull request #35)
+    
+    feedback of basic profile
+
+[33mcommit bbb70f5e62b8860342ae764442352f43df561db0[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 18 17:59:33 2022 +0500
+
+    feedback of basic profile
+
+[33mcommit e160d540d8dc2f0d0d1b29e714ded43c40fa0e34[m
+Merge: e6fa7f5 6dac000
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Thu Aug 18 12:30:27 2022 +0000
+
+    Merged in basic_profile_api (pull request #32)
+    
+    Basic profile api
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit 6dac0002a2a2c18d560dcb8d5e827588d767a5d5[m
+Merge: dadbe28 e6fa7f5
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 18 17:26:18 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+    
+     Conflicts:
+    	.idea/misc.xml
+
+[33mcommit 128a8cf2504d38de63197f5f1101a70cd62a5094[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 18 17:25:56 2022 +0500
+
+    Store partner details api done.
+
+[33mcommit dadbe28da43c18ddb561cd3b1a23882fbd6c032d[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 18 17:25:09 2022 +0500
+
+    feedback fixes of overall app
+
+[33mcommit 6a1803d8a4edcf3e8a0273e02894c6ef892477a6[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 18 15:15:00 2022 +0500
+
+    feedback fixes of addresss
+
+[33mcommit e6fa7f583bde1d9b6f375d2de1784282c62193c4[m
+Merge: b669b21 1da7f67
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Thu Aug 18 09:56:04 2022 +0000
+
+    Merged in apis_profile_onboarding (pull request #34)
+    
+    Apis profile picture store
+
+[33mcommit 1da7f6714bb5f2465743d5e72fa4d36f6fadc07b[m[33m ([m[1;32mapis_profile_onboarding[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 18 14:39:55 2022 +0500
+
+    Store User profile picture with Multipart api done.
+
+[33mcommit f919b4e6a65c4c5c179c323c06cb54b03f112fd4[m
+Merge: 802ef26 b669b21
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 18 14:38:00 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/res/values/strings.xml
+
+[33mcommit 802ef260f58702ee0763db6d9b170f24c41c60c9[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 18 14:37:15 2022 +0500
+
+    feedback fixes
+
+[33mcommit 2cfdbf42d6be754ceb1673152a8c300ec469ab5f[m
+Merge: 23821d1 b669b21
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 18 11:37:24 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into apis_profile_onboarding
+
+[33mcommit 23821d10fc29f79670aa032f7615b18934d10dc7[m[33m ([m[1;32mlinked_acoounts[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 18 11:36:00 2022 +0500
+
+    working on api
+
+[33mcommit b669b21c3e6839b83f18a611ceae45c15ac5b74e[m
+Merge: f5b6d3f 8c0fd5f
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Thu Aug 18 05:53:51 2022 +0000
+
+    Merged in linked_acoounts (pull request #33)
+    
+    Linked acoounts
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit ae926fc8bdd3f78c1378974dbcd839eeb338e4ee[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 17 17:55:34 2022 +0500
+
+    feedback fixes
+
+[33mcommit 8c0fd5fdc086fa77f2031819d0aacd11bfe156cb[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 17 17:41:42 2022 +0500
+
+    reset
+
+[33mcommit 4376f707d90a29a2764ccf0385a3bcacdeffeccb[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 17 17:39:15 2022 +0500
+
+    Select and add my hospital screen completed with search and add functionality
+
+[33mcommit 8a3b15d1721979791f3539b2433a40c162e77217[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 17 17:19:09 2022 +0500
+
+    curd family done
+
+[33mcommit bb65854fc370df1df14320cd9dc7d70fa21808ef[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 17 16:51:17 2022 +0500
+
+    Select and add my company screen completed with search and add functionality
+
+[33mcommit adaed45aedbbb9d42da47af754de82314b813d58[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 17 11:21:16 2022 +0500
+
+    feedbacks and fixes
+
+[33mcommit dbe86b85fbb4132f99a56702e1f2efd3071c0627[m
+Merge: 760fd28 f5b6d3f
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 17 10:46:32 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into linked_acoounts
+
+[33mcommit 328a1aae690873900a9d3b1e8da64810ce554a2c[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 17:07:19 2022 +0500
+
+    all fixes
+
+[33mcommit 790e44b247dbed13ada4c5cfe0c46da02edad03d[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 16:42:24 2022 +0500
+
+    fix of list in basic profile
+
+[33mcommit 7ffdcde2ca49b3f4c9a21f9610f2ee6ec6ef6fa0[m
+Merge: f23f584 f5b6d3f
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 16:04:55 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+
+[33mcommit f23f58409c68c8fd15622fb93a57230e66f34b27[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 16:04:44 2022 +0500
+
+    fixes
+
+[33mcommit f5b6d3f79bd07489d830ba2c2f705baa79b82d98[m[33m ([m[1;32mv1[m[33m)[m
+Merge: bdb578d e90fe13
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Aug 16 16:01:00 2022 +0500
+
+    conflicts resolved
+
+[33mcommit bdb578d40a478ea84af5a7a55d7949832de7bc42[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Aug 16 15:59:38 2022 +0500
+
+    some fixes
+
+[33mcommit e90fe1394653ae2c4a2e5bfb147c7b3daeb4ccee[m
+Merge: 52156dd a6861be
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Tue Aug 16 10:58:41 2022 +0000
+
+    Merged in basic_profile_api (pull request #31)
+    
+    Basic profile api
+
+[33mcommit a6861be0fb9d414a453f39176c819fc673830149[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 15:35:44 2022 +0500
+
+    feedback fixes and add images
+
+[33mcommit 4969e0de2ceaa55a2d050c7b495dc6fe3412b75b[m
+Merge: daeef1c 52156dd
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 14:35:21 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+
+[33mcommit daeef1c221cd40eeb8e32f3f25378ff22a9ef75d[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 14:34:37 2022 +0500
+
+    fixes
+
+[33mcommit 52156dd4a720bbcc35f8eb9a2ec00a27e8feabbe[m
+Merge: 9529a06 7b72581
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Tue Aug 16 09:13:28 2022 +0000
+
+    Merged in build_feedbacks (pull request #30)
+    
+    password toggle on forgot password
+
+[33mcommit 7b72581186b024d0ea9e068208b84e4fc87c7539[m[33m ([m[1;32mbuild_feedbacks[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 16 14:11:42 2022 +0500
+
+    password toggle on forgot password
+
+[33mcommit 9529a06c2e1d01576493ea82c2cc777bf6b90bc2[m
+Merge: 8db67c3 bfc34b6
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Tue Aug 16 07:18:16 2022 +0000
+
+    Merged in basic_profile_api (pull request #29)
+    
+    add list
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit bfc34b6d9e09aaac54407a75c82b33b88fec1d87[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 12:17:09 2022 +0500
+
+    add list
+
+[33mcommit 8db67c3ed56c6628655b5e64d34f902fe91613e7[m
+Merge: bbc910f d7e0d87
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Tue Aug 16 07:12:20 2022 +0000
+
+    Merged in build_feedbacks (pull request #28)
+    
+    Build feedbacks
+
+[33mcommit d7e0d8764899444c895d5016d24dfd6e52c2f38c[m
+Merge: 3993953 bbc910f
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 16 12:10:57 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into build_feedbacks
+    
+     Conflicts:
+    	.idea/misc.xml
+
+[33mcommit 39939531e25bfc86cc82244d9a4b85536d64e7e6[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 16 12:09:40 2022 +0500
+
+    Country code guide line implemented
+
+[33mcommit faa2ed91f5cae6279748235aa50fe9afa77fdcb7[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 16 11:51:59 2022 +0500
+
+    Post Signup is redirecting to Login screen
+
+[33mcommit bbc910f421915f6d58dff87274f8636f1f32550c[m
+Merge: d4d6b5a bb8cc22
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Tue Aug 16 06:43:09 2022 +0000
+
+    Merged in basic_profile_api (pull request #27)
+    
+    add other optn
+
+[33mcommit bb8cc22c805fdd39091235cd604c9bceef2b5a19[m
+Merge: 30bfcd7 d4d6b5a
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 11:41:46 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+    
+     Conflicts:
+    	netwrok_module/src/main/java/com/fatron/network_module/models/response/user/UserResponse.kt
+
+[33mcommit 30bfcd772df19dd8d517f0c76ba91fcf35642e4e[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 16 11:40:52 2022 +0500
+
+    fixes of feedback and navigation
+
+[33mcommit d4d6b5a15f147bbd568aa5c493a16be4df32a11c[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Aug 16 11:14:13 2022 +0500
+
+    profile crash fixed
+
+[33mcommit 760fd28b4e5a8b3c1bc213156200167cdd611cb8[m
+Merge: f7ba901 bf74060
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 16 10:42:03 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into linked_acoounts
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/base/BaseActivity.kt
+    	app/src/main/java/com/homemedics/app/ui/fragment/auth/ForgotPasswordFragment.kt
+    	app/src/main/res/navigation/home_navigation.xml
+    	app/src/main/res/values/strings.xml
+
+[33mcommit 4e5c825949dbfdbed1fd6b45730b3223afc7249c[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 17:55:09 2022 +0500
+
+    add other optn
+
+[33mcommit bf74060be5b20ccaf34698ea07a5a78197094288[m
+Merge: 72a2930 a8e4e51
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Mon Aug 15 12:28:30 2022 +0000
+
+    Merged in basic_profile_api (pull request #26)
+    
+    Basic profile api
+
+[33mcommit a8e4e51ba8b736925a9fc4a34b9f74aa7d917b93[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 17:27:22 2022 +0500
+
+    fix and merge
+
+[33mcommit 53d5f120e0f8dd844935b70d73bf962b8387f898[m
+Merge: 478a473 72a2930
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 17:06:29 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+
+[33mcommit 72a2930026af522beaadaacf850fc4a535a11a6d[m
+Merge: a7499c9 05a9ac8
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Mon Aug 15 12:05:17 2022 +0000
+
+    Merged in build_feedbacks (pull request #25)
+    
+    Build feedbacks
+
+[33mcommit 478a473faabd60fcecac4069454dde700141ffd6[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 17:05:13 2022 +0500
+
+    merge and fix user request
+
+[33mcommit 05a9ac8d81b7d6ab9fd91aeb7ed14a64422b931d[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 17:03:59 2022 +0500
+
+    Splash stuck issue fixed on background
+
+[33mcommit 381fdc303feac5356362f94fea78c33ccfcb0031[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 16:59:19 2022 +0500
+
+    Splash stuck issue fixed on background
+
+[33mcommit 45bdb1794565558d91af660711cba64fccd6f6ba[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 16:37:51 2022 +0500
+
+    Disabled country code and mobile number on forget password fragment
+
+[33mcommit 5ff3f49b9975a2c3b3bd5c00188d8936e5b4384e[m
+Merge: b1d70f2 a7499c9
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 16:36:31 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+    
+     Conflicts:
+    	.idea/misc.xml
+
+[33mcommit b1d70f27ee46cb9525595271e566af1d981531d6[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 16:36:08 2022 +0500
+
+    fix
+
+[33mcommit a7499c995d1bce911b50961dd93ee95602c13775[m
+Merge: 9e27d83 41f8c78
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 15 16:33:28 2022 +0500
+
+    conflicts resolved
+
+[33mcommit 9e27d83862416a56dacceb536d11befd1fac40e2[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 15 16:27:34 2022 +0500
+
+    some feedbacks resolved
+
+[33mcommit dbf68c07c34a0a9e656ae0a2d3785bb04b5f3f7d[m
+Merge: 2f85980 41f8c78
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 16:23:49 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into build_feedbacks
+
+[33mcommit 41f8c780022a1fb6e71050938519c8d694392195[m
+Merge: 9590516 2fd21c6
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Mon Aug 15 11:21:28 2022 +0000
+
+    Merged in basic_profile_api (pull request #24)
+    
+    Basic profile api
+
+[33mcommit 2fd21c691c59a69a85b874f8c74a35a66d2d3a1c[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 16:19:42 2022 +0500
+
+    merge and fix
+
+[33mcommit 7b691a1ffa376520184edd6849cf5f84e59ea630[m
+Merge: 7420ac3 9590516
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 16:17:22 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/fragment/profile/BasicProfileFragment.kt
+
+[33mcommit 2f85980f5f0670f9e046a1e5588a5af6e538a4de[m
+Merge: bdfe1cb 9590516
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 16:10:26 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into build_feedbacks
+
+[33mcommit 7420ac39dff2fbc0f35b6382d18f78dd93f89b0c[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 16:07:21 2022 +0500
+
+    fix location permission
+
+[33mcommit bdfe1cb7ecaaae1a889d9b45e9b7edbfd1930468[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 16:07:00 2022 +0500
+
+    Single top glitch fixed
+
+[33mcommit 9590516bb796f1cbbe8c40c49582704121f13edc[m
+Merge: 0b78a90 2a14898
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Mon Aug 15 10:21:52 2022 +0000
+
+    Merged in build_feedbacks (pull request #23)
+    
+    Build feedbacks
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit 2a148980586494d12d820f893df2f0750508cc49[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 15:15:17 2022 +0500
+
+    Email and cnic is mandatory ( it should not be )
+
+[33mcommit d3359b557ca6f6e7a0b688715b253485a48d267f[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 15:05:20 2022 +0500
+
+    Email and cnic is mandatory ( it should not be )
+
+[33mcommit c5c85a49ac6594336c62e099715caed455e2b2df[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 14:55:26 2022 +0500
+
+    Email and cnic is mandatory ( it should not be )
+
+[33mcommit 09ae4d14fdbfa56aba94fb996ae7bca26ec665f0[m
+Merge: 8e5cbe4 0b78a90
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 14:50:35 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into build_feedbacks
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/res/values/strings.xml
+
+[33mcommit 59edf924c45bcfb912c2df4831d019d267712bad[m
+Merge: ec226a8 0b78a90
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 14:50:06 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+
+[33mcommit ec226a82cab1249599046c0d06683ceec302c488[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 14:49:43 2022 +0500
+
+    fix of login and sign up phone number and code
+
+[33mcommit 8e5cbe4f47b4940366de5c7d8ea6a954a2b0ddca[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 14:49:15 2022 +0500
+
+    v1 code merge
+
+[33mcommit 0b78a904e8d5f34b579345358cf78b0356505816[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 15 14:45:06 2022 +0500
+
+    some feedbacks resolved
+
+[33mcommit 1f0b2fa6eeb6e0431e9274ad6c3b745c7186f099[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 13:08:50 2022 +0500
+
+    date format and gender selection functionality
+
+[33mcommit 0a11afa0a276fca6226c563e948918d8df4da085[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 12:21:53 2022 +0500
+
+    other in basic profile programmatically
+
+[33mcommit 65acdaa6cf5b7f5be65f65c93ffdf983acd9ff24[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 12:14:41 2022 +0500
+
+    other in signup programmatically
+
+[33mcommit 720390f4a3c10d89ff0d8b0fcc291bde3245f51d[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 12:10:11 2022 +0500
+
+    grey border on family tab
+
+[33mcommit 058682192e7e4ee0a9131c689935ef93438cbd2a[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 12:09:36 2022 +0500
+
+    grey border on family tab
+
+[33mcommit 8f74e2adc3fc3d150768c83eff6ec5c6ff89c8ae[m
+Merge: 762991d a7732ed
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 11:17:12 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into build_feedbacks
+
+[33mcommit 762991d3f653fd741d3eecc71997eafab44c7774[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 15 11:16:26 2022 +0500
+
+    App icon, others and grey border on personal profile
+
+[33mcommit a7732ed77f09c4d0d45866361c614e6110753794[m
+Merge: 5b17bcc 024b819
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Mon Aug 15 05:37:56 2022 +0000
+
+    Merged in basic_profile_api (pull request #22)
+    
+    Basic profile api
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit 024b81902bd3a021fd6d58709bcf6dca2c60b29a[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Mon Aug 15 10:35:50 2022 +0500
+
+    fixes of country code and city list and access token
+
+[33mcommit f7ba901d4850efa25de6e03294f9e29684d1fad7[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Sat Aug 13 17:12:12 2022 +0500
+
+    fragments created for linked accounts screens
+
+[33mcommit 9937f1c192bc31a049a613d56f26e71999ceecd8[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Sat Aug 13 17:11:01 2022 +0500
+
+    dropdown fix
+
+[33mcommit 5b17bcc29a782fb8cb0e91fa197e7c639dd368bf[m
+Merge: 23afee4 9970fbf
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Sat Aug 13 14:51:18 2022 +0500
+
+    conflicts resolved
+
+[33mcommit 9970fbfe2a3229264036438cf28bde5519b1cf61[m
+Merge: 5d4c41a 7ce4056
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Sat Aug 13 09:47:55 2022 +0000
+
+    Merged in basic_profile_api (pull request #21)
+    
+    Basic profile api
+
+[33mcommit 23afee401e3c0d7b5c00969641aa82933dbaf76d[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Sat Aug 13 14:41:09 2022 +0500
+
+    pre login api added
+
+[33mcommit 7ce40560017a0c55be899da380406b0219485771[m
+Merge: 3cfe248 5d4c41a
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Sat Aug 13 14:24:38 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+    
+     Conflicts:
+    	app/src/main/java/com/homemedics/app/ui/activity/SplashActivity.kt
+    	app/src/main/java/com/homemedics/app/ui/fragment/auth/LoginFragment.kt
+
+[33mcommit 3cfe248bf5e4224d2e618b99805a066666d385c9[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Sat Aug 13 14:21:06 2022 +0500
+
+    merge and complete basic profile with verify number
+
+[33mcommit 9186449e71da2556211d2d87edc022f1f0c37300[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Sat Aug 13 13:25:19 2022 +0500
+
+    fragments created for linked accounts screens
+
+[33mcommit 5d4c41a5142e75078286f46062a606daaf27e999[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Sat Aug 13 12:56:49 2022 +0500
+
+    isseus fixed
+
+[33mcommit 93639fdb5ff4991fb08e0ce5f60f952b3b54c544[m
+Merge: e9b475a c09252f
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Sat Aug 13 12:30:24 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into basic_profile_api
+    
+     Conflicts:
+    	app/src/main/java/com/homemedics/app/ui/activity/HomeActivity.kt
+    	app/src/main/java/com/homemedics/app/ui/activity/SplashActivity.kt
+    	app/src/main/java/com/homemedics/app/ui/fragment/auth/SignupFragment.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/models/response/meta/Country.kt
+    	netwrok_module/src/main/java/com/fatron/network_module/repository/ApiRepository.kt
+
+[33mcommit e9b475a2ebf04ecc7bf3c39513b48e6e177ac062[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Sat Aug 13 12:25:25 2022 +0500
+
+    add create profile api
+
+[33mcommit c09252f8315b00e5563b3178665fc3e84f4b9a8d[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Sat Aug 13 12:16:17 2022 +0500
+
+    minor fix
+
+[33mcommit b4a503fc0f3b1fb1e5b820a48bf5d51fbdd497ec[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Sat Aug 13 12:15:54 2022 +0500
+
+    linked account all screens designed
+
+[33mcommit 96111ee7547c3572967b552841cc37c02b0f1dc1[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Sat Aug 13 11:51:08 2022 +0500
+
+    login api 2 implemented
+
+[33mcommit 43f9b934edd12047c06d39ae6c88c0e20181f432[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 12 19:31:09 2022 +0500
+
+    drawer added
+
+[33mcommit e9d8849ccd936665f2c288ed0307e241704ede6a[m
+Merge: 714acdc 603c7b2
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Fri Aug 12 13:15:30 2022 +0000
+
+    Merged in signup_api (pull request #20)
+    
+    add get profile api
+
+[33mcommit 603c7b29f2fc47e3592f5ef0b63a16b156d6aaed[m
+Merge: dee23a7 714acdc
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 12 18:14:01 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into signup_api
+
+[33mcommit dee23a76f776f1f8eab51ffca1da7a51a30a4fc4[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 12 18:10:26 2022 +0500
+
+    add get profile api
+
+[33mcommit 714acdc9bb8d930c9b31e00e447ef608cf3e0221[m
+Merge: b8746be 344b93a
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 12 18:10:10 2022 +0500
+
+    v1 merging conflicts resolved
+
+[33mcommit 344b93ac67b2470197ed299ae134781cd45468e3[m
+Merge: cb5a1a3 7a8b7d3
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Fri Aug 12 13:07:19 2022 +0000
+
+    Merged in signup_api (pull request #19)
+    
+    Signup api
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit b8746be0a7a45ce2dc6bc4932bd93e956cf87ab3[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 12 18:05:08 2022 +0500
+
+    home
+
+[33mcommit 7a8b7d370f14feaec8d5b0290bb9af44065a7977[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 12 15:38:10 2022 +0500
+
+    add get profile api
+
+[33mcommit fc76d362ad521e67c87b7d6e96a5776d88d5b50c[m
+Merge: 0d2001f cb5a1a3
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 12 15:01:01 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into signup_api
+    
+     Conflicts:
+    	app/src/main/java/com/homemedics/app/ui/activity/SplashActivity.kt
+
+[33mcommit 0d2001fd24861a5b44373622bb9d8093fb131b36[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 12 14:56:41 2022 +0500
+
+    meta api completed
+
+[33mcommit cb5a1a34ed5bc626f861ac303d35a47fd4a5d97c[m
+Merge: eaa3e05 b28cf55
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Fri Aug 12 09:52:56 2022 +0000
+
+    Merged in feedbacks_v1 (pull request #18)
+    
+    Feedbacks v1
+
+[33mcommit eaa3e05a8883c7fa7eb64c96cb217aa93306c239[m
+Merge: 196b95e 9594cc1
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Fri Aug 12 07:36:59 2022 +0000
+
+    Merged in signup_api (pull request #17)
+    
+    Signup api
+
+[33mcommit b28cf55f6c176e6bc11e8ec22c78523a911a3ea6[m[33m ([m[1;32mfeedbacks_v1[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 12 12:32:28 2022 +0500
+
+    white status bar implemented
+
+[33mcommit 41223d6d1522c037652f71acf376ba6c7f74f572[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 12 12:11:16 2022 +0500
+
+    Text watcher implemented on all fields for error msgs
+
+[33mcommit 9594cc145043633ffd3a55f164e7f257dfa66af1[m
+Merge: 9d3400a 196b95e
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 12 11:38:45 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into signup_api
+    
+     Conflicts:
+    	.idea/misc.xml
+
+[33mcommit 9d3400af49c21f093490372e27582ea4aec7f997[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 12 11:37:53 2022 +0500
+
+    verify otp and forget pwd api complete
+
+[33mcommit 196b95e2ebd035480a96c3be9725097fa28bf674[m
+Merge: 1c1a184 dabda9e
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Fri Aug 12 05:54:21 2022 +0000
+
+    Merged in select_specialities (pull request #16)
+    
+    Select specialities
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit dabda9e52ba88d1fcba1179a00e8d770fb16df58[m[33m ([m[1;32mselect_specialities[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 11 19:05:38 2022 +0500
+
+    delete and checked functionality
+
+[33mcommit 74c57f38861835df8ea6a5650de78da71da92c76[m
+Merge: ea5c6b2 1c1a184
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 11 18:08:57 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into select_specialities
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/fragment/auth/LoginFragment.kt
+
+[33mcommit ea5c6b280c57e6ebcc7960e890a6e07edacd26d5[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 11 18:08:12 2022 +0500
+
+    Designed Add Specialities and Add Education screens, functionalities and more
+
+[33mcommit 7046fd94843515261181c35e9e1df9117da4086e[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 11 18:08:03 2022 +0500
+
+    Designed Add Specialities and Add Education screens, functionalities and more
+
+[33mcommit 8103412e8456d1a490f9ac3483f5ba2e23b99981[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 11 17:46:05 2022 +0500
+
+    add models for forget pwd
+
+[33mcommit 1c1a1844a26c427ac31d775ac846021f11544bd6[m
+Merge: b8e1e3d af4963d
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Thu Aug 11 12:13:25 2022 +0000
+
+    Merged in signup_api (pull request #15)
+    
+    signup api and send otp api complete
+
+[33mcommit af4963d2572b6476505458c6fe8d3ff2535244fb[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 11 16:39:36 2022 +0500
+
+    signup api and send otp api complete
+
+[33mcommit b8e1e3d2e00c33ae82e225439ebfb774fedbd8d7[m
+Merge: 304d1b1 f3cba19
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Thu Aug 11 06:47:55 2022 +0000
+
+    Merged in add_new_list (pull request #12)
+    
+    Add new list
+
+[33mcommit f3cba198d897feaaf3c7857bf6d049756ec533dd[m
+Merge: 9f343d3 304d1b1
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 11 11:46:17 2022 +0500
+
+    Merge branches 'add_new_list' and 'v1' of https://bitbucket.org/nextgeni/mediq-android into add_new_list
+    
+     Conflicts:
+    	.idea/misc.xml
+
+[33mcommit 304d1b11a65a0ccb8323ad569c8bdc419ba0b838[m
+Merge: 8c15f86 de63621
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Thu Aug 11 06:45:06 2022 +0000
+
+    Merged in capture_image (pull request #14)
+    
+    fix the image capture issue and rotation issue
+
+[33mcommit de636215241c4b11c7616c676dee92b819321b35[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 11 11:43:33 2022 +0500
+
+    set permission on click
+
+[33mcommit 31eb3f36e2a2a6b54f68083dbcfb04837b95bc77[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 11 10:47:07 2022 +0500
+
+    fix the image capture issue and rotation issue
+
+[33mcommit 8c15f868b530070e053319d48ec95800ec40fd14[m
+Merge: 962484d 1c90ecb
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 10 18:36:55 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into rm_state_mgt
+
+[33mcommit 1c90ecbc135fa26decf145df0f7ac4e8f6f643ab[m
+Merge: 30c1a64 7933a08
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Wed Aug 10 13:34:46 2022 +0000
+
+    Merged in become_partner (pull request #13)
+    
+    Become partner and upload cnic picture screen
+
+[33mcommit 962484d72f75e8ccef3447e1ad86fde90093ebec[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 10 18:31:31 2022 +0500
+
+    state mgt modification and minor issues fixed
+
+[33mcommit 7933a08e20bf34c5fc6a857ed865cbdab1659a00[m[33m ([m[1;32mbecome_partner[m[33m)[m
+Merge: f7babd5 30c1a64
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 10 18:15:33 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into become_partner
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/utils/Validations.kt
+    	app/src/main/res/navigation/home_navigation.xml
+    	app/src/main/res/values/dimen.xml
+    	app/src/main/res/values/strings.xml
+
+[33mcommit f7babd59c2cbc29cd7dce6913da07fd5b8e16439[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 10 18:12:08 2022 +0500
+
+    Become partner and upload cnic picture screen designed and it's validations
+
+[33mcommit 9f343d32ed37f2aaefe02b64fd68e18d8f7e6c1f[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 10 17:52:24 2022 +0500
+
+    set add address
+
+[33mcommit 30c1a64902d78c7fb20c221bbf066d87199afd54[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 10 17:01:38 2022 +0500
+
+    heading font fixed
+
+[33mcommit 14bcb42a7c234abe4834b05ce4db5c82ecc24834[m
+Merge: 1abfc1a e00bb82
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 10 15:58:31 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into add_new_list
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/fragment/address/AddAddressFragment.kt
+    	app/src/main/java/com/homemedics/app/ui/fragment/profile/AdditionalContactFragment.kt
+    	app/src/main/java/com/homemedics/app/ui/fragment/profile/BasicProfileFragment.kt
+    	app/src/main/java/com/homemedics/app/viewmodel/ProfileViewModel.kt
+    	app/src/main/res/layout/item_add_multiple_list.xml
+
+[33mcommit e00bb82f8c501d35842158ca2f01b6cda0e7f242[m
+Merge: 2029ef6 9cd0359
+Author: Muhammad Asadullah <asadullah.ali@nextgeni.com>
+Date:   Wed Aug 10 10:53:28 2022 +0000
+
+    Merged in location_fix (pull request #11)
+    
+    Location fix
+
+[33mcommit 9cd03591cc1b4e28007215cfc435cf91421d81e4[m
+Merge: b98dbd6 2029ef6
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 10 15:52:26 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into location_fix
+
+[33mcommit 2029ef6223fc8c1e64ceebd0bb130024fff69e32[m
+Merge: f260c73 e0e9906
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Wed Aug 10 10:51:58 2022 +0000
+
+    Merged in v1_ui_fixes (pull request #10)
+    
+    fixes of ui
+
+[33mcommit b98dbd6ae0370b96fac00a506930c8ea194118da[m
+Merge: 226768d f260c73
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 10 15:50:43 2022 +0500
+
+    conflicts resolved
+
+[33mcommit e0e9906374717857fdf4ddbba3ad295404285105[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 10 15:47:53 2022 +0500
+
+    fixes of ui
+
+[33mcommit 226768d99dceeca2b70e63b2ad9a3794487d7bfc[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 10 15:41:35 2022 +0500
+
+    two way binding added in add contact
+
+[33mcommit f260c73a8459b662a60dbdb4ea6b3eb3944ae72f[m
+Merge: a7d3089 2dbaf55
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Wed Aug 10 07:02:29 2022 +0000
+
+    Merged in capture_image (pull request #9)
+    
+    Capture image
+
+[33mcommit 2dbaf553650e2687246a97dfa27ae43f76705b7e[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 10 12:01:27 2022 +0500
+
+    conflicts resolved
+
+[33mcommit 018657b5be2630258e85964f02c47d9ced6a3182[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 10 11:59:23 2022 +0500
+
+    merge from v1
+
+[33mcommit a7d3089c05514f3070ead2c1e636d8dd07ea0698[m
+Merge: f6bd04b 8c15fe5
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Fri Aug 5 13:56:54 2022 +0000
+
+    Merged in profile_validations (pull request #8)
+    
+    Profile validations
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit 0e037d474ac3c9f2a88a111c7453e514bb5a10b5[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Aug 5 18:22:47 2022 +0500
+
+    address location view issues fixed
+
+[33mcommit 8c15fe5553b055e07ffecfa393d6f7e345374605[m[33m ([m[1;32mprofile_validations[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 5 15:55:52 2022 +0500
+
+    constraints set
+
+[33mcommit 30e3217253c36dd2f4d0cb0d8a1e3d28a9fabb58[m
+Merge: 415685a f6bd04b
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 5 15:50:12 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into profile_validations
+    
+     Conflicts:
+    	.idea/misc.xml
+    	app/src/main/java/com/homemedics/app/ui/fragment/profile/BasicProfileFragment.kt
+    	app/src/main/res/layout/fragment_basic_profile.xml
+    	app/src/main/res/values/strings.xml
+
+[33mcommit 415685abe6e3a21151b1f5c06462b56261373b5c[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Fri Aug 5 15:45:31 2022 +0500
+
+    Validations done Personal profile
+
+[33mcommit 1abfc1a878fb35b460bad039cfc94edfeb3d062e[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 5 15:30:24 2022 +0500
+
+    add list
+
+[33mcommit f6bd04b222e54eb953d410427fc33b3ed275c837[m
+Merge: e780d4e 8fe2d0a
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Fri Aug 5 06:58:47 2022 +0000
+
+    Merged in add_contacts (pull request #7)
+    
+    Add contacts
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit 8fe2d0a14696f80363a75f4394889ccfd203231b[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 5 11:52:55 2022 +0500
+
+    merge
+
+[33mcommit c9b55be336503da6ca1cf209f1eed87a71d410bc[m
+Merge: 57596ba a9a48f1
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Aug 5 11:48:55 2022 +0500
+
+    Merge remote-tracking branch 'origin/add_contacts' into add_contacts
+    
+    # Conflicts:
+    #       .idea/misc.xml
+
+[33mcommit 57596ba444eb8ee416758d4d569a15462e3887cf[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 4 17:40:54 2022 +0500
+
+    add drawables and list in profile
+
+[33mcommit ec672cb74870faba3fad88476b689c2f8880c2b1[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 4 14:15:36 2022 +0500
+
+    fixes
+
+[33mcommit e08b4762c0daf403d481704aa605a2bb2fa529aa[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 4 17:47:47 2022 +0500
+
+    generic alert dialog implemented
+
+[33mcommit a9a48f1cfa93e259faea861261db698add4f85a9[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 4 17:40:54 2022 +0500
+
+    add drawables and list in profile
+
+[33mcommit e780d4e784a313fde3160fa71c72c9844b78a0d9[m
+Merge: ef6a0e9 a2d3aec
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.com>
+Date:   Thu Aug 4 11:58:17 2022 +0000
+
+    Merged in login_dropdown (pull request #4)
+    
+    Login dropdown
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit a2d3aec9c246e6da293dd61bc19937c3aaa6d652[m[33m ([m[1;32mlogin_dropdown[m[33m)[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 4 16:57:34 2022 +0500
+
+    PR comments fixed
+
+[33mcommit fb07dca6d7a78efb5c8cabf33b85f411ea2de39e[m
+Merge: aca5819 ef6a0e9
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 4 14:27:54 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into add_contacts
+
+[33mcommit aca581924f64b89a7a4aa931491f57919d3504f6[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 4 14:15:36 2022 +0500
+
+    fixes
+
+[33mcommit cf5e9524631202198db25ce4789baa1435485120[m
+Merge: c74bf3a ef6a0e9
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 4 13:15:59 2022 +0500
+
+    Merge branch 'v1' of https://bitbucket.org/nextgeni/mediq-android into login_dropdown
+
+[33mcommit ef6a0e9be4baa1dea6df95772ced20abfde2eacf[m
+Merge: 51b34be 4ac39b6
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Thu Aug 4 08:09:14 2022 +0000
+
+    Merged in add_address (pull request #6)
+    
+    add address completed
+
+[33mcommit c74bf3abde59c8d983c37d6311e59aa5e9ba1aa3[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 4 12:54:57 2022 +0500
+
+    verification code and popbackstack
+
+[33mcommit 4ac39b6bfcae6b310535d4b6e28b88aa711bb7bb[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Thu Aug 4 12:51:49 2022 +0500
+
+    add address completed
+
+[33mcommit 800e17f8913733dc674b01f6a3abacf094e5b360[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 4 12:10:27 2022 +0500
+
+    Navigation flow on auth
+
+[33mcommit 067aa5f7c772c8dae037a40202ac07aae55a23cf[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Thu Aug 4 11:56:10 2022 +0500
+
+    request focus
+
+[33mcommit b6a5a9a75765a2102d86a316c01480ad4b967fb7[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Wed Aug 3 19:15:19 2022 +0500
+
+    Validations and error msg on Auth Module
+
+[33mcommit dd80263be4a7b0b4882a25f50adc32572cdccc23[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Tue Aug 2 19:00:11 2022 +0500
+
+    Count down timer done
+
+[33mcommit 2775bfbcdf87413bb11e525c58f4658d58cf2000[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 1 18:50:55 2022 +0500
+
+    designed forgot password screen
+
+[33mcommit b6a20c6b6fecddba1b3ddf14094975f04f6cef01[m
+Author: Shafiq ur Rehman <shafiq.rehman@nextgeni.dev>
+Date:   Mon Aug 1 14:55:44 2022 +0500
+
+    new branch
+
+[33mcommit 51b34beff65e0e261b29ef2993fad876a77135b0[m
+Merge: bef98db 5ad8698
+Author: Muhammad Asadullah <asadullah.ali@nextgeni.com>
+Date:   Thu Aug 4 07:34:12 2022 +0000
+
+    Merged in family (pull request #5)
+    
+    family tab work
+
+[33mcommit 5ad8698e261f2232627f0a52cdb3e72e3d17fbae[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Aug 4 12:33:02 2022 +0500
+
+    family tab work
+
+[33mcommit bef98dbf52380dbdb48b6756865a58115c6d15d9[m
+Merge: c815eaa 971e775
+Author: Ayesha Shahid <ayesha.shahid@nextgeni.com>
+Date:   Wed Aug 3 13:34:34 2022 +0000
+
+    Merged in add_address (pull request #3)
+    
+    Add address
+    
+    Approved-by: Muhammad Asadullah
+
+[33mcommit 971e77563d8ac7ab56bf4c40c1a4d6300d4a2627[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 3 18:32:05 2022 +0500
+
+    set navigations
+
+[33mcommit dbac496b7378c7b2f3113760b0fc94eabadecece[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Wed Aug 3 17:28:32 2022 +0500
+
+    complete add address and bindings
+
+[33mcommit 6782d5a27f0455f60437e7bfa4cd1bc605892a7b[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Tue Aug 2 18:14:53 2022 +0500
+
+    add address bottom sheet
+
+[33mcommit c815eaaf2d864695460930d4eaf91502728efc1f[m
+Merge: 75fbb61 cc6ce19
+Author: Muhammad Asadullah <asadullah.ali@nextgeni.com>
+Date:   Wed Aug 3 10:31:28 2022 +0000
+
+    Merged in profile (pull request #2)
+    
+    Profile
+
+[33mcommit cc6ce19b955395632717cbd58c039f4589e99d5f[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Aug 3 15:29:02 2022 +0500
+
+    basic profile work, add contact form added
+
+[33mcommit 9fcd9a4ed4317cc4dd6cd8ab2caeeaecc4e60174[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Aug 2 18:33:22 2022 +0500
+
+    basic profile work (in progress)
+
+[33mcommit 09ab4ceff5faa2a3026d96035df8e05e532cf49d[m[33m ([m[1;31morigin/dev[m[33m)[m
+Merge: 75fbb61 2601e11
+Author: Muhammad Asadullah <asadullah.ali@nextgeni.com>
+Date:   Mon Aug 1 09:49:57 2022 +0000
+
+    Merged in auth (pull request #1)
+    
+    Auth
+
+[33mcommit 2601e11ade3ae385efcafb042b610168fa3649df[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 1 14:48:27 2022 +0500
+
+    code improvements, login signup merged
+
+[33mcommit 7b184b9a46061fb3eb07b3de68f9d9d07e502405[m
+Merge: 14017df 60aad3c
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 1 10:56:05 2022 +0500
+
+    Merge remote-tracking branch 'origin/signup' into auth
+
+[33mcommit 14017df901ad63fe445c2eed814b442819844b4a[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Mon Aug 1 10:55:40 2022 +0500
+
+    git ignore modified
+
+[33mcommit 60aad3c0b5e03439a74eb0a482cd139522247ffe[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Jul 29 17:22:17 2022 +0500
+
+    merge and apply listeners and input types
+
+[33mcommit a7af06a43c6f7171563664fe8939bcdab73956f0[m
+Merge: 94d2e0d 2841b22
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Jul 29 16:08:51 2022 +0500
+
+    Merge branch 'auth' of https://bitbucket.org/nextgeni/mediq-android into signup
+    
+     Conflicts:
+    	.idea/misc.xml
+
+[33mcommit 94d2e0db50b54911e505931ffdf4c0ff22a8feea[m
+Author: Ayesha <ayesha@nextgeni.dev>
+Date:   Fri Jul 29 16:07:42 2022 +0500
+
+    signup ui and custom views complete
+
+[33mcommit 2841b226949aa874746e668fc098d2eff468308f[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Jul 28 18:28:19 2022 +0500
+
+    some login screen work
+
+[33mcommit 75fbb619d834eb50b648f8e56d61073788ea4d7d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Jul 26 13:25:51 2022 +0500
+
+    base replaced with project id
+
+[33mcommit 8fff92fd281f745385666ec7da2c74aaf03d2850[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Jul 26 13:10:39 2022 +0500
+
+    package change
+
+[33mcommit 82928775fe77569992eedc651d29ca503c3b58d9[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed Jul 6 15:04:56 2022 +0500
+
+    forgot pass converted to compose, base compose fragment added
+
+[33mcommit 0e0eccdab75d8f9fe3055d35589e77c0e6429c52[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Jul 5 18:51:55 2022 +0500
+
+    login added with issues, need to replace or adjust basefragment
+
+[33mcommit a76d8f28cc8bca521bc3697885190d28db50f354[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Tue Jul 5 12:33:34 2022 +0500
+
+    splash screen done
+
+[33mcommit e2d7a14f44ee36eb208dbc7cf52b6a6827d3d694[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Wed May 11 12:24:48 2022 +0500
+
+    exception handler added to avoid crash popups
+
+[33mcommit a9c5827b5c8101a875479a79cfee32d46ec8421e[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Fri Apr 1 11:12:09 2022 +0500
+
+    code improvments
+
+[33mcommit 82caf9c433baf1fba8f66e4260b885c4d9dd54d5[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Feb 3 15:41:14 2022 +0500
+
+    loader added
+
+[33mcommit c50d73d4a2ce393769beb38495989df4bf61bf1e[m
+Author: Asad <muhammadd.asadullah@gmail.com>
+Date:   Thu Feb 3 11:33:24 2022 +0500
+
+    basic login, forgot pass, change password added

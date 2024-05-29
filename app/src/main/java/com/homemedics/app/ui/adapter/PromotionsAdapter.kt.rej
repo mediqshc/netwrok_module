@@ -1,0 +1,11 @@
+diff a/app/src/main/java/com/homemedics/app/ui/adapter/PromotionsAdapter.kt b/app/src/main/java/com/homemedics/app/ui/adapter/PromotionsAdapter.kt	(rejected hunks)
+@@ -21,6 +21,9 @@
+     var deleteClickPackage: ((item: Promotions) -> Unit)? = null
+     var isConfirmation = false
+     var currency: String? = null
++    var discountvalue=false
++    var amount:Double=0.00
++    var amount1:Double=0.00
+ 
+     override var layout: (viewType: Int) -> Int
+         get() = { R.layout.item_checkout_split_amount }

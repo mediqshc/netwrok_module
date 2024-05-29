@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lab_test_navigation"
+    app:startDestination="@id/labServiceFragment">
+
+    <fragment
+        android:id="@+id/labTestFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.LabTestFragment"
+        android:label="LabTestFragment" >
+        <action
+            android:id="@+id/action_labTestFragment_to_labTestBookingFragment"
+            app:destination="@id/labTestBookingFragment" />
+        <action
+            android:id="@+id/action_labTestFragment_to_labTestListFragment"
+            app:destination="@id/labTestListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/labTestBookingFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.LabTestBookingFragment"
+        android:label="LabTestBookingFragment" >
+        <action
+            android:id="@+id/action_labTestBookingFragment_to_selectLabFragment"
+            app:destination="@id/selectLabFragment" />
+        <action
+            android:id="@+id/action_labTestBookingFragment_to_select_address_navigation"
+            app:destination="@id/select_address_navigation" />
+        <action
+            android:id="@+id/action_labTestBookingFragment_to_selectMainLabFragment"
+            app:destination="@id/selectMainLabFragment"/>
+        <action
+            android:id="@+id/action_labTestBookingWithOrderDetailsFragment_to_ordersDetailFragment"
+            app:destination="@id/ordersDetailFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/labTestFragment" />
+        <action
+            android:id="@+id/action_labTestBookingFragment_to_labTestFragment"
+            app:destination="@id/labTestFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/labTestFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/selectLabFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.SelectLabFragment"
+        android:label="SelectLabFragment" >
+        <action
+            android:id="@+id/action_selectLabFragment_to_labTestCartDetailsFragment"
+            app:destination="@id/labTestCartDetailsFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/selectMainLabFragment"
+            />
+    </fragment>
+    <include app:graph="@navigation/select_address_navigation" />
+    <fragment
+        android:id="@+id/labTestFilterFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.LabTestFilterFragment"
+        android:label="LabTestFilterFragment" />
+    <fragment
+        android:id="@+id/labTestListFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.LabTestListFragment"
+        android:label="LabTestListFragment" >
+        <action
+            android:id="@+id/action_labTestListFragment_to_labTestFilterFragment"
+            app:destination="@id/labTestFilterFragment" />
+        <action
+            android:id="@+id/action_labTestListFragment_to_selectMainLabFragment"
+            app:destination="@id/selectMainLabFragment" />
+        <action
+            android:id="@+id/action_labTestListFragment_to_labTestCartDetailsFragment"
+            app:destination="@id/labTestCartDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectMainLabFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.SelectMainLabFragment"
+        android:label="SelectMainLabFragment" >
+        <action
+            android:id="@+id/action_selectMainLabFragment_to_labTestCartDetailsFragment"
+            app:destination="@id/labTestCartDetailsFragment" />
+        <action
+            android:id="@+id/action_selectMainLabFragment_to_selectLabFragment"
+            app:destination="@id/selectLabFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/labTestCartDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.LabTestCartDetailsFragment"
+        android:label="LabTestCartDetailsFragment"
+        tools:layout="@layout/fragment_labtest_cart_details">
+        <action
+            android:id="@+id/action_labTestCartDetailsFragment_to_labTestBookingWithOrderDetailsFragment"
+            app:destination="@id/labTestBookingWithOrderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/labTestBookingWithOrderDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.LabTestBookingWithOrderDetailsFragment"
+        android:label="LabTestBookingWithOrderDetailsFragment" >
+        <action
+            android:id="@+id/action_labTestBookingWithOrderDetailsFragment_to_select_address_navigation"
+            app:destination="@id/select_address_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectAddressFragment"
+        android:name="com.homemedics.app.ui.fragment.doctorconsultation.SelectAddressFragment"
+        android:label="SelectAddressFragment"
+        tools:layout="@layout/fragment_select_address">
+        <action
+            android:id="@+id/action_selectAddressFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.homemedics.app.ui.fragment.address.AddAddressFragment"
+        android:label="AddAddressFragment"
+        tools:layout="@layout/fragment_add_address">
+        <action
+            android:id="@+id/action_addAddressFragment_to_addressBottomSheet"
+            app:destination="@id/addressBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/addressBottomSheet"
+        android:name="com.homemedics.app.ui.bottomsheets.AddressBottomSheet"
+        android:label="AddressBottomSheet" >
+        <action
+            android:id="@+id/action_addressBottomSheet_to_personalProfileFragment"
+            app:destination="@id/selectAddressFragment"
+            app:popUpTo="@id/selectAddressFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/ordersDetailFragment"
+        android:name="com.homemedics.app.ui.fragment.myorder.OrdersDetailFragment"
+        android:label="OrdersDetailFragment"
+        tools:layout="@layout/fragment_order_details"/>
+    <fragment
+        android:id="@+id/labServiceFragment"
+        android:name="com.homemedics.app.ui.fragment.labtests.LabServiceFragment"
+        android:label="LabServiceFragment" >
+        <action
+            android:id="@+id/action_labServiceFragment_to_labTestFragment"
+            app:destination="@id/labTestFragment" />
+        <action
+            android:id="@+id/action_labServiceFragment_to_walkinLabServiceFragment"
+            app:destination="@id/walkinLabServiceFragment" />
+        <action
+            android:id="@+id/action_walkinLabServiceFragment_to_walkInDiscountsCenterFragment2"
+            app:destination="@id/walkInDiscountsCenterFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/walkinLabServiceFragment"
+        android:name="com.homemedics.app.ui.fragment.walkin.laboratory.WalkinLabServiceFragment"
+        android:label="WalkinLabServiceFragment" >
+        <action
+            android:id="@+id/action_walkinLabServiceFragment_to_walkinLabDetailFragment"
+            app:destination="@id/walkinLabDetailFragment" />
+        <action
+            android:id="@+id/action_walkinLabServiceFragment_to_walkInDiscountsCenterFragment22"
+            app:destination="@id/walkInDiscountsCenterFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/walkinLabDetailFragment"
+        android:name="com.homemedics.app.ui.fragment.walkin.laboratory.WalkinLabDetailFragment"
+        android:label="WalkinLabDetailFragment" >
+        <action
+            android:id="@+id/action_walkinLabDetailFragment_to_labServiceFragment"
+            app:destination="@id/labServiceFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/labServiceFragment"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_walkinLabDetailFragment_to_walkInUploadDocsFragment7"
+            app:destination="@id/walkInUploadDocsFragment7" />
+        <action
+            android:id="@+id/action_walkinLabDetailFragment_to_walkin_lab_order_details_navigation"
+            app:destination="@id/walkin_lab_order_details_navigation"
+            app:popUpTo="@id/walkinLabServiceFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <include app:graph="@navigation/walkin_lab_order_details_navigation" />
+
+    <fragment
+        android:id="@+id/walkInDiscountsCenterFragment2"
+        android:name="com.homemedics.app.ui.fragment.walkin.discount.WalkInDiscountsCenterFragment"
+        android:label="WalkInDiscountsCenterFragment"
+        tools:layout="@layout/fragment_walkin_discounts_center"/>
+    <fragment
+        android:id="@+id/walkInUploadDocsFragment7"
+        android:name="com.homemedics.app.ui.fragment.walkin.details.WalkInUploadDocsFragment"
+        android:label="WalkInUploadDocsFragment" />
+</navigation>

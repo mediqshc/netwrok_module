@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/medical_records_navigation"
+    app:startDestination="@id/medicalRecordsFragment">
+
+    <fragment
+        android:id="@+id/medicalRecordsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.MedicalRecordsFragment"
+        android:label="MedicalRecordsFragment"
+        tools:layout="@layout/fragment_medical_records">
+        <action
+            android:id="@+id/action_medicalRecordsFragment_to_symptomsFragment"
+            app:destination="@id/symptomsFragment" />
+        <action
+            android:id="@+id/action_medicalRecordsFragment_to_addDiagnosisFragment"
+            app:destination="@id/addDiagnosisFragment" />
+        <action
+            android:id="@+id/action_medicalRecordsFragment_to_addMedicinesFragment"
+            app:destination="@id/addMedicinesFragment" />
+        <action
+            android:id="@+id/action_medicalRecordsFragment_to_addTestFragment"
+            app:destination="@id/addTestFragment" />
+        <action
+            android:id="@+id/action_medicalRecordsFragment_to_addRecommendationsFragment"
+            app:destination="@id/addRecommendationsFragment" />
+        <action
+            android:id="@+id/action_medicalRecordsFragment_to_enterDetailsFragment"
+            app:destination="@id/enterDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/symptomsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.AddSymptomsFragment"
+        android:label="SymptomsFragment"
+        tools:layout="@layout/fragment_add_emr_generic"/>
+
+    <fragment
+        android:id="@+id/observationFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.ObservationFragment"
+        android:label="ObservationFragment"
+        tools:layout="@layout/fragment_observation"/>
+
+    <fragment
+        android:id="@+id/diagnosisFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.DiagnosisFragment"
+        android:label="DiagnosisFragment"
+        tools:layout="@layout/fragment_diagnosis" />
+
+    <fragment
+        android:id="@+id/addDiagnosisFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.AddDiagnosisFragment"
+        android:label="AddDiagnosisFragment"
+        tools:layout="@layout/fragment_add_emr_generic"/>
+
+    <fragment
+        android:id="@+id/addTestFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.AddTestFragment"
+        android:label="AddTestFragment"
+        tools:layout="@layout/fragment_add_emr_generic"/>
+
+    <fragment
+        android:id="@+id/addMedicinesFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.AddMedicinesFragment"
+        android:label="AddMedicinesFragment"
+        tools:layout="@layout/fragment_add_emr_generic">
+        <action
+            android:id="@+id/action_addMedicinesFragment_to_enterDetailsFragment"
+            app:destination="@id/enterDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/enterDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.EnterPrescriptionDetailsFragment"
+        android:label="EnterDetailsFragment"
+        tools:layout="@layout/fragment_prescription_enter_details">
+        <action
+            android:id="@+id/action_enterDetailsFragment_to_medicalRecordsFragment"
+            app:destination="@id/medicalRecordsFragment"
+            app:popUpTo="@id/addMedicinesFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addRecommendationsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.AddRecommendationsFragment"
+        android:label="AddRecommendationsFragment"
+        tools:layout="@layout/fragment_add_emr_generic"/>
+
+</navigation>

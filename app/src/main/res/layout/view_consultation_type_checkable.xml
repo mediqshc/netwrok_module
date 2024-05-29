@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/llCheckableConsultationType"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:background="@drawable/rounded_divider">
+
+        <com.homemedics.app.ui.custom.CustomCheckableLinearLayout
+            android:id="@+id/cclVideoCall"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@drawable/selector_rounded_left_primary_transparent">
+
+            <TextView
+                android:id="@+id/tvVideoCall"
+                style="@style/button_multiple"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:text="@{langData.globalString.videoCalling}"
+                android:textColor="@drawable/selector_white_primary_color" />
+
+        </com.homemedics.app.ui.custom.CustomCheckableLinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp1"
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
+
+        <com.homemedics.app.ui.custom.CustomCheckableLinearLayout
+            android:id="@+id/cclMessage"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="@drawable/selector_rounded_primary_transparent">
+
+            <TextView
+                android:id="@+id/tvMessage"
+                style="@style/button_multiple"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:text="@{langData.globalString.messages}"
+                android:textColor="@drawable/selector_white_primary_color" />
+
+        </com.homemedics.app.ui.custom.CustomCheckableLinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp1"
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
+
+        <com.homemedics.app.ui.custom.CustomCheckableLinearLayout
+            android:id="@+id/cclHome"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_rounded_primary_transparent">
+
+            <TextView
+                android:duplicateParentState="true"
+                android:id="@+id/tvHome"
+                style="@style/button_multiple"
+                android:gravity="center"
+                android:textColor="@drawable/selector_white_primary_color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{langData.tabString.home}"/>
+
+        </com.homemedics.app.ui.custom.CustomCheckableLinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp1"
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
+
+        <com.homemedics.app.ui.custom.CustomCheckableLinearLayout
+            android:id="@+id/cclClinic"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_rounded_right_primary_transparent">
+
+            <TextView
+                android:duplicateParentState="true"
+                android:id="@+id/tvHomeVisit"
+                style="@style/button_multiple"
+                android:gravity="center"
+                android:textColor="@drawable/selector_white_primary_color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{langData.globalString.clinic}" />
+        </com.homemedics.app.ui.custom.CustomCheckableLinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,13 @@
+package com.fatron.network_module.models.request.video
+
+
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class TokenRequest(
+    @Json(name = "booking_id")
+    val bookingId: Int?,
+    @Json(name = "duty_id")
+    val dutyId: Int? = null
+)

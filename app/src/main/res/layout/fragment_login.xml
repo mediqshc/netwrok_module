@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+        <variable
+            name="loginModel"
+            type="com.fatron.network_module.models.request.auth.LoginRequest" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.fragment.auth.LoginFragment">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/layout_actionbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/heading_ovo"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp44"
+                android:text="@{langData.userAuthScreen.welcome}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/include" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/label_m"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp14"
+                android:layout_marginEnd="@dimen/dp20"
+                android:text="@{langData.userAuthScreen.description}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.43" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultEditText
+                android:id="@+id/etMobileNumber"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp26"
+                android:digits="@string/restrict_special_characters"
+                android:inputType="phone"
+                android:text="@={loginModel.phoneNumber}"
+                android:textDirection="locale"
+                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                android:id="@+id/cdCountryCode"
+                selectedValue="@={loginModel.countryCode}"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="0dp"
+                app:hintText="@{langData.globalString.countryCode}"
+                app:layout_constraintBottom_toBottomOf="@+id/etMobileNumber"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="@+id/etMobileNumber" />
+
+            <com.homemedics.app.ui.custom.CustomDefaultEditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp12"
+                android:inputType="textPassword"
+                android:text="@={loginModel.password}"
+                android:textDirection="locale"
+                android:visibility="gone"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/etMobileNumber"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                style="@style/label_m"
+                android:layout_marginTop="@dimen/dp16"
+                android:text="@{langData.userAuthScreen.forgotPassword}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/etMobileNumber"
+                app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bLogin"
+                style="@style/button_primary"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="@dimen/dp16"
+                android:enabled="false"
+                android:text="@{langData.userAuthScreen.login}"
+                android:visibility="gone"
+                app:icon="@drawable/ic_arrow_fw_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bStartJourney"
+                style="@style/button_primary"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="@dimen/dp16"
+                android:enabled="false"
+                android:text="@{langData.userAuthScreen.startJourney}"
+                app:icon="@drawable/ic_arrow_fw_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="bLogin, bStartJourney" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="@dimen/login_dialog_height"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp16"
+                android:clipChildren="true"
+                app:cardCornerRadius="@dimen/mdtp_day_number_select_circle_radius"
+                app:cardElevation="@dimen/cardview_default_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/teal_700"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/etNewAppMsg"
+                        style="@style/label_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp6"
+                        android:layout_marginTop="@dimen/dp14"
+                        android:layout_marginEnd="@dimen/dp6"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/bDownloadApp"
+                        style="@style/button_pink"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/dp16"
+                        android:text="Download"
+                        android:textStyle="bold" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

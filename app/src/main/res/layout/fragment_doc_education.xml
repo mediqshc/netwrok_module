@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="partner"
+            type="com.fatron.network_module.models.response.partnerprofile.PartnerProfileResponse" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:action1Res="@drawable/ic_back_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+        />
+
+        <include
+            android:id="@+id/iDoctor"
+            layout="@layout/item_doctor"
+            partner="@{partner}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp10"
+            android:background="@color/divider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvItems"
+            android:layout_margin="@dimen/dp16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_add_multiple_list"
+            tools:itemCount="3"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/tvAddNew"
+            app:layout_constraintStart_toStartOf="@+id/tvHeading"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddNew" />
+
+        <TextView
+            android:id="@+id/tvNoData"
+            style="@style/label_sm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_gravity="center"
+            android:textColor="@color/grey"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </LinearLayout>
+</layout>

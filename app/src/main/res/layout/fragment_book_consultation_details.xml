@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+        <variable
+            name="partner"
+            type="com.fatron.network_module.models.response.partnerprofile.PartnerProfileResponse" />
+        <variable
+            name="slotsResponse"
+            type="com.fatron.network_module.models.response.bdc.PartnerSlotsResponse" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:orientation="vertical">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:action1Res="@drawable/ic_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/iDoctor"
+                    layout="@layout/item_doctor"
+                    partner="@{partner}"
+                    slotsResponse="@{slotsResponse}" />
+
+                <TextView
+                    android:id="@+id/tvDesc"
+                    style="@style/label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="This is description"
+                    android:text="@{partner.overview}"
+                    android:padding="@dimen/dp16"
+                    android:maxLines="4"
+                    android:ellipsize="end"
+                    android:drawablePadding="@dimen/dp16"
+                    android:drawableEnd="@drawable/ic_arrow_fw_angular_primary"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/divider" />
+
+                <TextView
+                    android:id="@+id/tvQualification"
+                    style="@style/label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="MBBS, FCPS (Medicine), FCPS (Cardiology)"
+                    setPartnerEduction="@{partner}"
+                    android:padding="@dimen/dp16"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:drawablePadding="@dimen/dp16"
+                    android:drawableEnd="@drawable/ic_arrow_fw_angular_primary"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.bookingScreen.howToGetConsult}"/>
+
+                <com.homemedics.app.ui.custom.CustomServiceTypeView
+                    android:id="@+id/serviceTypeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/dp16"
+                    android:background="@drawable/rounded_divider">
+
+                    <TextView
+                        android:id="@+id/tvServiceDesc"
+                        style="@style/label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/dp16"
+                        android:text="@{langData.bookingScreen.docConsultationVideoDesc}" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/divider" />
+
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        style="@style/label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Rs. 2,000"
+                        setSlotsFee="@{slotsResponse}"
+                        android:textColor="@color/primary"
+                        android:layout_gravity="center_vertical"
+                        android:padding="@dimen/dp16"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:background="@color/divider" />
+
+                <TextView
+                    style="@style/heading_m"
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.bookingScreen.whenConsultation}"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDateSlots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="7"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/item_date_checkable" />
+
+                <TextView
+                    android:id="@+id/tvTimingText"
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.bookingScreen.timings}"/>
+
+<!--                <com.nex3z.flowlayout.FlowLayout-->
+<!--                    android:id="@+id/flSlots"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="@dimen/dp16"-->
+<!--                    app:flChildSpacing="@dimen/dp8"-->
+<!--                    app:flRowSpacing="@dimen/dp8">-->
+
+<!--&lt;!&ndash;                    <include layout="@layout/item_bordered_textview" />&ndash;&gt;-->
+
+<!--                </com.nex3z.flowlayout.FlowLayout>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSlots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="8"
+                    tools:listitem="@layout/item_bordered_textview" />
+
+                <TextView
+                    android:id="@+id/tvNoData"
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{langData.bookingScreen.noSlotsAvailable}"
+                    android:textSize="14sp"
+                    android:paddingBottom="@dimen/dp6"
+                    android:paddingTop="@dimen/dp6"
+                    android:textColor="@color/grey"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:background="@color/divider"
+                    android:layout_marginTop="@dimen/dp16"/>
+
+                <TextView
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.globalString.patientDetails}"/>
+
+                <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                    android:id="@+id/cdPatients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    app:layout_constraintEnd_toEndOf="@+id/dob"
+                    app:layout_constraintStart_toStartOf="@+id/welcomeDesc"
+                    app:layout_constraintTop_toBottomOf="@+id/dob" />
+
+                <EditText
+                    android:id="@+id/etInstructions"
+                    style="@style/edittext_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:minLines="2"
+                    android:maxLines="2"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:background="@drawable/rounded_grey"
+                    android:padding="@dimen/dp16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:background="@color/divider"
+                    android:layout_marginTop="@dimen/dp16"/>
+
+                <com.homemedics.app.ui.custom.CustomAddMultipleView
+                    android:id="@+id/caAddresses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="addressView"
+                    app:addNewText="@{langData.globalString.add}" />
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:background="@color/divider"
+                    android:layout_marginTop="@dimen/dp16"/>
+                <TextView
+                    style="@style/heading_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:text="@{langData.globalString.attachments}"/>
+
+                <TextView
+                    style="@style/label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:text="@{langData.globalString.MAddAttachments}"
+                    android:textColor="@color/grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvVoiceNote"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawablePadding="@dimen/dp8"
+                        android:drawableTop="@drawable/ic_mic_black"
+                        android:text="@{langData.globalString.voiceNote}" />
+
+                    <TextView
+                        android:id="@+id/tvAddImage"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawablePadding="@dimen/dp8"
+                        android:drawableTop="@drawable/ic_image"
+                        android:text="@{langData.globalString.addImage}" />
+
+                    <TextView
+                        android:id="@+id/tvUploadDoc"
+                        style="@style/label_sm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:drawablePadding="@dimen/dp8"
+                        android:drawableTop="@drawable/ic_upload_file"
+                        android:text="@{langData.globalString.uploadDoc}" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/attachmentDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1"
+                    android:background="@color/divider"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_marginHorizontal="@dimen/dp16"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAttachments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginHorizontal="@dimen/dp16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp16"
+                    android:background="@color/divider"
+                    android:layout_marginTop="@dimen/dp16"/>
+
+                <com.homemedics.app.ui.custom.CustomAddMultipleView
+                    android:id="@+id/caMedicalRecords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:custDesc="@{langData.bookingScreen.chooseMedicalRecords}"
+                    app:addNewText="@{langData.globalString.add}" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bBookConsultation"
+            android:layout_width="match_parent"
+            style="@style/button_long_orange"
+            android:layout_height="wrap_content"
+            android:text="@{langData.globalString.bookNow}" />
+
+    </LinearLayout>
+</layout>

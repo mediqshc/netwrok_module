@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItem"
+            app:srcCompat="@drawable/ic_circle" />
+
+        <ImageView
+            android:id="@+id/ivNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItem"
+            app:srcCompat="@drawable/ic_arrow_fw_angular_grey" />
+
+        <TextView
+            android:id="@+id/tvItem"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp12"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/ivNext"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            style="@style/label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            app:layout_constraintEnd_toStartOf="@+id/ivNext"
+            app:layout_constraintStart_toStartOf="@+id/tvItem"
+            app:layout_constraintTop_toBottomOf="@+id/tvItem" />
+
+        <TextView
+            android:id="@+id/tvCondition"
+            style="@style/label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            app:layout_constraintEnd_toStartOf="@+id/ivNext"
+            app:layout_constraintStart_toStartOf="@+id/tvItem"
+            app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+        <View
+            android:id="@+id/view10"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dp16"
+            android:background="@drawable/separator_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvItem"
+            app:layout_constraintTop_toBottomOf="@+id/tvCondition" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/customer_emr_vitals_navigation"
+    app:startDestination="@id/customerVitalsFragment">
+
+    <fragment
+        android:id="@+id/customerVitalsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.vitals.CustomerVitalsFragment"
+        android:label="CustomerVitalsFragment" >
+        <action
+            android:id="@+id/action_customerVitalsFragment_to_addNewVitalsRecordFragment2"
+            app:destination="@id/addNewVitalsRecordFragment2" />
+        <action
+            android:id="@+id/action_customerVitalsFragment_to_customerEMRFilterRecordsFragment2"
+            app:destination="@id/customerEMRFilterRecordsFragment2" />
+        <action
+            android:id="@+id/action_customerVitalsFragment_to_customerVitalsRecordDetailsFragment"
+            app:destination="@id/customerVitalsRecordDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewVitalsRecordFragment2"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.vitals.AddNewVitalsRecordFragment"
+        android:label="AddNewVitalsRecordFragment" />
+    <fragment
+        android:id="@+id/customerEMRFilterRecordsFragment2"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.medications.CustomerEMRFilterRecordsFragment"
+        android:label="CustomerEMRFilterRecordsFragment" />
+    <fragment
+        android:id="@+id/customerVitalsRecordDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.vitals.CustomerVitalsRecordDetailsFragment"
+        android:label="CustomerVitalsRecordDetailsFragment" >
+        <action
+            android:id="@+id/action_customerVitalsRecordDetailsFragment_to_addNewVitalsRecordFragment2"
+            app:destination="@id/addNewVitalsRecordFragment2">
+
+            <argument android:name="@string/modify" android:defaultValue="true" />
+
+        </action>
+    </fragment>
+</navigation>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/connectionLayout"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="@dimen/dp18"
+            android:layout_height="@dimen/dp18"
+            android:layout_marginStart="@dimen/dp16"
+            android:src="@drawable/ic_home_black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDesc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle"
+            app:layout_constraintVertical_bias="0.07999998" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/barrier"
+            app:layout_constraintStart_toEndOf="@+id/ivIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            style="@style/label_sm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            tools:text="Description"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="ivShare, rbSelect" />
+
+        <ImageView
+            android:id="@+id/ivDot"
+            android:layout_width="@dimen/dp6"
+            android:layout_height="@dimen/dp6"
+            android:src="@drawable/circle_orange"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/ivIcon"
+            app:layout_constraintEnd_toEndOf="@+id/ivShare"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="@+id/ivShare"
+            app:layout_constraintTop_toTopOf="@+id/ivIcon" />
+
+        <ImageView
+            android:id="@+id/ivShare"
+            style="@style/label_sm"
+            android:layout_width="@dimen/dp18"
+            android:layout_height="@dimen/dp18"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="@+id/ivIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivIcon"
+            app:srcCompat="@drawable/ic_share"
+            app:tint="@color/black"
+            tools:text="@string/unconfirmed" />
+
+        <RadioButton
+            android:id="@+id/rbSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:clickable="false"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_marginEnd="@dimen/dp8"
+            android:drawableEnd="?android:attr/listChoiceIndicatorSingle"
+            android:gravity="center_vertical|end"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDesc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvVitals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="@+id/ivShare"
+            app:layout_constraintStart_toStartOf="@+id/ivIcon"
+            app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+        <View
+            android:id="@+id/view8"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dp16"
+            android:background="@drawable/separator_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvDesc"
+            app:layout_constraintTop_toBottomOf="@id/rvVitals"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.homemedics.app.R" />
+        <import type="android.view.View" />
+
+        <variable
+            name="partner"
+            type="com.fatron.network_module.models.response.partnerprofile.PartnerProfileResponse" />
+
+        <variable
+            name="slotsResponse"
+            type="com.fatron.network_module.models.response.bdc.PartnerSlotsResponse" />
+
+        <variable
+            name="fromList"
+            type="Boolean" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/dp180"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        app:cardCornerRadius="@dimen/dp16"
+        app:cardElevation="@dimen/dp2">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp180"
+            android:background="@color/white"
+            android:layoutDirection="locale"
+            android:padding="@dimen/dp8"
+            android:textDirection="locale">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivDrImage"
+                android:layout_width="@dimen/dp60"
+                android:layout_height="@dimen/dp60"
+                android:layout_margin="@dimen/dp16"
+                android:src="@drawable/ic_male"
+                app:civ_border_color="@color/primary50"
+                defaultImage="@{partner.genderId == 2 ? R.drawable.ic_female_icon: R.drawable.ic_male}"
+                setImage="@{partner.profilePicture}"
+                app:civ_border_width="@dimen/dp2"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/label_m"
+                android:text="@{partner.fullName}"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:gravity="center|top"
+                android:maxLines="2"
+                android:minLines="2"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivDrImage"
+                tools:text="گھریلو صحت کی دیکھ بھال" />
+
+            <TextView
+                android:id="@+id/tvExperience"
+                style="@style/label"
+                setPartnerBio="@{partner}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:gravity="center"
+                android:maxLines="2"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                tools:text="TextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

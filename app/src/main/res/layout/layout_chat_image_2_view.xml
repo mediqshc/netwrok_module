@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="dataManager"
+            type="com.homemedics.app.model.MessageListViewItem" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:id="@+id/clIncomingDoc"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginBottom="@dimen/dp8"
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_right_chat_grey"
+            android:padding="@dimen/dp12"
+            android:layout_marginStart="@dimen/dp16"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivFileType"
+                android:layout_width="@dimen/dp24"
+                android:layout_height="@dimen/dp24"
+                android:src="@drawable/camera"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                app:layout_constrainedWidth="true"
+                android:maxLines="1"
+                android:text="@{dataManager.mediaName}"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivFileType"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Document" />
+
+            <TextView
+                android:id="@+id/tvDesc"
+                style="@style/label_sm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:text="@{dataManager.mediaSize!=null ?dataManager.mediaSize:``}"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:text="01.16" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                style="@style/label_sm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{dataManager.timeCreated}"
+                android:textColor="@color/grey"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvDesc"
+                app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+                tools:text="01.16" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".70" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

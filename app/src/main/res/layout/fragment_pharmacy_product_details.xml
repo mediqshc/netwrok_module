@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            app:action1Res="@drawable/ic_back_white"
+            app:action2Res="@drawable/ic_shopping_cart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/actionbar"
+            app:layout_constraintBottom_toTopOf="@+id/bAddToCart">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMedicineProduct"
+                    android:layout_width="@dimen/dp180"
+                    android:layout_height="@dimen/dp180"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:scaleType="centerInside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars"/>
+
+                <View
+                    android:id="@+id/vLine"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/separator_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivMedicineProduct" />
+
+                <TextView
+                    android:id="@+id/tvProductHeading"
+                    style="@style/heading_lg"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp16"
+                    android:textColor="@color/primary"
+                    android:textSize="22sp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvProductAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/vLine"
+                    tools:text="Panadol Tablet | Strip "/>
+
+                <TextView
+                    android:id="@+id/tvProductDesc"
+                    style="@style/label_m"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:textColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductHeading"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductHeading"
+                    tools:text="Panadol Tablet | Strip " />
+
+                <TextView
+                    android:id="@+id/tvProductAmount"
+                    style="@style/label_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp16"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/primary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvProductHeading"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvProductHeading"
+                    tools:text="Rs. 14.51"/>
+
+                <TextView
+                    android:id="@+id/tvProductDiscount"
+                    style="@style/label_sm"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp4"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/call_red"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductAmount"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductAmount"
+                    tools:text="PKR 20.56"/>
+
+                <include
+                    android:id="@+id/iCartButtons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    layout="@layout/layout_cart_buttons"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductDesc"/>
+
+                <View
+                    android:id="@+id/vShadow"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iCartButtons" />
+
+                <TextView
+                    android:id="@+id/tvProductDetails"
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@{lang.labPharmacyScreen.productDetails}"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/vShadow"/>
+
+                <TextView
+                    android:id="@+id/tvProductTotalAmount"
+                    style="@style/label_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp16"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvProductDetails"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvProductDetails"
+                    tools:text="Total  Rs. 29.7"/>
+
+                <TextView
+                    android:id="@+id/tvProductDescription"
+                    style="@style/label_m"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:textColor="@color/grey"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductHeading"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductDetails"
+                    tools:text="@string/lorem_ipsum"/>
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    style="@style/heading_m"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductDescription"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductDescription"
+                    tools:text="Paracetamol" />
+
+                <TextView
+                    android:id="@+id/tvProductPrescription"
+                    style="@style/label_m"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:textColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductDescription"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductName"
+                    tools:text="@string/prescription_not_required" />
+
+                <View
+                    android:id="@+id/vShadow2"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@color/divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductPrescription" />
+
+                <LinearLayout
+                    android:id="@+id/llIndications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp10"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductHeading"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/vShadow2">
+
+                    <TextView
+                        android:id="@+id/tvIndications"
+                        style="@style/heading_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp6"
+                        android:text="@{lang.labPharmacyScreen.indications}"
+                        app:drawableEndCompat="@drawable/ic_expand_black" />
+
+                    <TextView
+                        android:id="@+id/tvIndicationsValue"
+                        style="@style/label_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:textColor="@color/grey"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        tools:text="Vomiting"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/vShadow3"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@color/divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llIndications" />
+
+                <LinearLayout
+                    android:id="@+id/llContraindications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp10"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductHeading"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/vShadow3">
+
+                    <TextView
+                        android:id="@+id/tvContraindications"
+                        style="@style/heading_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp6"
+                        android:text="@{lang.labPharmacyScreen.contraindications}"
+                        app:drawableEndCompat="@drawable/ic_expand_black" />
+
+                    <TextView
+                        android:id="@+id/tvContraindicationsValue"
+                        style="@style/label_m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:textColor="@color/grey"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        tools:text="Vomiting"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/vShadow4"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@color/divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llContraindications" />
+
+                <TextView
+                    android:id="@+id/tvRelatedItem"
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@{lang.labPharmacyScreen.relatedItems}"
+                    app:layout_constraintStart_toStartOf="@+id/tvProductHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/vShadow4"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRelatedItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_pharmacy_medicine"
+                    tools:itemCount="6"
+                    android:layout_marginVertical="@dimen/dp16"
+                    app:layout_constraintStart_toStartOf="@+id/tvRelatedItem"
+                    app:layout_constraintEnd_toEndOf="@+id/tvProductAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRelatedItem"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bAddToCart"
+            style="@style/button_long_orange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{lang.labPharmacyScreen.addToCart}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

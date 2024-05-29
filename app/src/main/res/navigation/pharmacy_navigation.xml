@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pharmacy_navigation"
+    app:startDestination="@id/pharmacyServiceFragment">
+
+    <fragment
+        android:id="@+id/pharmacyServiceFragment"
+        android:name="com.homemedics.app.ui.fragment.pharmacy.PharmacyServiceFragment"
+        android:label="PharmacyServiceFragment"
+        tools:layout="@layout/fragment_pharmacy_services">
+        <action
+            android:id="@+id/action_pharmacyServiceFragment_to_pharmacySearchFragment"
+            app:destination="@id/pharmacySearchFragment" />
+        <action
+            android:id="@+id/action_pharmacyServiceFragment_to_walkInPharmacyServicesFragment"
+            app:destination="@id/walkInPharmacyServicesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pharmacySearchFragment"
+        android:name="com.homemedics.app.ui.fragment.pharmacy.PharmacySearchFragment"
+        android:label="PharmacySearchFragment"
+        tools:layout="@layout/fragment_pharmacy_search">
+        <action
+            android:id="@+id/action_pharmacySearchFragment_to_pharmacyMedicineListFragment"
+            app:destination="@id/pharmacyMedicineListFragment" />
+        <action
+            android:id="@+id/action_pharmacySearchFragment_to_pharmacyBookingFragment"
+            app:destination="@id/pharmacyBookingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pharmacyBookingFragment"
+        android:name="com.homemedics.app.ui.fragment.pharmacy.PharmacyBookingFragment"
+        android:label="PharmacyBookingFragment"
+        tools:layout="@layout/fragment_pharmacy_booking">
+        <action
+            android:id="@+id/action_pharmacyBookingFragment_to_select_address_navigation"
+            app:destination="@id/select_address_navigation" />
+        <action
+            android:id="@+id/action_pharmacyBookingFragment_to_pharmacySearchFragment"
+            app:destination="@id/pharmacySearchFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/pharmacySearchFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_pharmacyBookingFragment_to_ordersDetailFragment"
+            app:destination="@id/ordersDetailFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/pharmacySearchFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/pharmacyMedicineListFragment"
+        android:name="com.homemedics.app.ui.fragment.pharmacy.PharmacyMedicineListFragment"
+        android:label="PharmacyMedicineListFragment"
+        tools:layout="@layout/fragment_pharmacy_medicine_list">
+        <action
+            android:id="@+id/action_pharmacyMedicineListFragment_to_pharmacyMedicinesFilterFragment"
+            app:destination="@id/pharmacyMedicinesFilterFragment" />
+        <action
+            android:id="@+id/action_pharmacyMedicineListFragment_to_pharmacyProductDetailsFragment"
+            app:destination="@id/pharmacyProductDetailsFragment" />
+        <action
+            android:id="@+id/action_pharmacyMedicineListFragment_to_pharmacyCartDetailsFragment"
+            app:destination="@id/pharmacyCartDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pharmacyMedicinesFilterFragment"
+        android:name="com.homemedics.app.ui.fragment.pharmacy.PharmacyMedicinesFilterFragment"
+        android:label="PharmacyMedicinesFilterFragment"
+        tools:layout="@layout/fragment_medicines_filter"/>
+
+    <fragment
+        android:id="@+id/pharmacyProductDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.pharmacy.PharmacyProductDetailsFragment"
+        android:label="PharmacyProductDetailsFragment"
+        tools:layout="@layout/fragment_pharmacy_product_details">
+        <action
+            android:id="@+id/action_pharmacyProductDetailsFragment_to_pharmacyCartDetailsFragment"
+            app:destination="@id/pharmacyCartDetailsFragment" />
+        <action
+            android:id="@+id/action_pharmacyProductDetailsFragment_self"
+            app:destination="@id/pharmacyProductDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pharmacyCartDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.pharmacy.PharmacyCartDetailsFragment"
+        android:label="PharmacyCartDetailsFragment"
+        tools:layout="@layout/fragment_pharmacy_cart_details">
+        <action
+            android:id="@+id/action_pharmacyCartDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment2"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/pharmacy_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_pharmacyCartDetailsFragment_to_pharmacyCartCheckoutFragment"
+            app:destination="@id/pharmacyCartCheckoutFragment" />
+        <action
+            android:id="@+id/action_pharmacyCartDetailsFragment_to_pharmacySearchFragment"
+            app:destination="@id/pharmacySearchFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/pharmacySearchFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <include app:graph="@navigation/select_address_navigation" />
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.homemedics.app.ui.fragment.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/pharmacyCartCheckoutFragment"
+        android:name="com.homemedics.app.ui.fragment.pharmacy.PharmacyCartCheckoutFragment"
+        android:label="PharmacyCartCheckoutFragment"
+        tools:layout="@layout/fragment_pharmacy_cart_checkout">
+        <action
+            android:id="@+id/action_pharmacyCartCheckoutFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/pharmacy_navigation"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_pharmacyCartCheckoutFragment_to_select_address_navigation"
+            app:destination="@id/select_address_navigation" />
+        <action
+            android:id="@+id/action_pharmacyCartCheckoutFragment_to_pharmacySearchFragment"
+            app:destination="@id/pharmacySearchFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/pharmacySearchFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_pharmacyCartCheckoutFragment_to_selectAddressFragment"
+            app:destination="@id/selectAddressFragment" />
+        <action
+            android:id="@+id/action_pharmacyCartCheckoutFragment_to_pharmacyProductDetailsFragment"
+            app:destination="@id/pharmacyProductDetailsFragment"
+            app:popUpTo="@id/pharmacyCartDetailsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectAddressFragment"
+        android:name="com.homemedics.app.ui.fragment.doctorconsultation.SelectAddressFragment"
+        android:label="SelectAddressFragment"
+        tools:layout="@layout/fragment_select_address">
+        <action
+            android:id="@+id/action_selectAddressFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.homemedics.app.ui.fragment.address.AddAddressFragment"
+        android:label="AddAddressFragment"
+        tools:layout="@layout/fragment_add_address">
+        <action
+            android:id="@+id/action_addAddressFragment_to_addressBottomSheet"
+            app:destination="@id/addressBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/addressBottomSheet"
+        android:name="com.homemedics.app.ui.bottomsheets.AddressBottomSheet"
+        android:label="AddressBottomSheet" >
+        <action
+            android:id="@+id/action_addressBottomSheet_to_personalProfileFragment"
+            app:destination="@id/selectAddressFragment"
+            app:popUpTo="@id/selectAddressFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/ordersDetailFragment"
+        android:name="com.homemedics.app.ui.fragment.myorder.OrdersDetailFragment"
+        android:label="OrdersDetailFragment"
+        tools:layout="@layout/fragment_order_details"/>
+
+    <fragment
+        android:id="@+id/walkInPharmacyServicesFragment"
+        android:name="com.homemedics.app.ui.fragment.walkin.pharmacy.WalkInPharmacyServicesFragment"
+        android:label="WalkInPharmacyServicesFragment"
+        tools:layout="@layout/fragment_walkin_pharmacy_services">
+        <action
+            android:id="@+id/action_walkInPharmacyServicesFragment_to_walkInPharmacyDetailsFragment"
+            app:destination="@id/walkInPharmacyDetailsFragment"
+            app:popUpTo="@id/walkInPharmacyServicesFragment" />
+        <action
+            android:id="@+id/action_walkInPharmacyServicesFragment_to_walkInDiscountsCenterFragment"
+            app:destination="@id/walkInDiscountsCenterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/walkInPharmacyDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.walkin.pharmacy.WalkInPharmacyDetailsFragment"
+        android:label="WalkInPharmacyDetailsFragment"
+        tools:layout="@layout/fragment_walkin_pharmacy_details">
+        <action
+            android:id="@+id/go_to_home_from_walkin"
+            app:destination="@id/homeFragment2"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/pharmacy_navigation"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_walkInPharmacyDetailsFragment_to_pharmacyServiceFragment"
+            app:destination="@id/pharmacyServiceFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/pharmacyServiceFragment"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_walkInPharmacyDetailsFragment_to_walkin_order_details_navigation3"
+            app:destination="@id/walkin_order_details_navigation"
+            app:popUpTo="@id/pharmacyServiceFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_walkInPharmacyDetailsFragment_to_walkInUploadDocsFragment52"
+            app:destination="@id/walkInUploadDocsFragment5"
+            app:popUpTo="@id/walkInUploadDocsFragment5" />
+
+    </fragment>
+
+    <include app:graph="@navigation/walkin_order_details_navigation" />
+    <include app:graph="@navigation/pharmacy_navigation_inverse"/>
+
+    <fragment
+        android:id="@+id/walkInDiscountsCenterFragment"
+        android:name="com.homemedics.app.ui.fragment.walkin.discount.WalkInDiscountsCenterFragment"
+        android:label="WalkInDiscountsCenterFragment"
+        tools:layout="@layout/fragment_walkin_discounts_center"/>
+    <fragment
+        android:id="@+id/walkInUploadDocsFragment5"
+        android:name="com.homemedics.app.ui.fragment.walkin.details.WalkInUploadDocsFragment"
+        android:label="WalkInUploadDocsFragment" >
+
+    </fragment>
+
+</navigation>

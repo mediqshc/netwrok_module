@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="language"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp16"
+        android:paddingHorizontal="@dimen/dp24">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{language.linkedAccountScreen.codeSent}"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A code has been sent to"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            style="@style/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp4"
+            android:textColor="@color/primary"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            tools:text="john.doe@company.com"/>
+
+        <com.homemedics.app.ui.custom.CustomDefaultEditText
+            android:id="@+id/etVerificationEmail"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:maxLength="8"
+            android:inputType="number"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

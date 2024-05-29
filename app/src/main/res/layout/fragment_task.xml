@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/svContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:scrollbars="none">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleText="@string/personal_profile"
+            app:action1Res="@drawable/ic_back_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/heading_m"
+            android:text="Home visit"
+            android:paddingTop="@dimen/dp16"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/off_purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/actionbar" />
+
+        <TextView
+            android:id="@+id/tvDetail"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/purple30"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp16"
+            android:paddingBottom="@dimen/dp16"
+            android:text="06 May 2022 | Morning | Rs. 2,000"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_eclipse_h"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_oval_primary"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetail" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="@dimen/profile_img"
+            android:layout_height="@dimen/profile_img"
+            app:civ_border_width="3dp"
+            app:civ_border_color="@color/primary"
+            android:src="@drawable/ic_female_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivAddThumbnail"
+            android:layout_width="@dimen/profile_add_img"
+            android:layout_height="@dimen/profile_add_img"
+            app:civ_border_width="@dimen/dp2"
+            app:civ_border_color="@color/primary"
+            app:layout_constraintBottom_toBottomOf="@+id/ivThumbnail"
+            app:layout_constraintEnd_toEndOf="@+id/ivThumbnail"
+            android:src="@drawable/ic_add_photo" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/heading_m"
+            android:text="Home visit"
+            android:paddingTop="@dimen/dp16"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivThumbnail" />
+
+        <TextView
+            android:id="@+id/tvUserDetail"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp16"
+            android:paddingBottom="@dimen/dp16"
+            android:textColor="@color/grey"
+            android:text="06 May 2022 | Morning | Rs. 2,000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp16"
+            android:background="@color/divider"
+            app:layout_constraintTop_toBottomOf="@id/tvUserDetail"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <!--    app:srcCompqat="@drawable/ic_location"-->
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="@dimen/dp16"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginLeft="@dimen/dp16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp24"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{dataManager.title}"
+            android:layout_marginStart="@dimen/dp16"
+            app:layout_constraintEnd_toStartOf="@+id/ivDelete"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ivIcon"
+            app:layout_constraintTop_toTopOf="@+id/ivIcon"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Title" />
+
+
+        <!--    android:imageRes="@{dataManager.itemEndIcon == null ? R.drawable.ic_delete : dataManager.itemEndIcon}"-->
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="@dimen/dp16"
+            android:layout_height="@dimen/dp20"
+            app:layout_constraintBottom_toBottomOf="@+id/ivIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivIcon"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

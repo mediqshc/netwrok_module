@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            app:action2Res="@drawable/ic_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.homemedics.app.ui.custom.CustomDefaultDropDown
+            android:id="@+id/cdCountry"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            app:drawableStart="@drawable/ic_flag"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp8"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/actionbar" />
+
+        <com.homemedics.app.ui.custom.CustomDefaultDropDown
+            android:id="@+id/cdCity"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="@+id/cdCountry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/cdCountry" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50"/>
+
+        <com.homemedics.app.ui.custom.CustomDefaultDropDown
+            android:id="@+id/cdCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:drawableStart="@drawable/ic_magic_stars"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="@+id/cdCity"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/cdCountry"
+            app:layout_constraintTop_toBottomOf="@+id/cdCountry" />
+
+        <CheckBox
+            android:id="@+id/cbOverCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@{lang.labPharmacyScreen.overTheCounterProduct}"
+            android:textSize="16sp"
+            android:buttonTint="@color/black"
+            android:translationX="-5dp"
+            android:paddingStart="@dimen/dp8"
+            android:paddingEnd="@dimen/dp2"
+            app:layout_constraintStart_toStartOf="@+id/cdCountry"
+            app:layout_constraintTop_toBottomOf="@+id/cdCategory" />
+
+        <Button
+            android:id="@+id/bApplyFilter"
+            style="@style/button_long"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{lang.globalString.applyFilter}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

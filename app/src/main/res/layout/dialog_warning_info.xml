@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale"
+        android:textDirection="locale">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginStart="@dimen/dp18"
+            app:srcCompat="@drawable/ic_warning_info"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvHeading"
+            style="@style/heading_m"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp24"
+            android:text="@{lang.globalString.information}"
+            app:layout_constraintStart_toEndOf="@+id/ivWarning"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivWarning"
+            app:layout_constraintBottom_toBottomOf="@+id/ivWarning"/>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            style="@style/label_m"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginBottom="@dimen/dp18"
+            android:text="@{lang.dialogsStrings.prescriptionWarning}"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/ivWarning"
+            app:layout_constraintEnd_toEndOf="@+id/tvHeading"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeading"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/personalProfileFragment"
+        android:name="com.homemedics.app.ui.fragment.profile.PersonalProfileFragment"
+        android:label="PersonalProfileFragment"
+        tools:layout="@layout/fragment_personal_profile">
+        <action
+            android:id="@+id/action_personalProfileFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+        <action
+            android:id="@+id/action_personalProfileFragment_to_additionalContactFragment"
+            app:destination="@id/additionalContactFragment" />
+        <action
+            android:id="@+id/action_personalProfileFragment_to_addConnectionFragment"
+            app:destination="@id/addConnectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/additionalContactFragment"
+        android:name="com.homemedics.app.ui.fragment.profile.AdditionalContactFragment"
+        android:label="AdditionalContactFragment"
+        tools:layout="@layout/fragment_additional_contact" />
+
+
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.homemedics.app.ui.fragment.address.AddAddressFragment"
+        android:label="AddAddressFragment"
+        tools:layout="@layout/fragment_add_address">
+        <action
+            android:id="@+id/action_addAddressFragment_to_addressBottomSheet"
+            app:destination="@id/addressBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/addressBottomSheet"
+        android:name="com.homemedics.app.ui.bottomsheets.AddressBottomSheet"
+        android:label="AddressBottomSheet">
+        <action
+            android:id="@+id/action_addressBottomSheet_to_personalProfileFragment"
+            app:destination="@id/personalProfileFragment"
+            app:popUpTo="@id/personalProfileFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/addConnectionFragment"
+        android:name="com.homemedics.app.ui.fragment.profile.AddConnectionFragment"
+        android:label="AddConnectionFragment"
+        tools:layout="@layout/fragment_add_connection" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.homemedics.app.ui.fragment.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_home_to_packagesFragment_navigation"
+            app:destination="@id/packagesFragment" />
+        <action
+            android:id="@+id/action_home_to_customer_emr_consultation_navigation"
+            app:destination="@id/customerConsultationRecordDetailsFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_personalProfileFragment"
+            app:destination="@id/personalProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_linked_account_navigation"
+            app:destination="@id/linked_account_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_claim_details_navigation"
+            app:destination="@id/claim_details_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_become_partner_navigation"
+            app:destination="@id/become_partner_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_partner_profile_navigation"
+            app:destination="@id/partner_profile_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_planning_schedule_navigation"
+            app:destination="@id/planning_schedule_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_doctor_consultation_navigation"
+            app:destination="@id/doctor_consultation_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_task_navigation"
+            app:destination="@id/task_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_orders_navigation"
+            app:destination="@id/orders_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_home_service_navigation"
+            app:destination="@id/home_service_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_medical_records_navigation"
+            app:destination="@id/medical_records_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_pharmacy_navigation"
+            app:destination="@id/pharmacy_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_lab_test_navigation"
+            app:destination="@id/lab_test_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@+id/home_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_personalprofile_navigation"
+            app:destination="@id/personalProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_selectLanguageFragment"
+            app:destination="@id/selectLanguageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_faqFragment"
+            app:destination="@id/faqFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_claim_navigation"
+            app:destination="@id/claim_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_walkin_services_navigation"
+            app:destination="@id/walkin_services_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_claimOrdersDetailFragment"
+            app:destination="@id/claimOrdersDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_claim_list_navigation"
+            app:destination="@id/claim_list_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_walkin_order_details_navigation"
+            app:destination="@id/walkin_order_details_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_walkin_hosp_order_details_navigation"
+            app:destination="@id/walkin_hospital_order_details_navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_walkin_lab_order_details_navigation"
+            app:destination="@id/walkin_lab_order_details_navigation" />
+
+    </fragment>
+
+    <include app:graph="@navigation/become_partner_navigation" />
+    <include app:graph="@navigation/linked_account_navigation" />
+    <include app:graph="@navigation/partner_profile_navigation" />
+    <include app:graph="@navigation/planning_schedule_navigation" />
+    <include app:graph="@navigation/doctor_consultation_navigation" />
+    <include app:graph="@navigation/task_navigation" />
+    <include app:graph="@navigation/orders_navigation" />
+    <include app:graph="@navigation/home_service_navigation" />
+    <include app:graph="@navigation/medical_records_navigation" />
+    <include app:graph="@navigation/chat_navigation" />
+    <include app:graph="@navigation/pharmacy_navigation" />
+    <include app:graph="@navigation/lab_test_navigation" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.homemedics.app.ui.fragment.notifications.NotificationFragment"
+        android:label="NotificationFragment">
+        <action
+            android:id="@+id/action_notificationFragment_to_walkin_order_details_navigation"
+            app:destination="@id/walkin_order_details_navigation" />
+        <action
+            android:id="@+id/action_notificationFragment_to_walkin_hosp_order_details_navigation"
+            app:destination="@id/walkin_hospital_order_details_navigation" />
+        <action
+            android:id="@+id/action_notificationFragment_to_walkin_lab_order_details_navigation"
+            app:destination="@id/walkin_lab_order_details_navigation" />
+ <action
+            android:id="@+id/action_notificationFragment_to_claim_details_navigation"
+            app:destination="@id/claim_details_navigation" />
+
+        <action
+            android:id="@+id/action_notificationFragment_to_become_partner_navigation"
+            app:destination="@id/become_partner_navigation" />
+        <action
+            android:id="@+id/action_notificationFragment_to_partnerprofile_navigation"
+            app:destination="@id/partner_profile_navigation" />
+        <action
+            android:id="@+id/action_notificationFragment_to_personalprofile_navigation"
+            app:destination="@id/personalProfileFragment" />
+
+        <action
+            android:id="@+id/action_notificationFragment_to_orders_navigation"
+            app:destination="@id/orders_navigation" />
+        <action
+            android:id="@+id/action_notificationFragment_to_task_navigation"
+            app:destination="@id/task_navigation" />
+        <action
+            android:id="@+id/action_notificationFragment_to_customer_emr_consultation_navigation"
+            app:destination="@id/customerConsultationRecordDetailsFragment2" />
+        <action
+            android:id="@+id/action_notificationFragment_to_linked_account_navigation"
+            app:destination="@id/linked_account_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerConsultationRecordDetailsFragment2"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.consultation.CustomerConsultationRecordDetailsFragment"
+        android:label="CustomerConsultationRecordDetailsFragment"
+        tools:layout="@layout/fragment_customer_consultation_record_details" />
+    <fragment
+        android:id="@+id/selectLanguageFragment"
+        android:name="com.homemedics.app.ui.fragment.language.SelectLanguageFragment"
+        android:label="SelectLanguageFragment" />
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="com.homemedics.app.ui.fragment.faq.FaqFragment"
+        android:label="FaqFragment" />
+    <include app:graph="@navigation/claim_navigation" />
+    <include app:graph="@navigation/walkin_services_navigation" />
+    <include app:graph="@navigation/claim_list_navigation" />
+    <include app:graph="@navigation/claim_details_navigation" />
+    <include app:graph="@navigation/walkin_order_details_navigation" />
+    <include app:graph="@navigation/walkin_hospital_order_details_navigation" />
+    <include app:graph="@navigation/walkin_lab_order_details_navigation" />
+    <fragment
+        android:id="@+id/packagesFragment"
+        android:name="com.homemedics.app.ui.fragment.packages.PackagesFragment"
+        android:label="PackagesFragment" >
+        <action
+            android:id="@+id/action_packagesFragment_to_packageDetailsFragment2"
+            app:destination="@id/packageDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/packageDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.packages.package_details.PackageDetailsFragment"
+        android:label="PackageDetailsFragment" />
+
+</navigation>

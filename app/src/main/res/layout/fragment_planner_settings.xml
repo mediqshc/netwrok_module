@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="langData"
+        type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+</data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            app:action1Res="@drawable/ic_back_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMinutes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/actionbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tvDescription"
+                style="@style/heading_m"
+                android:layout_width="@dimen/dp0"
+                android:textDirection="locale"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp16"
+                android:background="@color/white"
+                android:text="@{langData.planningScreen.videoCallQues}"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                android:id="@+id/cdTimeSlot"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp16"
+                android:layout_marginHorizontal="@dimen/dp16"
+                app:hintText="@string/_minutes"
+                app:drawableStart="@drawable/ic_timer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp12"
+            android:background="@color/divider"
+            app:layout_constraintTop_toBottomOf="@id/clMinutes"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp0"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/divider1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tvSelectDescription"
+                style="@style/heading_m"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp16"
+                android:background="@color/white"
+                android:textDirection="locale"
+                android:text="@{langData.planningScreen.consultation}"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvWeekDays"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="@dimen/dp0"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginBottom="@dimen/dp10"
+                android:paddingTop="@dimen/dp18"
+                android:background="@color/white"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_week_days_list"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectDescription"
+                app:layout_constraintBottom_toTopOf="@+id/bSave" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bSave"
+                style="@style/button_long"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@{langData.globalString.save}"
+                android:layout_marginTop="@dimen/dp10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale"
+        android:textDirection="locale">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp22"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintEnd_toStartOf="@+id/tvAmount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            style="@style/label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/grey"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            tools:text="@string/lorem_ipsum" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            style="@style/label_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary"
+            android:textAlignment="textEnd"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Rs. 1,500" />
+
+        <TextView
+            android:id="@+id/tvDiscount"
+            style="@style/label_sm"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp4"
+            android:textAlignment="textEnd"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@+id/tvAmount"
+            app:layout_constraintEnd_toEndOf="@+id/tvAmount"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmount"
+            tools:text="PKR 20.56"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tvTitle, tvAmount, tvDiscount"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="@dimen/dp16"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginStart="@dimen/dp16"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrier"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/vDivider"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp2"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@drawable/separator_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivDelete" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

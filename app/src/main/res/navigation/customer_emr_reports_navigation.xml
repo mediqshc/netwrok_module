@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/customer_emr_reports_navigation"
+    app:startDestination="@id/customerReportsFragment">
+
+    <fragment
+        android:id="@+id/customerReportsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.reports.CustomerReportsFragment"
+        android:label="CustomerReportsFragment" >
+        <action
+            android:id="@+id/action_customerReportsFragment_to_customerReportDetailsFragment"
+            app:destination="@id/customerReportDetailsFragment" />
+        <action
+            android:id="@+id/action_customerReportsFragment_to_addNewReportRecordFragment"
+            app:destination="@id/addNewReportRecordFragment" />
+        <action
+            android:id="@+id/action_customerReportsFragment_to_customerEMRFilterRecordsFragment"
+            app:destination="@id/customerEMRFilterRecordsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerReportDetailsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.reports.CustomerReportDetailsFragment"
+        android:label="CustomerReportDetailsFragment" >
+        <action
+            android:id="@+id/action_customerReportDetailsFragment_to_shareRecordWithFragment"
+            app:destination="@id/shareRecordWithFragment" />
+        <action
+            android:id="@+id/action_customerReportDetailsFragment_to_addNewReportRecordFragment"
+            app:destination="@id/addNewReportRecordFragment">
+
+            <argument android:name="@string/modify"
+                android:defaultValue="true" />
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/addNewReportRecordFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.reports.AddNewReportRecordFragment"
+        android:label="AddNewReportRecordFragment" >
+        <action
+            android:id="@+id/action_addNewReportRecordFragment_to_selectLabTestFragment"
+            app:destination="@id/selectLabTestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectLabTestFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.reports.SelectLabTestFragment"
+        android:label="SelectLabTestFragment" >
+        <action
+            android:id="@+id/action_selectLabTestFragment_to_addReportRecordDocumentsFragment"
+            app:destination="@id/addReportRecordDocumentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addReportRecordDocumentsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.reports.AddReportRecordDocumentsFragment"
+        android:label="AddReportRecordDocumentsFragment" >
+        <action
+            android:id="@+id/action_addReportRecordDocumentsFragment_to_customerReportDetailsFragment"
+            app:destination="@id/customerReportDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerEMRFilterRecordsFragment"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.medications.CustomerEMRFilterRecordsFragment"
+        android:label="CustomerEMRFilterRecordsFragment" />
+
+</navigation>

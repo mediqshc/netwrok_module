@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/TextInputLayoutAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextColor="@color/dark_grey"
+            app:helperText=""
+            android:layoutDirection="locale"
+            android:layout_gravity="start"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            tools:hint="TextField">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/send"
+            android:layout_width="@dimen/dp140"
+            android:layout_height="@dimen/dp54"
+            android:layout_gravity="end|center_vertical"
+            android:paddingTop="@dimen/dp12"
+            android:paddingBottom="@dimen/dp12"
+            android:paddingHorizontal="@dimen/dp20"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="@dimen/dp6"
+            android:text="@string/send_code"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/dp6"/>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="dataManager"
+            type="com.fatron.network_module.models.response.notification.Notification" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layoutDirection="locale"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp8">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="@dimen/dp18"
+        android:layout_height="@dimen/dp22"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+    <ImageView
+        android:id="@+id/ivDot"
+        android:layout_width="@dimen/dp10"
+        android:layout_height="@dimen/dp10"
+        android:src="@drawable/circle_orange"
+        app:layout_constraintBottom_toTopOf="@+id/ivIcon"
+        app:layout_constraintEnd_toEndOf="@+id/ivIcon"
+        app:layout_constraintTop_toTopOf="@+id/ivIcon" />
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/label_m"
+        android:layout_width="0dp"
+        android:textAlignment="viewStart"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="8dp"
+        android:text="@{dataManager.title}"
+        app:layout_constraintEnd_toStartOf="@+id/tvDate"
+        app:layout_constraintStart_toEndOf="@+id/ivIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/tvDesc"
+        style="@style/label_sm"
+        android:layout_width="0dp"
+        android:textAlignment="viewStart"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/grey"
+        android:text="@{dataManager.body}"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="DescriptionDescription" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        style="@style/label_sm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle"
+        app:srcCompat="@drawable/ic_delete"
+        tools:text="@string/unconfirmed" />
+
+    <ImageView
+        android:id="@+id/ivDetail"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp112"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:src="@drawable/circle_orange"
+        app:layout_constraintEnd_toEndOf="@+id/tvDate"
+        app:layout_constraintStart_toStartOf="@+id/ivIcon"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/separator_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvDesc"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetail"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view9"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

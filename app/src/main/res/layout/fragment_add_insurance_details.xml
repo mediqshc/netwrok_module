@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="multipleViewItem"
+            type="com.fatron.network_module.models.generic.MultipleViewItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textDirection="locale"
+        android:layoutDirection="locale"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            app:action1Res="@drawable/ic_back_white"
+            app:action2Res="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <include
+            android:id="@+id/iCompany"
+            layout="@layout/item_company"
+            app:multipleViewItem="@{multipleViewItem}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actionbar" />
+
+        <com.homemedics.app.ui.custom.CustomDefaultEditText
+            android:id="@+id/etPolicyNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="policy"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:drawableStart="@drawable/ic_policy"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintEnd_toEndOf="@+id/iCompany"
+            app:layout_constraintStart_toStartOf="@+id/iCompany"
+            app:layout_constraintTop_toBottomOf="@+id/iCompany" />
+
+        <com.homemedics.app.ui.custom.CustomDefaultEditText
+            android:id="@+id/etCertificateId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="certid"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            app:drawableStart="@drawable/ic_card_membership"
+            app:layout_constraintEnd_toEndOf="@+id/etPolicyNumber"
+            app:layout_constraintStart_toStartOf="@+id/etPolicyNumber"
+            app:layout_constraintTop_toBottomOf="@+id/etPolicyNumber" />
+
+        <com.homemedics.app.ui.custom.CustomDefaultEditText
+            android:id="@+id/etCnicNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="cnic"
+            android:layout_marginTop="@dimen/dp16"
+            android:inputType="number"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            app:drawableStart="@drawable/ic_cnic_black"
+            app:layout_constraintEnd_toEndOf="@+id/etCertificateId"
+            app:layout_constraintStart_toStartOf="@+id/etCertificateId"
+            app:layout_constraintTop_toBottomOf="@+id/etCertificateId" />
+
+        <com.homemedics.app.ui.custom.CustomDefaultEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="patient_name"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_marginTop="@dimen/dp16"
+            android:inputType="textPersonName"
+            android:digits="@string/letters"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            app:drawableStart="@drawable/ic_person_black"
+            app:layout_constraintEnd_toEndOf="@+id/etCertificateId"
+            app:layout_constraintStart_toStartOf="@+id/etCertificateId"
+            app:layout_constraintTop_toBottomOf="@+id/etCertificateId" />
+
+        <View
+            android:layout_width="@dimen/dp1"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bLink"
+            style="@style/button_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </LinearLayout>
+</layout>

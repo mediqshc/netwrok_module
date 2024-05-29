@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="imageString" format="string" />
+    <attr name="imageRes" format="reference" />
+    <attr name="titleText" format="string" />
+    <attr name="addNewText" format="string" />
+    <attr name="labelText" format="string" />
+    <attr name="custDesc" format="string" />
+    <attr name="hintText" format="string" />
+    <attr name="desc" format="string" />
+    <attr name="verifHelperText" format="string" />
+    <attr name="error" format="string" />
+    <attr name="descText" format="string" />
+    <attr name="buttonText" format="string" />
+    <attr name="isChecked" format="boolean" />
+    <attr name="click" format="boolean" />
+    <attr name="isViewEnabled" format="boolean" />
+    <attr name="descriptionVisible" format="boolean" />
+    <attr name="drawableStart" format="reference" />
+    <attr name="drawableEnd" format="reference" />
+    <attr name="drawable" format="reference" />
+    <attr name="helperTextColor" format="reference" />
+    <attr name="textColorCheck" format="boolean" />
+
+    <declare-styleable name="DemoCustomView">
+        <attr name="imageString" />
+        <attr name="imageRes" />
+        <attr name="titleText" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomDefaultEditText">
+        <attr name="drawableStart" />
+        <attr name="drawableEnd" />
+        <attr name="drawable" />
+        <attr name="android:hint" />
+        <attr name="hintTextColor" />
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="android:text" />
+        <attr name="textColorCheck" />
+        <attr name="android:maxLength" />
+        <attr name="android:inputType" />
+        <attr name="click" />
+        <attr name="error" />
+        <attr name="endIconMode" />
+        <attr name="android:imeOptions" />
+        <attr name="android:digits" />
+    </declare-styleable>
+    <declare-styleable name="CustomDefaultDropDown">
+        <attr name="hintText" />
+        <attr name="hintTextColor" />
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="drawableStart" />
+        <attr name="android:enabled" />
+    </declare-styleable>
+    <declare-styleable name="CustomDefaultButtonEdit">
+        <attr name="android:hint" />
+        <attr name="hintTextColor" />
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="android:text" />
+        <attr name="buttonText" />
+        <attr name="helperTextColor" />
+        <attr name="verifHelperText" />
+        <attr name="error" />
+        <attr name="android:maxLength" />
+        <attr name="android:inputType" />
+        <attr name="android:imeOptions" />
+    </declare-styleable>
+    <declare-styleable name="CustomActionbar">
+        <attr name="titleText" />
+        <attr name="action1Res" format="reference" />
+        <attr name="action2Res" format="reference"/>
+        <attr name="action3Res" format="reference"/>
+        <attr name="desc"/>
+        <attr name="dotText" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="CustomAddMultipleView">
+        <attr name="titleText" />
+        <attr name="custDesc" />
+        <attr name="addNewText" />
+        <attr name="showAddButton" format="boolean" />
+        <attr name="showSwitchButton" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="CustomServiceTypeView">
+
+    </declare-styleable>
+
+</resources>

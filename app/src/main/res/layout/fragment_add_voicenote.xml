@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/dp24">
+
+        <TextView
+            android:id="@+id/tvVoiceNote"
+            style="@style/sub_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/IvVoiceImage"
+            android:layout_width="@dimen/dp60"
+            android:layout_height="@dimen/dp60"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp28"
+            android:layout_marginBottom="@dimen/dp12"
+            app:srcCompat="@drawable/ic_voice_circle" />
+
+        <FrameLayout
+            android:id="@+id/flPlayLayout"
+            android:layout_width="match_parent"
+            android:layoutDirection="ltr"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp24"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:layoutDirection="ltr"
+                android:textDirection="ltr"
+                android:layout_marginTop="@dimen/dp12"
+                android:background="@drawable/rounded_border_grey_8"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dp16"
+                android:paddingEnd="@dimen/dp16">
+                <ImageView
+                    android:layout_width="@dimen/dp16"
+                    android:layout_height="@dimen/dp18"
+                    android:layout_marginEnd="@dimen/dp12"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_record"
+                    />
+
+                <Chronometer
+                    android:id="@+id/tvTimer"
+                    style="@style/label_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dp12"
+                    android:gravity="start|center_horizontal"
+                    android:text="0:00"
+                    />
+
+                <TextView
+                    android:id="@+id/tvCancel"
+                    style="@style/disable_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dp12"
+                    android:gravity="end|center"
+                    app:drawableEndCompat="@drawable/ic_delete" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/IvVoicePause"
+                android:layout_width="@dimen/dp70"
+                android:layout_height="@dimen/dp70"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_voice_play" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlPlayLayout"
+            android:visibility="gone"
+            android:layoutDirection="ltr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_marginEnd="@dimen/dp16"
+            android:padding="@dimen/dp16">
+
+            <ImageView
+                android:id="@+id/IvPlay"
+                android:layout_width="@dimen/dp24"
+                android:layout_height="@dimen/dp24"
+                app:srcCompat="@drawable/ic_play_arrow" />
+
+            <ImageView
+                android:id="@+id/IvVoiceGraphics"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp24"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginEnd="@dimen/dp16"
+                android:layout_toStartOf="@id/IvPlayDelete"
+                android:layout_toEndOf="@id/IvPlay"
+                app:srcCompat="@drawable/ic_voice_graphic" />
+
+            <ImageView
+                android:id="@+id/IvPlayDelete"
+                android:layout_width="@dimen/dp24"
+                android:layout_height="@dimen/dp24"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/ic_delete" />
+
+            <View
+                android:id="@+id/vDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/IvVoiceGraphics"
+                android:layout_alignStart="@id/IvVoiceGraphics"
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@drawable/separator_horizontal" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

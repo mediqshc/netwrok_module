@@ -1,0 +1,3 @@
+Alias: mediqkey
+pwd: mediq.dot.zero
+First last name: Muhammad Asadullah

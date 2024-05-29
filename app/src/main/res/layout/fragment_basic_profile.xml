@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+        <variable
+            name="userProfile"
+            type="com.fatron.network_module.models.response.user.UserResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/svContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp0"
+            android:layoutDirection="locale"
+            android:textDirection="locale"
+            android:fillViewport="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/llButtons">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{langData.personalprofileBasicScreen.personalDetails}"
+                    android:layout_marginStart="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                    android:id="@+id/cdCountryCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:enabled="false"
+                    android:inputType="textNoSuggestions"
+                    app:drawableStart="@drawable/ic_call"
+                    android:layout_marginEnd="@dimen/dp8"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/etMobileNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginStart="@dimen/dp8"
+                    android:layout_marginEnd="@dimen/dp16"
+                    android:text="@={userProfile.phoneNumber}"
+                    android:maxLength="16"
+                    android:digits="@string/restrict_special_characters"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cdCountryCode"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/tvVerifyPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:drawablePadding="@dimen/dp4"
+                    android:text="@{langData.personalprofileBasicScreen.verified}"
+                    android:textColor="@color/primary"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/etMobileNumber"
+                    app:layout_constraintTop_toBottomOf="@+id/etMobileNumber"
+                    app:drawableEndCompat="@drawable/ic_done" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/etName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@={userProfile.fullName}"
+                    android:maxLength="35"
+                    android:inputType="textPersonName"
+
+                    app:drawableStart="@drawable/ic_person_black"
+                    app:layout_constraintEnd_toEndOf="@+id/etMobileNumber"
+                    app:layout_constraintStart_toStartOf="@+id/cdCountryCode"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVerifyPhone" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="35"
+                    android:text="@={userProfile.email}"
+                    app:drawableStart="@drawable/ic_mail_black"
+                    app:layout_constraintEnd_toEndOf="@+id/etMobileNumber"
+                    app:layout_constraintStart_toStartOf="@+id/cdCountryCode"
+                    app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+                <TextView
+                    android:id="@+id/tvVerifyEmail"
+                    style="@style/label_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:drawablePadding="@dimen/dp4"
+                    android:text="@{langData.personalprofileBasicScreen.verifyEmail}"
+                    android:textColor="@color/primary40"
+                    android:enabled="false"
+                    android:clickable="false"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/etEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/etEmail"
+                    app:drawableEndCompat="@drawable/ic_arrow_fw_primary50" />
+
+                <TextView
+                    android:id="@+id/ivDone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:drawablePadding="@dimen/dp4"
+                    android:gravity="center"
+                    android:text="@string/verified"
+                    android:textColor="@color/primary"
+                    android:visibility="gone"
+                    app:drawableEndCompat="@drawable/ic_done"
+                    app:layout_constraintEnd_toEndOf="@+id/etEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/etCnic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="15"
+                    android:text="@={userProfile.cnic}"
+                    android:inputType="number"
+                    app:drawableStart="@drawable/ic_cnic_black"
+                    android:layout_marginTop="@dimen/dp16"
+                    app:layout_constraintEnd_toEndOf="@+id/etMobileNumber"
+                    app:layout_constraintStart_toStartOf="@+id/cdCountryCode"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVerifyEmail" >
+
+                </com.homemedics.app.ui.custom.CustomDefaultEditText>
+
+                <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                    android:id="@+id/cdGender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    app:drawableStart="@drawable/ic_gender"
+                    app:layout_constraintEnd_toEndOf="@+id/etName"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/cdCountryCode"
+                    app:layout_constraintTop_toBottomOf="@+id/etCnic" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultEditText
+                    android:id="@+id/dob"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:inputType="none"
+                    app:textColorCheck="false"
+                    android:text="@={userProfile.dateOfBirth}"
+                    app:click="true"
+                    app:drawableStart="@drawable/ic_calendar"
+                    app:drawable="@drawable/ic_calendar"
+                    app:endIconMode="custom"
+                    android:layout_marginTop="@dimen/dp16"
+                    app:layout_constraintEnd_toEndOf="@+id/etMobileNumber"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/cdCountryCode"
+                    app:layout_constraintTop_toBottomOf="@+id/cdGender" />
+
+                <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                    android:id="@+id/cdCountry"
+                    selectedValue="@={userProfile.country}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    app:drawableStart="@drawable/ic_flag"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/dob"
+                    app:layout_constraintTop_toBottomOf="@+id/dob">
+
+                </com.homemedics.app.ui.custom.CustomDefaultDropDown>
+
+                <com.homemedics.app.ui.custom.CustomDefaultDropDown
+                    android:id="@+id/cdCity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginStart="@dimen/dp8"
+                    selectedValue="@={userProfile.city}"
+                    app:layout_constraintEnd_toEndOf="@+id/dob"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/dob" >
+
+                </com.homemedics.app.ui.custom.CustomDefaultDropDown>
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp12"
+                    android:background="@color/divider"
+                    android:layout_marginTop="@dimen/dp16"
+                    app:layout_constraintTop_toBottomOf="@id/cdCity" />
+
+                <com.homemedics.app.ui.custom.CustomAddMultipleView
+                    android:id="@+id/caContacts"
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:tag="contactsView"
+                    app:addNewText="@{langData.globalString.addNew}"
+                    app:titleText="@{langData.personalprofileBasicScreen.additionalContact}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp12"
+                    android:background="@color/divider"
+                    app:layout_constraintTop_toBottomOf="@id/caContacts"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.53"/>
+                <com.homemedics.app.ui.custom.CustomAddMultipleView
+                    android:id="@+id/caAddresses"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:tag="addressView"
+                    app:addNewText="@{langData.globalString.addNew}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider2"
+                    app:titleText="@{langData.personalprofileBasicScreen.locationAddress}" />
+
+                <!--            <com.google.android.material.button.MaterialButton-->
+                <!--                android:id="@+id/bSave"-->
+                <!--                style="@style/button_long"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="@{langData.globalString.save}"-->
+                <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:visibility="visible"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bDeleteAccount"
+                style="@style/button_long_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{langData.globalString.deleteAccount}"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bSave"
+                style="@style/button_long"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="@{langData.globalString.save}" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

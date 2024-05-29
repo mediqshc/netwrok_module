@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:textDirection="ltr"
+        android:layout_height="wrap_content">
+        <CheckedTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tvTitle"
+            style="@style/bordered_textview"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/dp0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@drawable/selector_white_black_color"
+            android:text="@string/karachi"/>
+    </LinearLayout>
+</layout>

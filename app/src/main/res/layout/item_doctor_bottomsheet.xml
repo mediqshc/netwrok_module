@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layoutDirection="locale"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivLab"
+            android:layout_width="@dimen/dp48"
+            android:layout_height="@dimen/dp48"
+            android:layout_margin="@dimen/dp16"
+            android:src="@drawable/ic_male"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivDrImage"
+            android:layout_width="@dimen/dp48"
+            android:layout_height="@dimen/dp48"
+            android:layout_margin="@dimen/dp16"
+            android:src="@drawable/ic_male"
+            app:civ_border_color="@color/primary50"
+            app:civ_border_width="@dimen/dp2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/ivOnlineStatus"
+            android:layout_width="@dimen/dp12"
+            android:layout_height="@dimen/dp12"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDrImage"
+            app:layout_constraintEnd_toEndOf="@+id/ivDrImage" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:textAlignment="viewStart"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintEnd_toStartOf="@+id/barrier"
+            app:layout_constraintStart_toEndOf="@id/ivDrImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Dr. Ahmed Sajjad" />
+
+        <TextView
+            android:id="@+id/tvExperience"
+            style="@style/label"
+            android:textAlignment="viewStart"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp4"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/dp2"
+            android:textColor="@color/grey"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/tvName"
+            app:layout_constraintStart_toEndOf="@id/ivDrImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            tools:text="Urologist, MBBS, FCPS" />
+
+        <TextView
+            android:id="@+id/tvYearsExp"
+            style="@style/label"
+            android:layout_width="@dimen/dp0"
+            android:textAlignment="viewStart"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/dp2"
+            android:textColor="@color/grey"
+            app:layout_constraintEnd_toEndOf="@+id/tvExperience"
+            app:layout_constraintStart_toStartOf="@+id/tvExperience"
+            app:layout_constraintTop_toBottomOf="@+id/tvExperience"
+            tools:text="(34 Years exp..)" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            style="@style/label"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/rs_3_000" />
+
+        <TextView
+            android:id="@+id/tvReview"
+            style="@style/label_m"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:textColor="@color/primary"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/reviews" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="tvAmount, tvReview"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp18"
+            android:layout_marginEnd="@dimen/dp16"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="@color/orange"
+            android:stepSize=".5"
+            app:layout_constraintBottom_toBottomOf="@+id/tvYearsExp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvExperience"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvNoRating"
+            style="@style/label_m"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp16"
+            android:textColor="@color/grey"
+            tools:text="@string/no_rating"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tvYearsExp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvExperience"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/vDivider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginVertical="@dimen/dp10"
+            android:background="@color/divider"
+            app:layout_constraintTop_toBottomOf="@id/tvYearsExp"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

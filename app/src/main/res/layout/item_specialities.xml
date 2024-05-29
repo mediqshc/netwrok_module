@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/itemImage"
+            android:layout_width="@dimen/dp36"
+            android:layout_height="@dimen/dp36"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginStart="@dimen/dp12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cardio" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/label_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp24"
+            android:layout_marginEnd="@dimen/dp24"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="@+id/itemImage"
+            app:layout_constraintEnd_toStartOf="@+id/cbSpecial"
+            app:layout_constraintStart_toEndOf="@+id/itemImage"
+            app:layout_constraintTop_toTopOf="@+id/itemImage"
+            tools:text="Title" />
+
+        <CheckBox
+            android:id="@+id/cbSpecial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dp0"
+            android:minHeight="@dimen/dp0"
+            app:layout_constraintBottom_toBottomOf="@+id/itemImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:buttonTint="@color/primary"
+            app:layout_constraintTop_toTopOf="@+id/itemImage" />
+
+        <View
+            android:id="@+id/vSeparator"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/dp16"
+            android:background="@drawable/separator_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

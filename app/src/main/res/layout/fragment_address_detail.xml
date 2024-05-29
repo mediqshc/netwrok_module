@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+        <variable
+            name="addressModel"
+            type="com.homemedics.app.model.AddressModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp16"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="70dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <ImageView
+            android:id="@+id/locPin"
+            android:layout_width="@dimen/dp16"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginStart="@dimen/dp16"
+            android:contentDescription="@string/location"
+            app:layout_constraintBottom_toBottomOf="@+id/region"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/address"
+            app:srcCompat="@drawable/ic_location_pin" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{addressModel.address}"
+            app:layout_constraintEnd_toStartOf="@+id/edit"
+            app:layout_constraintStart_toEndOf="@+id/locPin"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/region"
+            style="@style/sub_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:text="@{addressModel.region}"
+            app:layout_constraintEnd_toEndOf="@+id/address"
+            app:layout_constraintStart_toStartOf="@+id/address"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <ImageView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="@+id/region"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/address"
+            app:srcCompat="@drawable/ic_edit" />
+        <!--        <com.google.android.material.button.MaterialButton-->
+        <!--            android:id="@+id/bConfirmLoc"-->
+        <!--            style="@style/button_long"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_marginTop="@dimen/dp24"-->
+        <!--            android:text="@string/confirm_location"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/region" />-->
+
+
+        <com.homemedics.app.ui.custom.CustomDefaultEditText
+            android:id="@+id/etStreet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_marginStart="@dimen/dp16"
+            app:drawableStart="@drawable/ic_location_on"
+            android:text="@={addressModel.streetAddress}"
+            app:layout_constraintEnd_toEndOf="@+id/edit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/region" />
+
+
+
+        <com.homemedics.app.ui.custom.CustomDefaultEditText
+            android:id="@+id/etFloor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            app:drawableStart="@drawable/ic_home_black"
+            android:text="@={addressModel.floor}"
+            app:layout_constraintEnd_toEndOf="@+id/etStreet"
+            app:layout_constraintStart_toStartOf="@+id/etStreet"
+            app:layout_constraintTop_toBottomOf="@+id/etStreet" />
+
+        <com.homemedics.app.ui.custom.CustomDefaultDropDown
+            android:id="@+id/cdCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            selectedValue="@={addressModel.category}"
+            app:drawableStart="@drawable/ic_category_black"
+            app:layout_constraintEnd_toEndOf="@+id/etStreet"
+            app:layout_constraintStart_toStartOf="@+id/etStreet"
+            app:layout_constraintTop_toBottomOf="@+id/etFloor"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!--        android:value="@={viewModel._category}"-->
+        <com.homemedics.app.ui.custom.CustomDefaultEditText
+            android:id="@+id/etOther"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginBottom="@dimen/dp16"
+            android:layout_marginStart="@dimen/dp32"
+            android:visibility="gone"
+            android:text="@={addressModel.other}"
+            app:layout_constraintBottom_toTopOf="@+id/bSaveCont"
+            app:layout_constraintEnd_toEndOf="@+id/etStreet"
+            app:layout_constraintStart_toStartOf="@+id/etStreet"
+            app:layout_constraintTop_toBottomOf="@+id/cdCategory"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bSaveCont"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/selector_primary_primary50_solid"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingStart="@dimen/dp20"
+            android:paddingTop="@dimen/dp12"
+            android:paddingEnd="@dimen/dp20"
+            android:paddingBottom="@dimen/dp12"
+            android:text="@{lang.globalString.saveNContinue}"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cdCategory"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

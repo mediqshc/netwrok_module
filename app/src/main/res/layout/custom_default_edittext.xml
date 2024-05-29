@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/ssd"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivDrawableStart"
+            android:layout_width="@dimen/dp32"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:paddingEnd="@dimen/dp8"
+            android:scaleType="matrix"
+            android:src="@drawable/ic_mail_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="0dp"
+            style="@style/TextInputLayoutAppearance"
+            android:layout_height="wrap_content"
+            android:layoutDirection="locale"
+            android:layout_gravity="start"
+            android:textAlignment="viewStart"
+            android:textDirection="locale"
+            android:layout_weight="1"
+            app:errorIconDrawable="@null"
+            app:hintTextColor="@color/dark_grey"
+            tools:hint="TextField" >
+
+            1<com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                style="@style/TextInputLayoutAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                android:textSize="16sp"
+                android:includeFontPadding="false"
+                android:layout_gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="locale"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivDrawableEnd"
+                app:layout_constraintStart_toEndOf="@+id/ivDrawableStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivDrawableEnd"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDrawableStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivDrawableStart" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.homemedics.app.ui.custom.CustomActionbar
+                android:id="@+id/actionbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:action1Res="@drawable/ic_back_white"/>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/heading_m"
+                        android:layout_marginTop="@dimen/dp16"
+                        android:layout_marginStart="@dimen/dp16"
+                        android:text="@{lang.claimScreen.claimDetails}"
+                        tools:text="Claim details" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSplitAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp16"
+                        android:layout_marginTop="@dimen/dp16"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_checkout_split_amount"
+                        tools:itemCount="4"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:padding="@dimen/dp16"
+                        android:background="@color/off_purple">
+
+                        <TextView
+                            style="@style/label_m"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/primary"
+                            android:text="@{lang.globalString.total}" />
+
+                        <TextView
+                            android:id="@+id/tvPayableAmount"
+                            style="@style/label_m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary"
+                            tools:text="PKR 3,825.00" />
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/vDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp10"
+                        android:background="@color/divider" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/heading_m"
+                        android:layout_marginTop="@dimen/dp16"
+                        android:layout_marginStart="@dimen/dp16"
+                        android:text="@{lang.tabString.myConnections}"
+                        tools:text="My conenctions" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvConnections"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp16"
+                        android:layout_marginTop="@dimen/dp16"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="4"
+                        tools:listitem="@layout/item_select_main_lab" />
+
+                    <TextView
+                        android:id="@+id/tvNoData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp16"
+                        android:padding="@dimen/dp16"
+                        android:visibility="gone"
+                        android:text="@{lang.globalString.noConnections}"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bSubmit"
+                style="@style/button_long"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@{lang.globalString.submit}"
+                tools:text="@string/submit"/>
+
+        </LinearLayout>
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

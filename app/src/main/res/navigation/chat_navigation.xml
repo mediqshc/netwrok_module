@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_navigation"
+    app:startDestination="@id/conversationFragment">
+    <action
+        android:id="@+id/action_chatFragment"
+        app:destination="@id/chatFragment"
+        app:popUpToInclusive="true"
+        app:popUpTo="@id/chat_navigation"/>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.homemedics.app.ui.fragment.chat.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_medical_records_navigation"
+            app:destination="@id/medical_records_navigation" />
+        <action
+            android:id="@+id/action_chatFragment_to_patient_emr_navigation"
+            app:destination="@id/patient_emr_navigation"  >
+            <argument
+                android:name="bookingId"
+                android:defaultValue="0"
+                app:argType="integer"
+                />
+
+            <argument android:name="fromBDC"
+                android:defaultValue="true" />
+
+            <argument android:name="fromChat"
+                android:defaultValue="true" />
+
+        </action>
+        <action
+            android:id="@+id/action_chatFragment_to_customerConsultationRecordDetailsFragment2"
+            app:destination="@id/customerConsultationRecordDetailsFragmentg" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/chatTabFragment"
+        android:name="com.homemedics.app.ui.fragment.chat.ChatTabFragment"
+        android:label="Chat List"
+        tools:layout="@layout/fragment_chat_tab"/>
+
+    <fragment
+        android:id="@+id/conversationFragment"
+        android:name="com.homemedics.app.ui.fragment.chat.ConversationFragment"
+        android:label="Conversation"
+        tools:layout="@layout/conversation_fragment">
+        <action
+            android:id="@+id/action_chatTabFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <include app:graph="@navigation/medical_records_navigation" />
+    <include app:graph="@navigation/customer_emr_navigation" />
+    <fragment
+        android:id="@+id/customerConsultationRecordDetailsFragmentg"
+        android:name="com.homemedics.app.ui.fragment.medicalrecords.patient.consultation.CustomerConsultationRecordDetailsFragment"
+        android:label="CustomerConsultationRecordDetailsFragment"
+        tools:layout="@layout/fragment_customer_consultation_record_details"/>
+
+</navigation>

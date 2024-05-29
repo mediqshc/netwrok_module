@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="lang"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:background="@color/white">
+
+        <com.homemedics.app.ui.custom.CustomActionbar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            app:action2Res="@drawable/ic_close"/>
+
+        <LinearLayout
+            android:id="@+id/llTestName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/dp16">
+
+            <TextView
+                android:id="@+id/tvTestName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/heading_xlg"
+                android:layout_gravity="center"
+                android:gravity="center"
+                tools:text="Covid 19 test" />
+
+            <TextView
+                android:id="@+id/tvTestDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/label_m"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:ellipsize="end"
+                android:maxLines="10"
+                android:textColor="@color/grey"
+                tools:text="Viral tests look for a current infection with SARS-CoV-2, the virus that causes COVID-19" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp10"
+            android:background="@color/divider"/>
+
+        <com.homemedics.app.ui.custom.CustomAddMultipleView
+            android:id="@+id/caPreferredLab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:addNewText="@{lang.globalString.select}"
+            app:showAddButton="false" />
+
+        <TextView
+            android:id="@+id/tvNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/dp16"
+            android:text="@{lang.labPharmacyScreen.noLabsFound}"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/dp0"
+            android:layout_marginHorizontal="@dimen/dp16"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_select_main_lab" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bAddToCart"
+            style="@style/button_long_orange"
+            android:enabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{lang.labPharmacyScreen.addToCart}"/>
+
+    </LinearLayout>
+</layout>

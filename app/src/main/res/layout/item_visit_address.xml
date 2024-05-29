@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:id="@+id/cVisitAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp16">
+
+                <TextView
+                    android:id="@+id/tvVisitAddress"
+                    style="@style/heading_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:layout_marginHorizontal="@dimen/dp16"
+                    android:text="@string/visit_address"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvAddNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp16"
+                    android:background="@drawable/rounded_border_primary"
+                    android:drawablePadding="@dimen/dp8"
+                    android:paddingStart="@dimen/dp12"
+                    android:paddingTop="@dimen/dp8"
+                    android:paddingEnd="@dimen/dp12"
+                    android:paddingBottom="@dimen/dp8"
+                    android:text="@string/add"
+                    android:textColor="@color/primary"
+                    app:drawableEndCompat="@drawable/ic_add_primary"
+                    app:layout_constraintTop_toTopOf="@+id/tvVisitAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvVisitAddress"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvChooseAddress"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp16"
+                android:text="@string/choose_address_for_consultation"/>
+
+            <include
+                android:id="@+id/iAddress"
+                android:layout_marginTop="@dimen/dp30"
+                android:layout_marginHorizontal="@dimen/dp20"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                layout="@layout/item_add_multiple_list"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp16"
+                android:background="@color/divider"
+                android:layout_marginTop="@dimen/dp16"/>
+
+        </LinearLayout>
+</layout>

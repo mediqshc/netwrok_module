@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="langData"
+            type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:background="@color/divider">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tvOffDates"
+                style="@style/label_m"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp20"
+                android:text="@{langData.planningScreen.offDates}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvAddNew"/>
+
+            <TextView
+                android:id="@+id/tvAddNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp16"
+                android:background="@drawable/rounded_border_primary"
+                android:drawablePadding="@dimen/dp8"
+                android:paddingStart="@dimen/dp12"
+                android:paddingTop="@dimen/dp8"
+                android:paddingEnd="@dimen/dp12"
+                android:paddingBottom="@dimen/dp8"
+                android:text="@{langData.globalString.add}"
+                android:textColor="@color/primary"
+                app:drawableEndCompat="@drawable/ic_add_primary"
+                app:layout_constraintTop_toTopOf="@+id/tvOffDates"
+                app:layout_constraintBottom_toBottomOf="@+id/tvOffDates"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                style="@style/label_m"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp16"
+                android:layout_marginStart="@dimen/dp20"
+                android:text="@{langData.planningScreen.offDatesContent}"
+                app:layout_constraintTop_toBottomOf="@+id/tvOffDates"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvAddNew"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvNoOffDates"
+            style="@style/label_m"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp12"
+            android:paddingVertical="@dimen/dp18"
+            android:background="@color/white"
+            android:text="@{langData.planningScreen.noOffDates}"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clContainer"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOffDates"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp0"
+            android:layout_marginTop="@dimen/dp16"
+            android:background="@color/white"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_off_dates"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clContainer"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

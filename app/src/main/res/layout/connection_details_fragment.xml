@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="langData"
+        type="com.homemedics.app.firebase.RemoteConfigLanguage" />
+
+</data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="locale"
+        android:textDirection="locale"
+        android:orientation="vertical">
+
+    <com.homemedics.app.ui.custom.CustomActionbar
+        android:id="@+id/actionbar"
+        android:layout_height="?android:actionBarSize"
+        android:layout_width="match_parent"
+        app:action2Res="@drawable/ic_link_off"
+        app:action1Res="@drawable/ic_back_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/heading_m"
+                android:id="@+id/tvServiceText"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp16"
+                android:text="@{langData.linkedAccountScreen.linkedDesc}" />
+
+            <View
+                android:background="@color/divider"
+                android:layout_height="@dimen/dp12"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp16"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:text="@{langData.linkedAccountScreen.noCredit}"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCollapsing"
+                android:background="@drawable/rounded_divider"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp16"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/dp16"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/heading_m"
+                        android:id="@+id/tvCreditFund"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/dp16"
+                        android:background="@color/off_pink"
+                        android:text="@{langData.linkedAccountScreen.creditFunds}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <include
+                        android:id="@+id/iCreditFund"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp16"
+                        android:layout_marginStart="@dimen/dp16"
+                        android:layout_width="match_parent"
+                        layout="@layout/detail_layout" />
+
+                    <View
+                        android:background="@drawable/separator_horizontal"
+                        android:id="@+id/view10"
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvItem"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCondition" />
+
+                    <TextView
+                        style="@style/heading_m"
+                        android:id="@+id/tvDiscounts"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/dp16"
+                        android:text="@{langData.linkedAccountScreen.discounts}" />
+
+                    <include
+                        android:id="@+id/iDiscounts"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp16"
+                        android:layout_marginStart="@dimen/dp16"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        layout="@layout/detail_layout" />
+
+                    <View
+                        android:background="@drawable/separator_horizontal"
+                        android:id="@+id/view12"
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0" />
+
+                    <TextView
+                        style="@style/heading_m"
+                        android:id="@+id/tvTermsCondition"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/dp16"
+                        android:text="@{langData.linkedAccountScreen.termsCondition}" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clTerms"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/label"
+                            android:id="@+id/tvCompanyValidity"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp16"
+                            android:layout_width="match_parent"
+                            android:textColor="@color/grey"
+                            android:text="@{langData.linkedAccountScreen.companyValidity}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            style="@style/label_m"
+                            android:id="@+id/tvTermsText"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:padding="@dimen/dp16"
+                            android:text="@{langData.linkedAccountScreen.companyLocations}"
+                            app:layout_constraintTop_toBottomOf="@+id/tvCompanyValidity" />
+
+                        <View
+                            android:background="@drawable/separator_horizontal"
+                            android:id="@+id/view13"
+                            android:layout_height="1dp"
+                            android:layout_width="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTermsText" />
+
+<!--                        <androidx.constraintlayout.widget.Group-->
+<!--                            android:id="@+id/gpCountryDetail"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            app:constraint_referenced_ids="tvCountry,tvAddress,ivNext"-->
+<!--                            tools:layout_editor_absoluteY="165dp" />-->
+
+<!--                        <TextView-->
+<!--                            style="@style/label_m"-->
+<!--                            android:id="@+id/tvCountry"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginEnd="8dp"-->
+<!--                            android:layout_marginStart="@dimen/dp16"-->
+<!--                            android:layout_marginTop="@dimen/dp12"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            tools:text="Pakistan"-->
+<!--                            app:layout_constraintEnd_toStartOf="@+id/ivNext"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/tvTermsText" />-->
+
+<!--                        <TextView-->
+<!--                            style="@style/label"-->
+<!--                            android:id="@+id/tvAddress"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            tools:text="Karachi"-->
+<!--                            android:textColor="@color/grey"-->
+<!--                            app:layout_constraintEnd_toEndOf="@+id/tvCountry"-->
+<!--                            app:layout_constraintStart_toStartOf="@+id/tvCountry"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/tvCountry" />-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/ivNext"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginEnd="8dp"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            app:layout_constraintBottom_toBottomOf="@+id/tvAddress"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="@+id/tvCountry"-->
+<!--                            app:srcCompat="@drawable/ic_arrow_fw_angular_grey" />-->
+
+<!--                        <View-->
+<!--                            android:background="@drawable/separator_horizontal"-->
+<!--                            android:id="@+id/view14"-->
+<!--                            android:layout_height="1dp"-->
+<!--                            android:layout_marginTop="@dimen/dp12"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintHorizontal_bias="0.0"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/tvAddress" />-->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvCountryCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/dp16"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_city_country"
+                            android:nestedScrollingEnabled="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view13"
+                            app:layout_constraintBottom_toTopOf="@+id/tvConditionText"/>
+
+                        <TextView
+                            style="@style/label_m"
+                            android:id="@+id/tvConditionText"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp16"
+                            android:layout_width="0dp"
+                            android:text="@{langData.linkedAccountScreen.creditDependents}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/rvCountryCity" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvTermDetailItem"
+                            android:layout_height="match_parent"
+                            android:nestedScrollingEnabled="false"
+                            android:layout_margin="@dimen/dp16"
+                            android:layout_width="match_parent"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvConditionText"
+                            tools:itemCount="8"
+                            tools:listitem="@layout/item_detail" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/label_m"
+                android:drawablePadding="@dimen/dp16"
+                android:id="@+id/tvDetailConditionText"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textDirection="locale"
+                android:layoutDirection="locale"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginHorizontal="@dimen/dp24"
+                android:layout_marginBottom="@dimen/dp24"
+                android:layout_width="wrap_content"
+                android:text="@{langData.linkedAccountScreen.viewDetailTerms}"
+                android:textColor="@color/primary_gradient_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view14"
+                app:drawableRightCompat="@drawable/ic_arrow_fw_angular_primary" />
+
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <com.homemedics.app.ui.custom.CustomCheckableLinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ccLinearLayout"
+        android:layout_width="@dimen/dp56"
+        android:textDirection="locale"
+        android:layoutDirection="locale"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginEnd="@dimen/dp6"
+        android:orientation="vertical"
+        android:background="@drawable/selector_rounded_primary_border_divider"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvDay"
+            android:duplicateParentState="true"
+            style="@style/label_sm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/selector_white_black_color"
+            android:text="Sun" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:duplicateParentState="true"
+            style="@style/label_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/selector_white_black_color"
+            android:textStyle="bold"
+            android:text="01" />
+
+    </com.homemedics.app.ui.custom.CustomCheckableLinearLayout>
+</layout>
