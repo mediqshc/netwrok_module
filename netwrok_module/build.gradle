@@ -117,7 +117,7 @@ afterEvaluate {
             from components.findByName(varient.name)
             groupId="com.github.mediqshc"
             artifactId="netwrok_module"
-            version="1.0.1"
+            version="1.0.2"
         }
     }
 }
