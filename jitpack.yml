@@ -1,5 +1,25 @@
+#jdk:
+#  -openjdk:11
+#
+#env:
+#  JAVA_OPTS: "-Xmx2048m"
+#  GRADLE_OPTS: "-Xmx2048m"
+#
+#
+#before_install:
+#  - sdk install java 11.0.12-open
+#  - sdk use java 11.0.12-open
+#  -
+
 jdk:
-  -openjdk:11
+  - openjdk11
+
+env:
+  JAVA_OPTS: "-Xmx2048m -Xms512m"
+  GRADLE_OPTS: "-Xmx2048m -Xms512m"
+
 before_install:
-  - sdk install java 11.0.12-open
-  - sdk use java 11.0.12-open
+  - ./gradlew --version
+
+install:
+  - ./gradlew clean -Pgroup=com.github.mediqshc -Pversion=1.0.6 -xtest -xlint assemble publishToMavenLocal
