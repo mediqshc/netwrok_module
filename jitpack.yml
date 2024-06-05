@@ -23,5 +23,6 @@ before_install:
 
 install:
   - FILE ="-Dfile=netwrok_module-live-release.aar"
-  - mvn install: install-file $File -DgroupId = com.github.mediqshc DartifactId = netwrok_module -Dversion =VERSION -DPackaging=aar -DgeneratePom=true
+  - mvn install: install-file $File -DgroupId = com.github.mediqshc DartifactId = netwrok_module -Dversion =1.0.10
+  - -DPackaging=aar -DgeneratePom=true
 #  - ./gradlew clean -Pgroup=com.github.mediqshc -Pversion=1.0.6 -xtest -xlint assemble publishToMavenLocal
