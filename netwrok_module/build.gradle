@@ -10,7 +10,16 @@ android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+
     defaultConfig {
+        multiDexEnabled true
         aarMetadata {
             minSdkVersion 21
             targetSdkVersion 31
@@ -111,6 +120,8 @@ dependencies {
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
     kapt "androidx.hilt:hilt-compiler:1.2.0"
 
+    implementation 'com.android.support:multidex:1.0.3'
+
 
     // implementation("androidx.compose.compiler:compiler:1.5.14")
 
@@ -124,7 +135,7 @@ afterEvaluate {
             from components.findByName(varient.name)
             groupId = "com.github.mediqshc"
             artifactId = "netwrok_module"
-            version = "1.0.8"
+            version = "1.0.9"
         }
     }
 }

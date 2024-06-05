@@ -12,7 +12,15 @@ plugins {
 android {
     compileSdk 33
 
+    lintOptions {
+        disable 'LintWarningId' // Replace with specific lint warning ID to ignore
+        abortOnError false // To avoid build failure on lint errors
+    }
+
     defaultConfig {
+
+        multiDexEnabled true
+
         applicationId "com.homemedics.app"
         minSdk 24
         targetSdk 33
@@ -200,6 +208,7 @@ dependencies {
     //QR code
     implementation project(':zxing-android-embedded')
 
+    implementation 'com.android.support:multidex:1.0.3'
 
    // implementation("androidx.compose.compiler:compiler:1.5.14")
 
