@@ -15,14 +15,13 @@ jdk:
   - openjdk11
 
 env:
-  JAVA_OPTS: "-Xmx2048m -Xms512m"
-  GRADLE_OPTS: "-Xmx2048m -Xms512m"
+  JAVA_OPTS: "-Xmx2048m"
+  GRADLE_OPTS: "-Xmx2048m"
 
 before_install:
   - ./gradlew --version
 
 install:
-  - FILE ="-Dfile=netwrok_module-live-release.aar"
-  - mvn install: install-file $File -DgroupId = com.github.mediqshc DartifactId = netwrok_module -Dversion =1.0.11
-  - -DPackaging=aar -DgeneratePom=true
+  - FILE="-Dfile=network_module-live-release.aar"
+  - mvn install:install-file $FILE -DgroupId=com.github.mediqshc -DartifactId=network_module -Dversion=1.0.11 -Dpackaging=aar -DgeneratePom=true
 #  - ./gradlew clean -Pgroup=com.github.mediqshc -Pversion=1.0.6 -xtest -xlint assemble publishToMavenLocal
