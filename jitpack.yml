@@ -22,6 +22,6 @@ before_install:
   - ./gradlew --version
 
 install:
-  - FILE="-Dfile=network_module-live-release.aar"
+  - FILE="-Dfile=netwrok_module-live-release.aar"
   - mvn install:install-file $FILE -DgroupId=com.github.mediqshc -DartifactId=network_module -Dversion=1.0.11 -Dpackaging=aar -DgeneratePom=true
 #  - ./gradlew clean -Pgroup=com.github.mediqshc -Pversion=1.0.6 -xtest -xlint assemble publishToMavenLocal
