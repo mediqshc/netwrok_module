@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.mediqshc</groupId> <!-- com.github.geek-atif-->
     <artifactId>netwrok_module</artifactId> <!-- com-atifqamar-customtoast -->
-    <version>1.0.13</version> <!-- 1.0 -->
+    <version>1.0.14</version> <!-- 1.0 -->
     <packaging>pom</packaging>
     <description>First version release</description>
 </project>
