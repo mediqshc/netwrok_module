@@ -1,0 +1,76 @@
+# Android Studio
+.idea/
+.gradle/
+local.properties
+/.cxx/
+.cxx/
+**/cmakeBuilds/
+**/externalNativeBuild/
+**/build/
+**/captures/
+**/outputs/
+**/generated/
+**/release/
+**/app/build/intermediates/
+**/app/build/outputs/
+**/app/build/generated/
+*.iml
+
+# Ignore Android/IntelliJ log files
+*.log
+
+# Ignore Gradle files
+.gradle/
+build/
+gradle-app/
+gradle-wrapper.jar
+gradle-wrapper.properties
+gradlew
+gradlew.bat
+gradle/
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Kotlin specific
+*.kt.swp
+*.kt.swo
+*.kts.swp
+*.kts.swo
+
+# Java specific
+*.class
+*.jar
+*.war
+*.ear
+
+# Android specific
+*.apk
+*.ap_
+*.dex
+*.class
+*.so
+*.unity3d
+*.meta
+*.orig
+
+# OS generated files
+.DS_Store
+*.swp
+*~
+*.swo
+*.swn
+Thumbs.db
+*.bak
+*.backup
+*.tmp
+*.temp
+*.orig
+*.directory
+
+# Other
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.sublime-workspace
+*.sublime-project

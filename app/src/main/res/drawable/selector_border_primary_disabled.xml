@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="false" android:drawable="@drawable/rounded_border_primary30" />
-    <item android:drawable="@drawable/rounded_border_primary" />
-</selector>
