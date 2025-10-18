@@ -1,7 +1,10 @@
 package com.fatron.network_module.repository
 
+
 import com.fatron.network_module.models.request.AppointmentStatusRequest
+import com.fatron.network_module.models.request.Surgery.SurgeryRequest
 import com.fatron.network_module.models.request.activedays.ActiveDaysRequest
+import com.fatron.network_module.models.request.aiquestion.GetQuestionsRequest
 import com.fatron.network_module.models.request.appointments.AppointmentDetailReq
 import com.fatron.network_module.models.request.appointments.AppointmentListRequest
 import com.fatron.network_module.models.request.appointments.AppointmentsActionRequest
@@ -18,6 +21,7 @@ import com.fatron.network_module.models.request.email.EmailVerifyRequest
 import com.fatron.network_module.models.request.emr.AttachEMRtoBDCRequest
 import com.fatron.network_module.models.request.emr.EMRDownloadRequest
 import com.fatron.network_module.models.request.emr.EMRShareWithRequest
+import com.fatron.network_module.models.request.emr.FaceScannerEMRVitalsRequest.VitalSignsRequest
 import com.fatron.network_module.models.request.emr.StoreEMRRequest
 import com.fatron.network_module.models.request.emr.customer.consultation.EMRConsultationFilterRequest
 import com.fatron.network_module.models.request.emr.customer.records.EMRRecordsFilterRequest
@@ -55,12 +59,25 @@ import com.fatron.network_module.models.request.video.ParticipantsRequest
 import com.fatron.network_module.models.request.video.RoomRequest
 import com.fatron.network_module.models.request.video.TokenRequest
 import com.fatron.network_module.models.request.walkin.*
+import com.fatron.network_module.models.response.aiChat.AIQuestionSummaryResponse
 import com.fatron.network_module.models.response.AppointmentStatusResponse
 import com.fatron.network_module.models.response.DeleteSlotsResponse
 import com.fatron.network_module.models.response.EconResponse
+import com.fatron.network_module.models.response.aiChat.QuestionData
 import com.fatron.network_module.models.response.ResponseGeneral
+import com.fatron.network_module.models.response.Scribe.Notes
+import com.fatron.network_module.models.response.Scribe.ScribeResponse
+import com.fatron.network_module.models.response.Scribe.SoapNotesRequest
+import com.fatron.network_module.models.response.Surgery.BookingInfo
+import com.fatron.network_module.models.response.Surgery.SurgeonResponse
+import com.fatron.network_module.models.response.Surgery.SurgeryBooking
+import com.fatron.network_module.models.response.Surgery.SurgeryResponse
 import com.fatron.network_module.models.response.activedays.ActiveDaysResponse
 import com.fatron.network_module.models.response.activedays.AddActiveDaysResponse
+import com.fatron.network_module.models.response.aiChat.BotConversation
+import com.fatron.network_module.models.response.aiChat.SummaryResponse
+import com.fatron.network_module.models.response.aiPrescription.AiPrescription
+import com.fatron.network_module.models.response.aiPrescription.ORCRequest
 import com.fatron.network_module.models.response.appointments.AppointmentListResponse
 import com.fatron.network_module.models.response.appointments.AppointmentResponse
 import com.fatron.network_module.models.response.appointments.AppointmentServicesResponse
@@ -89,12 +106,14 @@ import com.fatron.network_module.models.response.emr.customer.records.CustomerRe
 import com.fatron.network_module.models.response.emr.type.*
 import com.fatron.network_module.models.response.family.FamilyConnection
 import com.fatron.network_module.models.response.family.FamilyResponse
+import com.fatron.network_module.models.response.healthcard.HealthCardResponse
 import com.fatron.network_module.models.response.homeservice.HomeServiceDetailResponse
 import com.fatron.network_module.models.response.homeservice.HomeServiceListResponse
 import com.fatron.network_module.models.response.labtest.LabBranchListResponse
 import com.fatron.network_module.models.response.labtest.LabTestCategoriesResponse
 import com.fatron.network_module.models.response.labtest.LabTestListResponse
 import com.fatron.network_module.models.response.linkaccount.*
+import com.fatron.network_module.models.response.meta.GenericItem
 import com.fatron.network_module.models.response.meta.MetaDataResponse
 import com.fatron.network_module.models.response.notification.NotificationCountResponse
 import com.fatron.network_module.models.response.notification.NotificationResponse
@@ -152,18 +171,8 @@ interface RetrofitAPI {
     @POST("v1/phone_number/verification")
     suspend fun verifyPhoneNum(@Body loginRequest: LoginRequest): ResponseGeneral<UserResponse>
 
-    @POST("v1/econ/subscribe")
-    suspend fun subscribe(@Body loginRequest: EconSubscribeRequest): ResponseGeneral<EconResponse>
-
-    @POST("v1/econ/unsubscribe")
-    suspend fun unsubscribe(@Body loginRequest: EconOtpRequest): ResponseGeneral<EconResponse>
-
-    @POST("v1/econ/otp")
-    suspend fun sendEconOtp(@Body loginRequest: EconOtpRequest): ResponseGeneral<EconResponse>
-
-    @POST("v1/econ/verify-otp")
-    suspend fun verifyEconOtp(@Body loginRequest: EconSubscribeRequest): ResponseGeneral<UserResponse>
-
+    @POST("v1/card/details")
+    suspend fun getHealthCard(): ResponseGeneral<HealthCardResponse>
 
     @GET("v1/meta")
     suspend fun metaData(
@@ -230,11 +239,6 @@ interface RetrofitAPI {
     @GET("v1/profile/family")
     suspend fun getFamilyConnectionList(@Query("emr") emr: Boolean? = null): ResponseGeneral<FamilyResponse>
 
-    @POST("v1/econ/packages")
-    suspend fun getPackages(
-        @Query("network") network: String? = null,
-        @Query("phone") phone: String? = null
-    ): ResponseGeneral<List<Package>>
 
     @POST("v1/profile/family/create")
     suspend fun createFamilyConnection(@Body request: FamilyRequest): ResponseGeneral<FamilyConnection>
@@ -390,6 +394,50 @@ interface RetrofitAPI {
     ): ResponseGeneral<Any>
 
 
+    @GET("v1/prior_auth/init")
+    suspend fun priorAuthInit(): ResponseGeneral<PriorAuthInit>
+
+
+    @GET("v1/ai/summary/get")
+    suspend fun getAISummary(): ResponseGeneral<SummaryResponse>
+
+
+    @POST("v1/surgery/catalogs")
+    suspend fun getSurgeryCatalogs(): ResponseGeneral<SurgeryResponse>
+
+    @POST("v1/surgery/surgeons")
+    suspend fun getSurgeons(@Body request:SurgeryRequest): ResponseGeneral<SurgeonResponse>
+
+    @POST("v1/surgery/request/store")
+    suspend fun submitRequest(@Body request:SurgeryBooking): ResponseGeneral<BookingInfo>
+
+
+    @POST("v1/ai/bookings/history")
+    suspend fun getConsultationHistory(): ResponseGeneral<ScribeResponse>
+
+    @POST("v1/ai/soap/notes")
+    suspend fun getSoapNotes(@Body request: SoapNotesRequest): ResponseGeneral<Notes>
+
+
+    @POST("v1/chatbot/question/get")
+    suspend fun getQuestions(
+        @Body getQuestionsRequest: GetQuestionsRequest
+    ): ResponseGeneral<QuestionData>
+
+    @POST("v1/chatbot/question/chat")
+    suspend fun getBotChat(
+        @Body getQuestionsRequest: GetQuestionsRequest
+    ): ResponseGeneral<BotConversation>
+
+
+
+    @JvmSuppressWildcards
+    @Multipart
+    @POST("v1/chatbot/upload/attachment")
+    suspend fun postAudioQuestionAttachment(
+        @Part voiceAnswer:  MultipartBody.Part
+    ): ResponseGeneral<AIQuestionSummaryResponse>
+
     @POST("v1/appointments/details")
     suspend fun getApptDetail(@Body appointmentDetailReq: AppointmentDetailReq): ResponseGeneral<AppointmentResponse>
 
@@ -492,6 +540,20 @@ interface RetrofitAPI {
 
     @POST("v1/emr/medicines/delete")
     suspend fun deleteMedicine(@Body request: MedicineDeleteRequest): ResponseGeneral<*>
+
+    @JvmSuppressWildcards
+    @Multipart
+    @POST("v1/emr/attachments")
+    suspend fun addPriorAuthAttachment(
+        @Part("emr_id") emr_id: Int,
+        @Part("attachment_type") attachment_type: RequestBody,
+        @Part("emr_type") emr_type: Int,
+        @Part attachments: ArrayList<MultipartBody.Part>?
+    ): ResponseGeneral<DeleteAttachmentRequest>
+
+    @POST("v1/emr/attachments/delete")
+    suspend fun deletePriorAuthDocument(@Body request: DeleteAttachmentRequest): ResponseGeneral<*>
+
 
     @JvmSuppressWildcards
     @Multipart
@@ -666,6 +728,7 @@ interface RetrofitAPI {
     @POST("v1/notification/count")
     suspend fun getNotificationsCount(@Body request: NotificationReadRequest): ResponseGeneral<NotificationCountResponse>
 
+
     @POST("v1/notification/create")
     suspend fun callCreateNotif(@Body request: CreateNotifRequest): ResponseGeneral<Any>
 
@@ -676,6 +739,16 @@ interface RetrofitAPI {
     suspend fun getPartnerAvailability(@Body request: PartnerAvailabilityRequest): ResponseGeneral<PartnerAvailabilityResponse>
 
     //claim
+
+    @POST("v1/prior_auth/store")
+    suspend fun submitPriorAuthorizationForm(@Body request: PriorAuthorizationRequest): ResponseGeneral<PriorAuthorizationResponse>
+
+    @POST("v1/prior_auth/get")
+    suspend fun getPriorAuthorizationForm(@Body request: ListPriorAuthorizationsRequest): ResponseGeneral<List<PriorAuthorizationRequest>>
+
+    @POST("v1/prior_auth/details")
+    suspend fun getPriorAuthorizationDetails(@Body request: ListPriorAuthorizationsRequest): ResponseGeneral<priorAuthDetails>
+
 
     @POST("v1/claim/services")
     suspend fun getClaimServices(): ResponseGeneral<ClaimServicesResponse>
@@ -702,6 +775,30 @@ interface RetrofitAPI {
     suspend fun cancelClaim(
         @Body request: ClaimStatusRequest
     ): ResponseGeneral<*>
+
+
+    @JvmSuppressWildcards
+    @Multipart
+    @POST("v1/prior_auth/attachments/store")
+    suspend fun addPriorAuthAttachment(
+        @Part("prior_authorization_id") priorAuthorizationId: Int?,
+        @Part("attachment_type") attachmentType: Int?,
+        @Part("document_type") documentType: Int?,
+        @Part attachments: ArrayList<MultipartBody.Part>?
+    ): ResponseGeneral<DeleteAttachmentRequest>
+
+
+    @JvmSuppressWildcards
+    @Multipart
+    @POST("v1/prior_auth/attachments/delete")
+    suspend fun deletePriorAuthAttachment(@Part("prior_authorization_attachment_id") priorAuthorizationAttachmentId: Int?): ResponseGeneral<*>
+
+
+    @JvmSuppressWildcards
+    @Multipart
+    @POST("v1/prior_auth/attachments")
+    suspend fun callGetPriorAuthAttachments(@Part("prior_authorization_id") priorAuthorizationId: Int?): ResponseGeneral<AttachmentResponse>
+
 
     @JvmSuppressWildcards
     @Multipart
@@ -754,6 +851,12 @@ interface RetrofitAPI {
 
     @POST("v1/walk_in_pharmacy/connections")
     suspend fun getWalkInPharmacyConnections(@Body request: WalkInConnectionRequest): ResponseGeneral<ClaimConnectionsResponse>
+
+    @POST("v1/ai/ocr/get")
+    suspend fun getOCR(@Body request: ORCRequest): ResponseGeneral<AiPrescription>
+
+
+
 
     @POST("v1/walk_in_pharmacy/initial")
     suspend fun initialWalkInPharmacy(@Body request: WalkInInitialRequest): ResponseGeneral<WalkInInitialResponse>
@@ -906,4 +1009,7 @@ interface RetrofitAPI {
 
     @POST("v1/walk_in_laboratory/discount/visit")
     suspend fun getLabDiscountCenter(@Body request: HospitalDiscountCenterRequest): ResponseGeneral<HospitalDiscountCenter>
+
+    @POST("v1/walk_in_pharmacy/discount/visit")
+    suspend fun getPharmacyDiscountCenter(@Body request: HospitalDiscountCenterRequest): ResponseGeneral<HospitalDiscountCenter>
 }

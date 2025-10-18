@@ -1,6 +1,7 @@
 package com.fatron.network_module.models.response.claim
 
 
+import com.fatron.network_module.models.request.claim.PriorAuthorizationRequest
 import com.fatron.network_module.models.response.appointments.Attachment
 import com.fatron.network_module.models.response.family.FamilyConnection
 import com.fatron.network_module.models.response.meta.RequiredDocumentType
@@ -43,7 +44,7 @@ data class Claim(
     @Json(name = "connection")
     var connection: ClaimConnection? = null,
     @Json(name = "settlements")
-    val settlements: Settlements? = null,
+    val settlements: List<Settlements>? = null,
     @Json(name = "settlement_documents")
     var settlementDocuments: List<RequiredDocumentType>? = null,
     @Json(name = "amount")
@@ -62,10 +63,27 @@ data class Claim(
 
 @JsonClass(generateAdapter = true)
 data class Settlements(
-   @Json(name = "id")
-   val id: Int? = null,
-   @Json(name = "booking_id")
-   val bookingId: Int? = null,
-   @Json(name = "actual_amount")
-   val actualAmount: String? = null
+    @Json(name = "id")
+    val id: Int? = null,
+    @Json(name = "booking_id")
+    val bookingId: Int? = null,
+    @Json(name = "actual_amount")
+    val actualAmount: String? = null
+)
+
+@JsonClass(generateAdapter = true)
+data class PriorAuthorizationResponse(
+    @Json(name = "result")
+    val result: String? = null
+)
+
+@JsonClass(generateAdapter = true)
+data class PriorAuthorizationResponseList(
+    @Json(name = "result")
+    val result: ArrayList<PriorAuthorizationRequest>? = null
+)
+@JsonClass(generateAdapter = true)
+data class PriorAuthorization(
+    val id: Int,
+    val patient_name: String,
 )

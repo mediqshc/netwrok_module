@@ -4,7 +4,9 @@ package com.fatron.network_module.repository
 
 import android.util.Log
 import com.fatron.network_module.models.request.AppointmentStatusRequest
+import com.fatron.network_module.models.request.Surgery.SurgeryRequest
 import com.fatron.network_module.models.request.activedays.ActiveDaysRequest
+import com.fatron.network_module.models.request.aiquestion.GetQuestionsRequest
 import com.fatron.network_module.models.request.appointments.AppointmentDetailReq
 import com.fatron.network_module.models.request.appointments.AppointmentListRequest
 import com.fatron.network_module.models.request.appointments.AppointmentsActionRequest
@@ -21,6 +23,7 @@ import com.fatron.network_module.models.request.email.EmailVerifyRequest
 import com.fatron.network_module.models.request.emr.AttachEMRtoBDCRequest
 import com.fatron.network_module.models.request.emr.EMRDownloadRequest
 import com.fatron.network_module.models.request.emr.EMRShareWithRequest
+import com.fatron.network_module.models.request.emr.FaceScannerEMRVitalsRequest.VitalSignsRequest
 import com.fatron.network_module.models.request.emr.StoreEMRRequest
 import com.fatron.network_module.models.request.emr.customer.consultation.EMRConsultationFilterRequest
 import com.fatron.network_module.models.request.emr.customer.records.EMRRecordsFilterRequest
@@ -60,13 +63,16 @@ import com.fatron.network_module.models.request.video.RoomRequest
 import com.fatron.network_module.models.request.video.TokenRequest
 import com.fatron.network_module.models.request.walkin.*
 import com.fatron.network_module.models.response.ResponseGeneral
+import com.fatron.network_module.models.response.Scribe.SoapNotesRequest
+import com.fatron.network_module.models.response.Surgery.SurgeryBooking
+import com.fatron.network_module.models.response.aiPrescription.ORCRequest
 import com.fatron.network_module.models.response.pharmacy.HospitalDiscountCenterRequest
 import com.fatron.network_module.models.response.planschedule.deleteSlotRequest
 import com.fatron.network_module.utils.Enums
 import com.fatron.network_module.utils.TinyDB
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
-import retrofit2.http.Body
 import retrofit2.http.Part
 
 object ApiRepository {
@@ -122,25 +128,25 @@ object ApiRepository {
             api.sendOtp(otpRequest)
         }
 
-    suspend fun sendEconOtp(otpRequest: EconOtpRequest) =
-        safeApiCall(false, ResponseGeneral::class.java) {
-            api.sendEconOtp(otpRequest)
-        }
-
-    suspend fun subscribeEconPackage(subscribeRequest: EconSubscribeRequest) =
-        safeApiCall(false, ResponseGeneral::class.java) {
-            api.subscribe(subscribeRequest)
-        }
-
-    suspend fun unSubscribeEconPackage(unSubscribeRequest: EconOtpRequest) =
-        safeApiCall(false, ResponseGeneral::class.java) {
-            api.unsubscribe(unSubscribeRequest)
-        }
-
-    suspend fun verifyEconOtp(request: EconSubscribeRequest) =
-        safeApiCall(false, ResponseGeneral::class.java) {
-            api.verifyEconOtp(request)
-        }
+//    suspend fun sendEconOtp(otpRequest: EconOtpRequest) =
+//        safeApiCall(false, ResponseGeneral::class.java) {
+//            api.sendEconOtp(otpRequest)
+//        }
+//
+//    suspend fun subscribeEconPackage(subscribeRequest: EconSubscribeRequest) =
+//        safeApiCall(false, ResponseGeneral::class.java) {
+//            api.subscribe(subscribeRequest)
+//        }
+//
+//    suspend fun unSubscribeEconPackage(unSubscribeRequest: EconOtpRequest) =
+//        safeApiCall(false, ResponseGeneral::class.java) {
+//            api.unsubscribe(unSubscribeRequest)
+//        }
+//
+//    suspend fun verifyEconOtp(request: EconPackageSubscribeRequest) =
+//        safeApiCall(false, ResponseGeneral::class.java) {
+//            api.verifyEconOtp(request)
+//        }
 
     suspend fun verifyOtp(verifyOtpRequest: ForgetPwdRequest) =
         safeApiCall(false, ResponseGeneral::class.java) {
@@ -346,6 +352,12 @@ object ApiRepository {
     suspend fun getOffDates() =
         safeApiCall(false, ResponseGeneral::class.java) {
             api.getOffDates()
+        }
+
+
+    suspend fun getHealthCard() =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getHealthCard()
         }
 
     suspend fun getDoctors(request: BDCFilterRequest) =
@@ -888,6 +900,73 @@ object ApiRepository {
 
     //claim
 
+    suspend fun submitPriorAuthorizationForm(request: PriorAuthorizationRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.submitPriorAuthorizationForm(request)
+        }
+
+    suspend fun priorAuthorizationFormInit() =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.priorAuthInit()
+        }
+
+    suspend fun getQuestions(request: GetQuestionsRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getQuestions(request)
+        }
+
+    suspend fun getAISummary() =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getAISummary()
+        }
+
+    suspend fun getBotChat(request: GetQuestionsRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getBotChat(request)
+        }
+
+
+    suspend fun postAudioQuestionAttachment( voiceParts: MultipartBody.Part) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.postAudioQuestionAttachment(
+                voiceAnswer = voiceParts
+            )
+        }
+
+    suspend fun getPriorAuthorizationForm(request: ListPriorAuthorizationsRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getPriorAuthorizationForm(request)
+        }
+
+    suspend fun getSurgery() =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getSurgeryCatalogs()
+        }
+    suspend fun getSurgeons(catalod_id: SurgeryRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getSurgeons(request = catalod_id)
+        }
+
+    suspend fun createRequest(catalod_id: SurgeryBooking) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.submitRequest(request = catalod_id)
+        }
+
+    suspend fun getConsultationHistory() =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getConsultationHistory()
+        }
+
+    suspend fun getSoapNotes(request: SoapNotesRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getSoapNotes(request)
+        }
+
+    suspend fun getPriorAuthorizationDetails(request: ListPriorAuthorizationsRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getPriorAuthorizationDetails(request)
+        }
+
     suspend fun getClaimServices(request: PageRequest) =
         safeApiCall(false, ResponseGeneral::class.java) {
             api.getClaimServices()
@@ -954,6 +1033,29 @@ object ApiRepository {
             api.getOrders(request)
         }
 
+    //prior auth
+
+    suspend fun callGetPriorAuthAttachments(priorAuthorizationId: Int) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.callGetPriorAuthAttachments(priorAuthorizationId)
+        }
+
+    suspend fun deletePriorAuthAttachment(priorAuthorizationAttachmentId: Int) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.deletePriorAuthAttachment(priorAuthorizationAttachmentId)
+        }
+
+    suspend fun addPriorAuthAttachment(request: AddPriorAuthAttachmentRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.addPriorAuthAttachment(
+                priorAuthorizationId = request.priorAuthorizationId,
+                attachmentType = request.attachmentType,
+                documentType = request.documentType,
+                attachments = request.attachments,
+            )
+        }
+
+
     //walkin
 
     suspend fun addWalkInAttachment(request: AddWalkInAttachmentRequest) =
@@ -997,6 +1099,11 @@ object ApiRepository {
     suspend fun getWalkInPharmacyConnections(request: WalkInConnectionRequest) =
         safeApiCall(false, ResponseGeneral::class.java) {
             api.getWalkInPharmacyConnections(request)
+        }
+
+    suspend fun getORC(request: ORCRequest) =
+        safeApiCall(false, ResponseGeneral::class.java) {
+            api.getOCR(request)
         }
 
     suspend fun initialWalkInPharmacy(request: WalkInInitialRequest) =
@@ -1216,8 +1323,13 @@ object ApiRepository {
             api.getLabDiscountCenter(request)
         }
 
-    suspend fun getPackages(network: String? = null, phone: String? = null) =
+    suspend fun PharmacyDiscountCenter(request: HospitalDiscountCenterRequest) =
         safeApiCall(false, ResponseGeneral::class.java) {
-            api.getPackages(network, phone)
+            api.getPharmacyDiscountCenter(request)
         }
+
+//    suspend fun getPackages(phone: String? = null) =
+//        safeApiCall(false, ResponseGeneral::class.java) {
+//            api.getPackages(phone)
+//        }
 }

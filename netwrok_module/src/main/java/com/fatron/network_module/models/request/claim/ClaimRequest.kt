@@ -27,5 +27,8 @@ data class ClaimRequest(
     @Json(name = "comments")
     var comments: String? = null,
     @Json(name = "service_id")
-    var serviceId: Int? = null
+    var serviceId: Int? = null,
+    @Json(name = "prior_auth_id")
+    var priorAuthId: Int? = null,
+
 )
